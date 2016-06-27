@@ -38,7 +38,7 @@ $ brew install coreutils gnu-sed wget curl gawk p7zip
 
 ### How to install hosty
 
-$ curl -L git.io/hosty | sh
+$ curl -L goo.gl/dtFRbn | sh
 
 ## How to run hosty
 
