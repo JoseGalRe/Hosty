@@ -218,7 +218,7 @@ if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
 else
     echo
     echo "You can see the results in hosts.txt"
-    cat "$host" > hosts.txt
+    cat "$host" > hosty.txt
 fi
 
 echo
