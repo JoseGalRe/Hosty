@@ -3,13 +3,14 @@
 
 # Add ad-blocking hosts files in this array
 HOSTS=(
-    "http://adaway.org/hosts.txt"
-    "http://hosts-file.net/ad_servers.asp"
-    "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext"
+    "http://malwaredomainlist.com/hostslist/hosts.txt"
+    "http://mirror1.malwaredomains.com/files/immortal_domains.txt"
     "http://someonewhocares.org/hosts/hosts"
     "http://winhelp2002.mvps.org/hosts.txt"
-    "https://raw.githubusercontent.com/JoseGalRe/Hosty/master/hostyhosts.txt"
-    "https://raw.githubusercontent.com/jorgicio/publicidad-chile/master/hosts.txt")
+    "https://adaway.org/hosts.txt"
+    "https://hosts-file.net/ad_servers.txt"
+    "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0"
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")
 
 
 # Add AdBlock Plus rules files in this array
