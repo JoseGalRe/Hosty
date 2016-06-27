@@ -44,6 +44,14 @@ if [ -f "$HOME"/.hosty ]; then
 fi
 
 
+# Chech if the sudo comand exist (useful for windows)
+sudoc() {
+    if sudo >/dev/null 2>&1; then
+        sudo
+    fi
+}
+
+
 # Chech if the gsed comand exist (useful for mac)
 gnused() {
     if hash gsed 2>/dev/null; then
@@ -90,7 +98,7 @@ else
     let ln-=1
     head -n "$ln" /etc/hosts > "$orig"
     if [ "$1" == "--restore" ]; then
-        sudo bash -c "cat $orig > /etc/hosts"
+        sudoc bash -c "cat $orig > /etc/hosts"
         echo "/etc/hosts restore completed."
         exit 0
     fi
@@ -100,8 +108,8 @@ fi
 # If this is our first run, create a whitelist file and set to read-only for safety
 if [ ! -f /etc/hosts.whitelist ]; then
     echo "Creating whitelist file..."
-    sudo touch /etc/hosts.whitelist
-    sudo chmod 444 /etc/hosts.whitelist
+    sudoc touch /etc/hosts.whitelist
+    sudoc chmod 444 /etc/hosts.whitelist
     echo
 fi
 
@@ -109,8 +117,8 @@ fi
 # If this is our first run, create a blacklist file and set to read-only for safety
 if [ ! -f /etc/hosts.blacklist ]; then
     echo "Creating blacklist file..."
-    sudo touch /etc/hosts.blacklist
-    sudo chmod 444 /etc/hosts.blacklist
+    sudoc touch /etc/hosts.blacklist
+    sudoc chmod 444 /etc/hosts.blacklist
     echo
 fi
 
@@ -196,7 +204,7 @@ cat "$aux" >> "$host"
 ln=$(grep -c "$IP" "$host")
 
 if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
-    sudo bash -c "cat $host > /etc/hosts"
+    sudoc bash -c "cat $host > /etc/hosts"
 else
     echo
     echo "You can see the results in $host"
