@@ -54,7 +54,7 @@ sudoc() {
 
 # Chech if the gsed comand exist (useful for mac)
 gnused() {
-    if hash gsed 2>/dev/null; then
+    if gsed >/dev/null 2>&1; then
         gsed "$@"
     else
         sed "$@"
