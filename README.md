@@ -1,5 +1,4 @@
-hosty
-=====
+#Hosty - Ad blocker script for Linux.
 
 Ad blocker script for all Unix and Unix-like operating systems (Linux, GNU, BSD, Mac OS X, FreeBSD, OpenBSD).
 
