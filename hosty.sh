@@ -217,7 +217,8 @@ if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     sudoc bash -c "cat $host > /etc/hosts"
 else
     echo
-    echo "You can see the results in $host"
+    echo "You can see the results in hosts.txt"
+    cat "$host" > hosts.txt
 fi
 
 echo
