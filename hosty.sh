@@ -15,15 +15,15 @@ HOSTS=(
 
 
 # Add AdBlock Plus rules files in this array
-RULES=(
-    "http://abp.mozilla-hispano.org/nauscopio/filtros.txt"
-    "https://adguard.com/en/filter-rules.html?id=2"
-    "https://adguard.com/en/filter-rules.html?id=3"
-    "https://adguard.com/en/filter-rules.html?id=9"
-    "https://data.getadblock.com/filters/adblock_custom.txt"
-    "https://easylist-downloads.adblockplus.org/easylist.txt"
-    "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
-    "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt")
+#RULES=(
+#    "http://abp.mozilla-hispano.org/nauscopio/filtros.txt"
+#    "https://adguard.com/en/filter-rules.html?id=2"
+#    "https://adguard.com/en/filter-rules.html?id=3"
+#    "https://adguard.com/en/filter-rules.html?id=9"
+#    "https://data.getadblock.com/filters/adblock_custom.txt"
+#    "https://easylist-downloads.adblockplus.org/easylist.txt"
+#    "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
+#    "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt")
 
 
 # Set IP to redirect
@@ -144,16 +144,16 @@ done
 
 
 # Obtain various AdBlock Plus rules files and merge into one
-for i in "${RULES[@]}"; do
-    dwn "$i"
-
-    if [ $? != 0 ]; then
-        echo "Error downloading $i"
-    else
-        awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
-    fi
-
-done
+#for i in "${RULES[@]}"; do
+#    dwn "$i"
+#
+#    if [ $? != 0 ]; then
+#        echo "Error downloading $i"
+#    else
+#        awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
+#    fi
+#
+#done
 
 
 # Excluding localhost and similar domains
