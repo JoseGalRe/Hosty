@@ -64,7 +64,9 @@ gnused() {
 
 # Method for download host files in tmp path
 dwn() {
-    wget --no-cache -nv -O "$aux" "$1"
+    echo "Downloading $1"
+    curl -s "$i" -o "$aux"
+
     if [ $? != 0 ]; then
         return $?
     fi
