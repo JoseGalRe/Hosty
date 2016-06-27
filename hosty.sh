@@ -169,7 +169,9 @@ fi
 # Applying user blacklist
 echo
 echo "Applying user blacklist..."
-cat "/etc/hosts.blacklist" >> "$host"
+if [ -f "/etc/hosts.blacklist" ]; then
+    cat "/etc/hosts.blacklist" >> "$host"
+fi
 if [ -f "$HOME"/.hosty.blacklist ]; then
     cat "$HOME"/.hosty.blacklist >> "$host"
 fi
@@ -178,7 +180,9 @@ fi
 # Applying user whitelist
 echo
 echo "Applying user whitelist..."
-cat "/etc/hosts.whitelist" >> "$host"
+if [ -f "/etc/hosts.whitelist" ]; then
+    cat "/etc/hosts.whitelist" >> "$host"
+fi
 if [ -f "$HOME"/.hosty.whitelist ]; then
     cat "$HOME"/.hosty.whitelist >> "$white"
 fi
