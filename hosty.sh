@@ -11,7 +11,15 @@ HOSTS=(
     "https://adaway.org/hosts.txt"
     "https://hosts-file.net/ad_servers.txt"
     "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0"
+    "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")
+
+
+# Others
+#http://adblock.gjtech.net/?format=hostfile
+#http://sysctl.org/cameleon/hosts
+#https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts
+#https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt
 
 
 # Add AdBlock Plus rules files in this array
