@@ -225,9 +225,13 @@ if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     sudoc bash -c "cat $host > /etc/hosts"
 else
     echo
-    echo "You can see the results in hosts.txt"
+    echo "You can see the results in hosty.txt"
     cat "$host" > hosty.txt
 fi
+
+echo
+echo "Cleanup temporary files"
+rm -f "$aux" "$host" "$orig" "$tmp" "$white"
 
 echo
 echo "Done, $ln websites blocked."
