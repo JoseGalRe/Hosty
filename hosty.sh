@@ -3,7 +3,7 @@
 
 # Add ad-blocking hosts files in this array
 HOSTS=(
-    "http://malwaredomainlist.com/hostslist/hosts.txt"
+    "http://www.malwaredomainlist.com/hostslist/hosts.txt"
     "http://mirror1.malwaredomains.com/files/immortal_domains.txt"
     "http://mirror1.malwaredomains.com/files/justdomains"
     "http://someonewhocares.org/hosts/hosts"
@@ -40,6 +40,7 @@ IP="0.0.0.0"
 
 # Temporal files
 aux=$(mktemp)
+ord=$(mktemp)
 host=$(mktemp)
 orig=$(mktemp)
 tmp=$(mktemp)
@@ -74,8 +75,9 @@ gnused() {
 
 # Method for download host files in tmp path
 dwn() {
-    echo "Downloading $1"
     curl -s "$i" -o "$aux"
+    lln=$(grep -c . "$aux")
+    echo "Downloaded $lln hosts blocked from $1"
 
     if [ $? != 0 ]; then
         return $?
@@ -217,7 +219,8 @@ echo "# Ad blocking hosts generated $(date)"
 echo "# Don't write below this line. It will be lost if you run hosty again."
 } >> "$host"
 
-cat "$aux" >> "$host"
+sort "$aux" > "$ord"
+cat "$ord" >> "$host"
 
 ln=$(grep -c "$IP" "$host")
 
@@ -231,7 +234,7 @@ fi
 
 echo
 echo "Cleanup temporary files"
-rm -f "$aux" "$host" "$orig" "$tmp" "$white"
+rm -f "$aux" "$host" "$ord" "$orig" "$tmp" "$white"
 
 echo
 echo "Done, $ln websites blocked."
