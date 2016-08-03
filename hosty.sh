@@ -144,7 +144,7 @@ for i in "${HOSTS[@]}"; do
 
     if [ $? != 0 ]; then
         echo "Error downloading $i"
-    elif [ "$i" == "http://mirror1.malwaredomains.com/files/justdomains" ]; then
+    elif [[ "$i" =~ ^http://mirror1.malwaredomains ]]; then
         cat "$aux" >> "$host"
     else
         gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
