@@ -8,9 +8,9 @@ HOSTS=(
     "http://mirror1.malwaredomains.com/files/justdomains"
     "http://someonewhocares.org/hosts/hosts"
     "http://winhelp2002.mvps.org/hosts.txt"
-    "https://adaway.org/hosts.txt"
     "https://hosts-file.net/ad_servers.txt"
     "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0"
+    "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
     "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")
 
