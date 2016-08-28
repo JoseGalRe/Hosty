@@ -9,9 +9,11 @@ HOSTS=(
     "http://someonewhocares.org/hosts/hosts"
     "http://winhelp2002.mvps.org/hosts.txt"
     "https://hosts-file.net/ad_servers.txt"
+    "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
+    "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
     "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0"
     "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
-    "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
+    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")
 
 
@@ -144,7 +146,8 @@ for i in "${HOSTS[@]}"; do
 
     if [ $? != 0 ]; then
         echo "Error downloading $i"
-    elif [[ "$i" =~ ^http://mirror1.malwaredomains ]]; then
+    elif [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
+         [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
         cat "$aux" >> "$host"
     else
         gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
