@@ -148,7 +148,7 @@ for i in "${HOSTS[@]}"; do
         echo "Error downloading $i"
     elif [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
          [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
-        cat "$aux" >> "$host"
+        gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' "$aux" >> "$host"
     else
         gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
     fi
