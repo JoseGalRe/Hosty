@@ -179,7 +179,7 @@ gnused -e '/^\(localhost\|localhost\.localdomain\|local\|broadcasthost\|ip6-loca
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
     echo "Applying recommended whitelist (Run hosty --all to avoid this step)..."
-    gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|clients6\.google\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|graph\.facebook\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i "$host"
+    gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|graph\.facebook\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i "$host"
 fi
 
 
