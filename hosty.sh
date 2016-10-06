@@ -13,6 +13,7 @@ HOSTS=(
     "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
     "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0"
     "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
+    "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
     "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")
 
