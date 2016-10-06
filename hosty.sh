@@ -148,6 +148,7 @@ for i in "${HOSTS[@]}"; do
         echo "Error downloading $i"
     elif [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
          [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
+        gnused -e '/\(crashlytics\.com\|ati-host\.net\|akadns\.net\|urbanairship\.com\|symcd\.com\|edgekey\.net\)$/d' -i "$aux"
         gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' "$aux" >> "$host"
     else
         gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
@@ -179,7 +180,7 @@ gnused -e '/^\(localhost\|localhost\.localdomain\|local\|broadcasthost\|ip6-loca
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
     echo "Applying recommended whitelist (Run hosty --all to avoid this step)..."
-    gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i $host
+    gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i "$host"
 fi
 
 
@@ -187,7 +188,7 @@ fi
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
     echo "Applying JoseGalRe's recommended whitelist (Run hosty --all to avoid this step)..."
-    gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|crashlytics\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\|logw306\.ati-host\.net\|pd-st\.itunes-apple\.com\.akadns\.net\)$/d' -i $host
+    gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\)$/d' -i "$host"
 fi
 
 
