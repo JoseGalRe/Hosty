@@ -189,7 +189,7 @@ fi
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
     echo "Applying JoseGalRe's recommended whitelist (Run hosty --all to avoid this step)..."
-    gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\)$/d' -i "$host"
+    gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\|adfoc\.us\)$/d' -i "$host"
 fi
 
 
