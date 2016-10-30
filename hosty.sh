@@ -193,6 +193,14 @@ if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
 fi
 
 
+# Applying dev blacklist
+echo
+echo "Applying dev blacklist..."
+if [ -f "devlist.txt" ]; then
+    cat "devlist.txt" >> "$host"
+fi
+
+
 # Applying user blacklist
 echo
 echo "Applying user blacklist..."
