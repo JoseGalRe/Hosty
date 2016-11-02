@@ -9,19 +9,19 @@ HOSTS=(
     "http://someonewhocares.org/hosts/hosts"
     "http://winhelp2002.mvps.org/hosts.txt"
     "https://hosts-file.net/ad_servers.txt"
-    "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
     "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
+    "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
     "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0"
     "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+    "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
     "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
-    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
-    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")
+    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt")
 
 
 # Others
 #http://adblock.gjtech.net/?format=hostfile
 #http://sysctl.org/cameleon/hosts
-#https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts
 #https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt
 
 
@@ -42,12 +42,13 @@ IP="0.0.0.0"
 
 
 # Temporal files
-aux=$(mktemp)
-ord=$(mktemp)
-host=$(mktemp)
-orig=$(mktemp)
-tmp=$(mktemp)
-white=$(mktemp)
+aux=$(mktemp)   # Temp file for making some format in downloaded hosts
+ord=$(mktemp)   # Temp file for alphabetize the downloaded hosts
+host=$(mktemp)  # Temp file for concatenate the downloaded hosts
+orig=$(mktemp)  # Temp file for save your current /etc/hosts
+zip=$(mktemp)   # Temp file for save hosts files compressed in zip
+white=$(mktemp) # Temp file for save the hosts for the whitelist
+hosty=$(mktemp) # Temp file for final hosts file
 
 
 # Init User hosts file
@@ -76,19 +77,19 @@ gnused() {
 }
 
 
-# Method for download host files in tmp path
+# Method for download host files in zip temp file
 dwn() {
     curl -s "$i" -o "$aux"
     lln=$(grep -c . "$aux")
-    echo "Downloaded $lln hosts blocked from $1"
+    echo "   + Downloaded $lln hosts blocked from $1"
 
     if [ $? != 0 ]; then
         return $?
     fi
 
     if [[ "$1" == *.zip ]]; then
-        zcat "$aux" > "$tmp"
-        cat "$tmp" > "$aux"
+        zcat "$aux" > "$zip"
+        cat "$zip" > "$aux"
         if [ $? != 0 ]; then
             return $?
         fi
@@ -123,34 +124,39 @@ fi
 
 
 # If this is our first run, create a whitelist file and set to read-only for safety
-if [ ! -f /etc/hosts.whitelist ]; then
-    echo "Creating whitelist file..."
-    sudoc touch /etc/hosts.whitelist
-    sudoc chmod 444 /etc/hosts.whitelist
-    echo
+if [ "$1" == "--debug" ] && [ "$2" == "--debug" ]; then
+    if [ ! -f /etc/hosts.whitelist ]; then
+        echo
+        echo " * Creating whitelist file..."
+        sudoc touch /etc/hosts.whitelist
+        sudoc chmod 444 /etc/hosts.whitelist
+    fi
 fi
 
 
 # If this is our first run, create a blacklist file and set to read-only for safety
-if [ ! -f /etc/hosts.blacklist ]; then
-    echo "Creating blacklist file..."
-    sudoc touch /etc/hosts.blacklist
-    sudoc chmod 444 /etc/hosts.blacklist
-    echo
+if [ "$1" == "--debug" ] && [ "$2" == "--debug" ]; then
+    if [ ! -f /etc/hosts.blacklist ]; then
+        echo
+        echo " * Creating blacklist file..."
+        sudoc touch /etc/hosts.blacklist
+        sudoc chmod 444 /etc/hosts.blacklist
+    fi
 fi
 
 
 # Obtain various hosts files and merge into one
-echo "Downloading ad-blocking files..."
+echo
+echo " * Downloading ad-blocking files..."
 for i in "${HOSTS[@]}"; do
     dwn "$i"
 
     if [ $? != 0 ]; then
-        echo "Error downloading $i"
+        echo " * ERROR!!! downloading $i"
     elif [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
          [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
         gnused -e '/\(crashlytics\.com\|ati-host\.net\|akadns\.net\|urbanairship\.com\|symcd\.com\|edgekey\.net\)$/d' -i "$aux"
-        gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' "$aux" >> "$host"
+        gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' -e '/^\s*$/d' "$aux" >> "$host"
     else
         gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
     fi
@@ -163,7 +169,7 @@ done
 #    dwn "$i"
 #
 #    if [ $? != 0 ]; then
-#        echo "Error downloading $i"
+#        echo " * ERROR!!! downloading $i"
 #    else
 #        awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
 #    fi
@@ -173,14 +179,14 @@ done
 
 # Excluding localhost and similar domains
 echo
-echo "Excluding localhost and similar domains..."
+echo " * Excluding localhost and similar domains..."
 gnused -e '/^\(localhost\|localhost\.localdomain\|local\|broadcasthost\|ip6-localhost\|ip6-loopback\|ip6-localnet\|ip6-mcastprefix\|ip6-allnodes\|ip6-allrouters\)$/d' -i "$host"
 
 
 # Applying recommended whitelist
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
-    echo "Applying recommended whitelist (Run hosty --all to avoid this step)..."
+    echo " * Applying recommended whitelist (Run hosty --all to avoid this step)..."
     gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i "$host"
 fi
 
@@ -188,77 +194,111 @@ fi
 # Applying my recommended whitelist
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
-    echo "Applying JoseGalRe's recommended whitelist (Run hosty --all to avoid this step)..."
+    echo " * Applying JoseGalRe's recommended whitelist (Run hosty --all to avoid this step)..."
     gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\|adfoc\.us\|vo\.msecnd\.net\|linkbucks\.com\)$/d' -i "$host"
 fi
 
 
 # Applying dev blacklist
-echo
-echo "Applying dev blacklist..."
 if [ -f "devlist.txt" ]; then
+    echo
+    echo " * Applying dev blacklist..."
     cat "devlist.txt" >> "$host"
 fi
 
 
 # Applying user blacklist
-echo
-echo "Applying user blacklist..."
-if [ -f "/etc/hosts.blacklist" ]; then
+if [ -f "/etc/hosts.blacklist" ] || [ -f "$HOME"/.hosty.blacklist ] ; then
+    echo
+    echo " * Applying user blacklist..."
     cat "/etc/hosts.blacklist" >> "$host"
-fi
-if [ -f "$HOME"/.hosty.blacklist ]; then
     cat "$HOME"/.hosty.blacklist >> "$host"
 fi
 
 
 # Applying user whitelist
-echo
-echo "Applying user whitelist..."
-if [ -f "/etc/hosts.whitelist" ]; then
+if [ -f "/etc/hosts.whitelist" ] || [ -f "$HOME"/.hosty.whitelist ]; then
+    echo
+    echo " * Applying user whitelist..."
     cat "/etc/hosts.whitelist" >> "$host"
-fi
-if [ -f "$HOME"/.hosty.whitelist ]; then
     cat "$HOME"/.hosty.whitelist >> "$white"
 fi
 
 
 # Cleaning and de-duplicating
 echo
-echo "Cleaning and de-duplicating..."
+echo " * Cleaning and de-duplicating..."
 awk '/^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ {print $2}' "$orig" >> "$white"
 awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$white" "$host" > "$aux"
 
 
+# Get the final number of hosts
+FL=$(grep -c "$IP" "$aux")
+
+
 # Building
 echo
-echo "Building /etc/hosts..."
-cat "$orig" > "$host"
-
-{
-echo "# Ad blocking hosts generated $(date)"
-echo "# Don't write below this line. It will be lost if you run hosty again."
-} >> "$host"
-
-sort "$aux" > "$ord"
-cat "$ord" >> "$host"
-
-ln=$(grep -c "$IP" "$host")
-
 if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
-    sudoc bash -c "cat $host > /etc/hosts"
+    echo " * Building /etc/hosts..."
+    cat "$orig" > "$hosty"
+    echo "" >> "$hosty"
 else
-    echo
-    echo "You can see the results in hosty.txt"
-    cat "$host" > hosty.txt
+    echo " * Building debug \"./hosty.txt\" file..."
 fi
 
-echo
-echo "Cleanup temporary files"
-rm -f "$aux" "$host" "$ord" "$orig" "$tmp" "$white"
 
+# Print information on the head of the host file
+{
+echo "# Hosty - Ad blocker script for Linux."
+echo "#"
+echo "# This hosts file is a free download from:"
+echo "# https://github.com/JoseGalRe/Hosty"
+echo "#"
+echo "# This hosts file is generated from the following sources:"
+for i in "${HOSTS[@]}"; do echo "#  * $i" ; done
+echo "#"
+echo "# Update Date: $(LC_TIME=en_US date)"
+echo "# Number of domains: $FL"
+echo "#"
+echo "# Licence:"
+echo "# CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)"
+echo "#"
+echo "# Contributions by:"
+echo "# astrolince, s-nt-s, JoseGalRe"
+echo "#"
+echo "# Don't write below this line. It will be lost if you run hosty again."
+echo ""
+echo "127.0.0.1 localhost"
+echo "::1 localhost"
+echo ""
+echo "# [Start of entries generated by Hosty]"
+} >> "$hosty"
+
+
+# Alphabetize final hosts
+sort "$aux" > "$ord"
+cat "$ord" >> "$hosty"
+
+
+# Save hosts file
+if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
+    sudoc bash -c "cat $hosty > /etc/hosts"
+else
+    cat "$hosty" > hosty.txt
+fi
+
+
+# Cleanup
 echo
-echo "Done, $ln websites blocked."
+echo " * Cleanup temporary files"
+rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white"
+
+
+# Done
 echo
-echo "You can always restore your original hosts file with this command:"
-echo "  $ sudo hosty --restore"
+echo " * Done, $FL websites blocked."
+if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
+    echo
+    echo " * You can always restore your original hosts file with this command:"
+    echo "   $ sudo hosty --restore"
+fi
