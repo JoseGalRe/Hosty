@@ -40,6 +40,26 @@ HOSTS=(
 #    "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt")
 
 
+# Colors
+esc="\033"             #  Bold
+bld="${esc}[1m"        #  Bold
+rst="${esc}[0m"        #  Reset
+red="${esc}[31m"       #  Red      - Text
+grn="${esc}[32m"       #  Green    - Text
+cya="${esc}[36m"       #  Cyan     - Text
+whi="${esc}[37m"       #  White    - Text
+bldred=${bld}${red}    #  Red      - Bold Text
+bldgrn=${bld}${grn}    #  Green    - Bold Text
+bldcya=${bld}${cya}    #  Cyan     - Bold Text
+bldwhi=${bld}${whi}    #  White    - Bold Text
+
+
+# Welcome Message
+echo
+echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
+echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
+
+
 # Set IP to redirect
 IP="0.0.0.0"
 
@@ -64,8 +84,8 @@ fi
 
 # Chech if the sudo comand exist (useful for windows)
 sudoc() {
-    if sudo >/dev/null 2>&1; then
-        sudo
+    if hash sudo >/dev/null 2>&1; then
+        sudo "$@"
     fi
 }
 
@@ -84,7 +104,7 @@ gnused() {
 dwn() {
     curl -A "unknown" -s "$i" -o "$aux"
     lln=$(grep -c . "$aux")
-    echo "   + Downloaded $lln hosts blocked from $1"
+    echo -e "   + ${bldcya}Downloaded ${bldgrn}$lln ${bldcya}hosts blocked from ${bldgrn}$1"
 
     if [ $? != 0 ]; then
         return $?
@@ -108,10 +128,12 @@ dwn() {
 
 
 # Method for restore original host
-ln=$(gnused -n '/^# Ad blocking hosts generated/=' /etc/hosts)
+ln=$(gnused -n '/^# Hosty - Ad blocker script for Linux/=' /etc/hosts)
 if [ -z "$ln" ]; then
     if [ "$1" == "--restore" ]; then
-        echo "There is nothing to restore."
+        echo
+        echo -e "${bldwhi} * ${bldgrn}There is nothing to restore."
+        echo
         exit 0
     fi
     cat /etc/hosts > "$orig"
@@ -120,17 +142,19 @@ else
     head -n "$ln" /etc/hosts > "$orig"
     if [ "$1" == "--restore" ]; then
         sudoc bash -c "cat $orig > /etc/hosts"
-        echo "/etc/hosts restore completed."
+        echo
+        echo -e "${bldwhi} * ${bldcya}/etc/hosts${bldgrn} restore completed."
+        echo
         exit 0
     fi
 fi
 
 
 # If this is our first run, create a whitelist file and set to read-only for safety
-if [ "$1" == "--debug" ] && [ "$2" == "--debug" ]; then
+if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     if [ ! -f /etc/hosts.whitelist ]; then
         echo
-        echo " * Creating whitelist file..."
+        echo -e "${bldwhi} * ${bldgrn}Creating whitelist file..."
         sudoc touch /etc/hosts.whitelist
         sudoc chmod 444 /etc/hosts.whitelist
     fi
@@ -138,10 +162,10 @@ fi
 
 
 # If this is our first run, create a blacklist file and set to read-only for safety
-if [ "$1" == "--debug" ] && [ "$2" == "--debug" ]; then
+if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     if [ ! -f /etc/hosts.blacklist ]; then
         echo
-        echo " * Creating blacklist file..."
+        echo -e "${bldwhi} * ${bldgrn}Creating blacklist file..."
         sudoc touch /etc/hosts.blacklist
         sudoc chmod 444 /etc/hosts.blacklist
     fi
@@ -150,12 +174,12 @@ fi
 
 # Obtain various hosts files and merge into one
 echo
-echo " * Downloading ad-blocking files..."
+echo -e "${bldwhi} * ${bldgrn}Downloading ad-blocking files..."
 for i in "${HOSTS[@]}"; do
     dwn "$i"
 
     if [ $? != 0 ]; then
-        echo " * ERROR!!! downloading $i"
+        echo -e "${bldwhi} *   ${bldred}ERROR!!! downloading ${bldwhi}$i"
     elif [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
          [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
         gnused -e '/\(crashlytics\.com\|ati-host\.net\|akadns\.net\|urbanairship\.com\|symcd\.com\|edgekey\.net\)$/d' -i "$aux"
@@ -174,7 +198,7 @@ done
 #    dwn "$i"
 #
 #    if [ $? != 0 ]; then
-#        echo " * ERROR!!! downloading $i"
+#        echo -e "${bldwhi} *   ${bldred}ERROR!!! downloading ${bldwhi}$i"
 #    else
 #        awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
 #    fi
@@ -184,14 +208,14 @@ done
 
 # Excluding localhost and similar domains
 echo
-echo " * Excluding localhost and similar domains..."
+echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
 gnused -e '/^\(localhost\|localhost\.localdomain\|local\|broadcasthost\|ip6-localhost\|ip6-loopback\|ip6-localnet\|ip6-mcastprefix\|ip6-allnodes\|ip6-allrouters\)$/d' -i "$host"
 
 
 # Applying Hosty recommended whitelist
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
-    echo " * Applying Hosty recommended whitelist (Run hosty --all to avoid this step)..."
+    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}Hosty ${bldgrn}recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
     gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i "$host"
 fi
 
@@ -199,7 +223,7 @@ fi
 # Applying JoseGalRe's recommended whitelist
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
-    echo " * Applying JoseGalRe's recommended whitelist (Run hosty --all to avoid this step)..."
+    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}JoseGalRe's ${bldgrn}recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
     gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\|adfoc\.us\|vo\.msecnd\.net\|linkbucks\.com\)$/d' -i "$host"
 fi
 
@@ -207,7 +231,7 @@ fi
 # Applying AdAway recommended whitelist (https://github.com/AdAway/AdAway/wiki/ProblematicApps)
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
-    echo " * Applying AdAway recommended whitelist (Run hosty --all to avoid this step)..."
+    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}AdAway ${bldgrn}recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
     gnused -e '/\(redirect\.viglink\.com\|intsig\.net\|connect\.tapjoy\.com\|data\.flurry\.com\)$/d' -i "$host"
 fi
 
@@ -215,32 +239,32 @@ fi
 # Applying Dev blacklist
 if [ -f "devlist.txt" ]; then
     echo
-    echo " * Applying Dev blacklist..."
-    cat "devlist.txt" >> "$host"
+    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}Dev ${bldgrn}blacklist..."
+    cat "devlist.txt" >> "$host" 2>/dev/null
 fi
 
 
 # Applying user blacklist
 if [ -f "/etc/hosts.blacklist" ] || [ -f "$HOME"/.hosty.blacklist ] ; then
     echo
-    echo " * Applying user blacklist..."
-    cat "/etc/hosts.blacklist" >> "$host"
-    cat "$HOME"/.hosty.blacklist >> "$host"
+    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}User ${bldgrn}blacklist..."
+    cat "/etc/hosts.blacklist" >> "$host" 2>/dev/null
+    cat "$HOME"/.hosty.blacklist >> "$host" 2>/dev/null
 fi
 
 
 # Applying user whitelist
 if [ -f "/etc/hosts.whitelist" ] || [ -f "$HOME"/.hosty.whitelist ]; then
     echo
-    echo " * Applying user whitelist..."
-    cat "/etc/hosts.whitelist" >> "$host"
-    cat "$HOME"/.hosty.whitelist >> "$white"
+    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}User ${bldgrn}whitelist..."
+    cat "/etc/hosts.whitelist" >> "$host" 2>/dev/null
+    cat "$HOME"/.hosty.whitelist >> "$white" 2>/dev/null
 fi
 
 
 # Cleaning and de-duplicating
 echo
-echo " * Cleaning and de-duplicating..."
+echo -e "${bldwhi} * ${bldgrn}Cleaning and de-duplicating..."
 awk '/^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ {print $2}' "$orig" >> "$white"
 awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$white" "$host" > "$aux"
 #gnused -e '/\<0.0.0.0 .doubleclick.com\>/d'  -e '/\<0.0.0.0 .doubleclick.net\>/d' -i "$aux" # remove derp by adblock.mahakala.is
@@ -253,11 +277,12 @@ FL=$(grep -c "$IP" "$aux")
 # Building
 echo
 if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
-    echo " * Building /etc/hosts..."
+    echo -e "${bldwhi} * ${bldgrn}Building ${bldcya}/etc/hosts..."
+    sed '$ d' -i "$orig"
     cat "$orig" > "$hosty"
     echo "" >> "$hosty"
 else
-    echo " * Building debug \"./hosty.txt\" file..."
+    echo -e "${bldwhi} * ${bldgrn}Building debug ${bldcya}\"./hosty.txt\" ${bldgrn}file..."
 fi
 
 
@@ -304,15 +329,21 @@ fi
 
 # Cleanup
 echo
-echo " * Cleanup temporary files"
+echo -e "${bldwhi} * ${bldgrn}Cleanup temporary files"
 rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white"
 
 
 # Done
 echo
-echo " * Done, $FL websites blocked."
+echo -e "${bldwhi} * ${bldgrn}Done, ${bldcya}$FL ${bldgrn}websites blocked.${rst}"
 if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     echo
-    echo " * You can always restore your original hosts file with this command:"
-    echo "   $ sudo hosty --restore"
+    echo -e "${bldwhi} * ${bldgrn}You can always restore your original hosts file with this command:"
+    echo -e "   $ sudo hosty --restore${rst}"
+fi
+
+
+# Final whiteline (useful for gitbash on windows)
+if [[ "$OSTYPE" == linux* ]] || [[ "$OSTYPE" == darwin* ]]; then
+    echo
 fi
