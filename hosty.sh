@@ -22,9 +22,10 @@ HOSTS=(
 
 
 # Others
-#http://adblock.gjtech.net/?format=hostfile
-#http://sysctl.org/cameleon/hosts
-#https://adblock.mahakala.is
+#http://hostsfile.org/Downloads/hosts.txt    # Very long list + Block Porn
+#http://hostsfile.mine.nu/hosts0.txt         # Very long list
+#http://sysctl.org/cameleon/hosts            # Very long list + Some false positives
+#https://adblock.mahakala.is                 # Very long list
 
 
 # Add AdBlock Plus rules files in this array
