@@ -22,6 +22,7 @@ HOSTS=(
 # Others
 #http://adblock.gjtech.net/?format=hostfile
 #http://sysctl.org/cameleon/hosts
+#https://adblock.mahakala.is
 #https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt
 
 
@@ -79,7 +80,7 @@ gnused() {
 
 # Method for download host files in zip temp file
 dwn() {
-    curl -s "$i" -o "$aux"
+    curl -A "unknown" -s "$i" -o "$aux"
     lln=$(grep -c . "$aux")
     echo "   + Downloaded $lln hosts blocked from $1"
 
@@ -230,6 +231,7 @@ echo
 echo " * Cleaning and de-duplicating..."
 awk '/^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ {print $2}' "$orig" >> "$white"
 awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$white" "$host" > "$aux"
+#gnused -e '/\<0.0.0.0 .doubleclick.com\>/d'  -e '/\<0.0.0.0 .doubleclick.net\>/d' -i "$aux" # remove derp by adblock.mahakala.is
 
 
 # Get the final number of hosts
