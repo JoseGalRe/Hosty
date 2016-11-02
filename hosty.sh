@@ -343,7 +343,9 @@ if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
 fi
 
 
-# Final whiteline (useful for gitbash on windows)
+# Final
 if [[ "$OSTYPE" == linux* ]] || [[ "$OSTYPE" == darwin* ]]; then
+    echo
+    echo -e "${bldwhi} * ${bldgrn}Now Please restart the system to apply the changes${rst}"
     echo
 fi
