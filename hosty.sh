@@ -204,6 +204,14 @@ if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
 fi
 
 
+# Applying AdAway (https://github.com/AdAway/AdAway/wiki/ProblematicApps)
+if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
+    echo
+    echo " * Applying AdAway recommended whitelist (Run hosty --all to avoid this step)..."
+    gnused -e '/\(redirect\.viglink\.com\|intsig\.net\|connect\.tapjoy\.com\|data\.flurry\.com\)$/d' -i "$host"
+fi
+
+
 # Applying dev blacklist
 if [ -f "devlist.txt" ]; then
     echo
