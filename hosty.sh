@@ -15,6 +15,7 @@ HOSTS=(
     "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
     "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
+    "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt"
     "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
     "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt")
 
@@ -23,7 +24,6 @@ HOSTS=(
 #http://adblock.gjtech.net/?format=hostfile
 #http://sysctl.org/cameleon/hosts
 #https://adblock.mahakala.is
-#https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt
 
 
 # Add AdBlock Plus rules files in this array
@@ -158,6 +158,8 @@ for i in "${HOSTS[@]}"; do
          [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
         gnused -e '/\(crashlytics\.com\|ati-host\.net\|akadns\.net\|urbanairship\.com\|symcd\.com\|edgekey\.net\)$/d' -i "$aux"
         gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' -e '/^\s*$/d' -e '$a\' "$aux" >> "$host"
+    elif [[ "$i" =~ ^https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt ]]; then
+        gnused -e 's/address=\///g' -e 's/\/0.0.0.0//g' -e '/^\#.*$/d' -e '/^\s*$/d' "$aux" >> "$host"
     else
         gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
     fi
