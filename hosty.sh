@@ -17,7 +17,8 @@ HOSTS=(
     "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
     "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt"
     "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
-    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt")
+    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
+    "https://raw.githubusercontent.com/yous/YousList/master/hosts.txt")
 
 
 # Others
