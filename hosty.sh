@@ -188,15 +188,15 @@ echo " * Excluding localhost and similar domains..."
 gnused -e '/^\(localhost\|localhost\.localdomain\|local\|broadcasthost\|ip6-localhost\|ip6-loopback\|ip6-localnet\|ip6-mcastprefix\|ip6-allnodes\|ip6-allrouters\)$/d' -i "$host"
 
 
-# Applying recommended whitelist
+# Applying Hosty recommended whitelist
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
-    echo " * Applying recommended whitelist (Run hosty --all to avoid this step)..."
+    echo " * Applying Hosty recommended whitelist (Run hosty --all to avoid this step)..."
     gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i "$host"
 fi
 
 
-# Applying my recommended whitelist
+# Applying JoseGalRe's recommended whitelist
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
     echo " * Applying JoseGalRe's recommended whitelist (Run hosty --all to avoid this step)..."
@@ -204,7 +204,7 @@ if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
 fi
 
 
-# Applying AdAway (https://github.com/AdAway/AdAway/wiki/ProblematicApps)
+# Applying AdAway recommended whitelist (https://github.com/AdAway/AdAway/wiki/ProblematicApps)
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
     echo " * Applying AdAway recommended whitelist (Run hosty --all to avoid this step)..."
@@ -212,10 +212,10 @@ if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
 fi
 
 
-# Applying dev blacklist
+# Applying Dev blacklist
 if [ -f "devlist.txt" ]; then
     echo
-    echo " * Applying dev blacklist..."
+    echo " * Applying Dev blacklist..."
     cat "devlist.txt" >> "$host"
 fi
 
