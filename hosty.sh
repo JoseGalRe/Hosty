@@ -224,7 +224,7 @@ fi
 if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     echo
     echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}JoseGalRe's ${bldgrn}recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
-    gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\|adfoc\.us\|vo\.msecnd\.net\|linkbucks\.com\)$/d' -i "$host"
+    gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\|adfoc\.us\|vo\.msecnd\.net\|linkbucks\.com\|solvemedia\.com\)$/d' -i "$host"
 fi
 
 
