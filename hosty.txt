@@ -21,8 +21,8 @@
 #  * https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt
 #  * https://raw.githubusercontent.com/yous/YousList/master/hosts.txt
 #
-# Update Date: Wed, Nov  2, 2016  5:23:05 PM
-# Number of domains: 115846
+# Update Date: Thu, Nov  3, 2016  9:28:38 PM
+# Number of domains: 115853
 #
 # Licence:
 # CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
@@ -25677,6 +25677,7 @@
 0.0.0.0 alex-hacks.com
 0.0.0.0 alexmed-rehabilitacja.pl
 0.0.0.0 alexsaranc.org
+0.0.0.0 alfacart.com
 0.0.0.0 alfaizan.org
 0.0.0.0 alfallc.com.ua
 0.0.0.0 alfatraffic.com
@@ -27711,6 +27712,7 @@
 0.0.0.0 apu04c0.audientia.net
 0.0.0.0 apu0640.audientia.net
 0.0.0.0 apuarym.cn
+0.0.0.0 apugod.work
 0.0.0.0 apvdr.com
 0.0.0.0 apvoxen.net
 0.0.0.0 apx.avazutracking.net
@@ -36849,6 +36851,7 @@
 0.0.0.0 cfrfa.112.2o7.net
 0.0.0.0 cfs.u-ad.info
 0.0.0.0 cfs8.blog.daum.net
+0.0.0.0 cfsdtzggpcmr.com
 0.0.0.0 cfsparts.declare-enlignes.com
 0.0.0.0 cft4.co.cc
 0.0.0.0 cfwudao.cc
@@ -41621,6 +41624,7 @@
 0.0.0.0 creditorrs.bid
 0.0.0.0 credit-oui.com
 0.0.0.0 credit-reflexe.com
+0.0.0.0 creditsansjustificatif.me
 0.0.0.0 creditsoffer.blogspot.com
 0.0.0.0 credits-taux-reduits.com
 0.0.0.0 creditwallet.net
@@ -42879,6 +42883,7 @@
 0.0.0.0 dashboardnew.adcalls.nl
 0.0.0.0 dashers.com.br
 0.0.0.0 dashet.com
+0.0.0.0 dashgreen.online
 0.0.0.0 dashingleather.com
 0.0.0.0 dashman.web.fc2.com
 0.0.0.0 dashrathsilverart.com
@@ -43624,6 +43629,7 @@
 0.0.0.0 dentalcoaching.ro
 0.0.0.0 dentalimplantsprovidenceri.net
 0.0.0.0 dentalretainer.co.uk
+0.0.0.0 dentistkart.com
 0.0.0.0 dent-lux.com.pl
 0.0.0.0 denturecentre.ie
 0.0.0.0 denver.cbslocal.us.intellitxt.com
@@ -44101,6 +44107,7 @@
 0.0.0.0 dinaire.com
 0.0.0.0 dina-rish.us
 0.0.0.0 dinclinx.com
+0.0.0.0 dineroen30dias.net
 0.0.0.0 ding-a-ling-tel.com
 0.0.0.0 dingew.com
 0.0.0.0 dinglaathletics.com
@@ -60830,7 +60837,6 @@
 0.0.0.0 jwcwooiw.yrezonvtrkc.tk
 0.0.0.0 jwebbsense.cjt1.net
 0.0.0.0 jwner.voluumtrk.com
-0.0.0.0 jwpcdn.com
 0.0.0.0 jwplatform.com
 0.0.0.0 jwpltx.com
 0.0.0.0 jwqj.net
@@ -82190,7 +82196,6 @@
 0.0.0.0 pixel.serviceleverage.com
 0.0.0.0 pixel.sitescout.com
 0.0.0.0 pixel.sojern.com
-0.0.0.0 pixel.solvemedia.com
 0.0.0.0 pixel.staging.tree.com
 0.0.0.0 pixel.staticworld.net
 0.0.0.0 pixel.tapad.com
@@ -86895,6 +86900,7 @@
 0.0.0.0 rpgenerator.net
 0.0.0.0 rpgratuit.com
 0.0.0.0 rpjf.com
+0.0.0.0 rpmdo.com
 0.0.0.0 rpm-images.newrelic.com
 0.0.0.0 rponl.ivwbox.de
 0.0.0.0 rp-online.met.vgwort.de
@@ -88247,6 +88253,7 @@
 0.0.0.0 scnt.rambler.ru
 0.0.0.0 scoalamameipitesti.ro
 0.0.0.0 scoeyc.com
+0.0.0.0 scoobywhoop.com
 0.0.0.0 scootloor.com
 0.0.0.0 scopelight.com
 0.0.0.0 scopulatccplum.findatrucksd.com
@@ -91290,7 +91297,6 @@
 0.0.0.0 solutionswide.go2cloud.org
 0.0.0.0 solutionzip.us
 0.0.0.0 soluxury.co.uk
-0.0.0.0 solvemedia.com
 0.0.0.0 solventra.net
 0.0.0.0 solveseek.com
 0.0.0.0 som.aeroplan.com
@@ -93214,6 +93220,7 @@
 0.0.0.0 stir.com
 0.0.0.0 stir.semilo.com
 0.0.0.0 stiriprotv.2cnt.net
+0.0.0.0 stirshakead.com
 0.0.0.0 stirup.co
 0.0.0.0 stisa.org.cn
 0.0.0.0 stiv.colorwithyourwife.com
