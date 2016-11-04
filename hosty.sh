@@ -100,30 +100,19 @@ gnused() {
 }
 
 
-# Method for download host files in zip temp file
+# Method for download hosts
 dwn() {
-    curl -A "unknown" -s "$i" -o "$aux"
-    lln=$(grep -c . "$aux")
-    echo -e "   + ${bldcya}Downloaded ${bldgrn}$lln ${bldcya}hosts blocked from ${bldgrn}$1"
-
-    if [ $? != 0 ]; then
-        return $?
-    fi
-
-    if [[ "$1" == *.zip ]]; then
-        zcat "$aux" > "$zip"
-        cat "$zip" > "$aux"
-        if [ $? != 0 ]; then
-            return $?
+    if (curl -A "unknown" -s "$i" -o "$aux"); then
+        if [[ "$1" == *.zip ]] || [[ "$1" == *.7z ]]; then
+            if ! (7z e -so -bd "$aux" 2>/dev/null > "$zip"; cat "$zip" > "$aux"); then
+                echo -e "${bldwhi}   * ${bldred}Failed to extract the zip or 7z file ${bldwhi}$i"
+            fi
         fi
-    elif [[ "$1" == *.7z ]]; then
-        7z e -so -bd "$aux" 2>/dev/null > "$1"
-        if [ $? != 0 ]; then
-            return $?
-        fi
+        lln=$(grep -c . "$aux")
+        echo -e "${bldgrn}   + ${bldcya}Downloaded ${bldgrn}$lln ${bldcya}hosts blocked from ${bldgrn}$1"
+    else
+        echo -e "${bldwhi}   * ${bldred}Error downloading ${bldwhi}$i"
     fi
-
-    return 0
 }
 
 
@@ -134,7 +123,7 @@ if [ -z "$ln" ]; then
         echo
         echo -e "${bldwhi} * ${bldgrn}There is nothing to restore."
         echo
-        exit 0
+        exit 1
     fi
     cat /etc/hosts > "$orig"
 else
@@ -145,7 +134,7 @@ else
         echo
         echo -e "${bldwhi} * ${bldcya}/etc/hosts${bldgrn} restore completed."
         echo
-        exit 0
+        exit 1
     fi
 fi
 
@@ -178,31 +167,22 @@ echo -e "${bldwhi} * ${bldgrn}Downloading ad-blocking files..."
 for i in "${HOSTS[@]}"; do
     dwn "$i"
 
-    if [ $? != 0 ]; then
-        echo -e "${bldwhi} *   ${bldred}ERROR!!! downloading ${bldwhi}$i"
-    elif [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
-         [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
+    if [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
+       [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
         gnused -e '/\(crashlytics\.com\|ati-host\.net\|akadns\.net\|urbanairship\.com\|symcd\.com\|edgekey\.net\)$/d' -i "$aux"
-        gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' -e '/^\s*$/d' -e '$a\' "$aux" >> "$host"
+        gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' -e '/^\s*$/d' "$aux" | awk 1 >> "$host"
     elif [[ "$i" =~ ^https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt ]]; then
         gnused -e 's/address=\///g' -e 's/\/0.0.0.0//g' -e '/^\#.*$/d' -e '/^\s*$/d' "$aux" >> "$host"
     else
-        gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
+        gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' -e 's/\(http:\|\/\)//g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
     fi
-
 done
 
 
 # Obtain various AdBlock Plus rules files and merge into one
 #for i in "${RULES[@]}"; do
 #    dwn "$i"
-#
-#    if [ $? != 0 ]; then
-#        echo -e "${bldwhi} *   ${bldred}ERROR!!! downloading ${bldwhi}$i"
-#    else
-#        awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
-#    fi
-#
+#    awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
 #done
 
 
