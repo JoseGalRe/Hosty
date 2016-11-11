@@ -161,9 +161,9 @@ if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
 fi
 
 
-# Obtain various hosts files and merge into one
+# Download and merge Hosts files into one file
 echo
-echo -e "${bldwhi} * ${bldgrn}Downloading ad-blocking files..."
+echo -e "${bldwhi} * ${bldgrn}Downloading Hosts files..."
 for i in "${HOSTS[@]}"; do
     dwn "$i"
     gnused -e 's/\(127\.0\.0\.1[ \t]\|0\.0\.0\.0[ \t]\)//g' -i "$aux"
@@ -171,7 +171,9 @@ for i in "${HOSTS[@]}"; do
 done
 
 
-# Obtain various AdBlock Plus rules files and merge into one
+# Download and merge AdBlock Plus rules into one file
+#echo
+#echo -e "${bldwhi} * ${bldgrn}Downloading AdBlock Plus files..."
 #for i in "${RULES[@]}"; do
 #    dwn "$i"
 #    awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
