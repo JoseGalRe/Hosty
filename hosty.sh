@@ -166,14 +166,8 @@ echo
 echo -e "${bldwhi} * ${bldgrn}Downloading ad-blocking files..."
 for i in "${HOSTS[@]}"; do
     dwn "$i"
-
-    if [[ "$i" =~ ^http://mirror1.malwaredomains.com ]] || [[ "$i" =~ ^https://s3.amazonaws.com ]] ||
-       [[ "$i" =~ ^https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt ]]; then
-        gnused -e '/\(crashlytics\.com\|ati-host\.net\|akadns\.net\|urbanairship\.com\|symcd\.com\|edgekey\.net\)$/d' -i "$aux"
-        gnused -e '/Malvertising*\|Malware*/d' -e 's/#.*//' -e 's/ //g' -e '/^\s*$/d' "$aux" | awk 1 >> "$host"
-    else
-        gnused -e '/^[[:space:]]*\(127\.0\.0\.1\|0\.0\.0\.0\|255\.255\.255\.0\)[[:space:]]/!d' -e 's/[[:space:]]\+/ /g' -e 's/\(http:\|\/\)//g' "$aux" | awk '$2~/^[^# ]/ {print $2}' >> "$host"
-    fi
+    gnused -e 's/\(127\.0\.0\.1[ \t]\|0\.0\.0\.0[ \t]\)//g' -i "$aux"
+    awk '$1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($1)}' "$aux" >> "$host"
 done
 
 
