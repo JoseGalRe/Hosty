@@ -1,2 +1,4 @@
 #!/bin/bash
+curl -s https://raw.githubusercontent.com/JoseGalRe/Hosty/master/hosty.blacklist -o /usr/local/bin/hosty.blacklist
+curl -s https://raw.githubusercontent.com/JoseGalRe/Hosty/master/hosty.whitelist -o /usr/local/bin/hosty.whitelist
 bash <(curl -s https://raw.githubusercontent.com/JoseGalRe/Hosty/master/hosty.sh) $*

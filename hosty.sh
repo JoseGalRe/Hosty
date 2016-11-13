@@ -3,41 +3,44 @@
 
 # Add ad-blocking hosts files in this array
 HOSTS=(
-    "http://www.malwaredomainlist.com/hostslist/hosts.txt"
-    "http://mirror1.malwaredomains.com/files/immortal_domains.txt"
-    "http://mirror1.malwaredomains.com/files/justdomains"
-    "http://someonewhocares.org/hosts/hosts"
-    "http://winhelp2002.mvps.org/hosts.txt"
-    "https://hosts-file.net/ad_servers.txt"
-    "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
-    "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
-    "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0"
-    "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
-    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-    "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
-    "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
-    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
-    "https://raw.githubusercontent.com/yous/YousList/master/hosts.txt")
-
-
-# Others
-#http://hostsfile.org/Downloads/hosts.txt    # Very long list + Block Porn
-#http://hostsfile.mine.nu/hosts0.txt         # Very long list
-#http://sysctl.org/cameleon/hosts            # Very long list + Some false positives
-#https://adblock.mahakala.is                 # Very long list
-#https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt
+    "1" "http://www.malwaredomainlist.com/hostslist/hosts.txt"
+    "0" "http://hostsfile.mine.nu/hosts0.txt"
+    "1" "http://mirror1.malwaredomains.com/files/immortal_domains.txt"
+    "1" "http://mirror1.malwaredomains.com/files/justdomains"
+    "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"
+    "0" "http://securemecca.com/Downloads/hosts.txt"
+    "1" "http://someonewhocares.org/hosts/hosts"
+    "0" "http://sysctl.org/cameleon/hosts"
+    "1" "http://winhelp2002.mvps.org/hosts.txt"
+    "0" "https://adblock.mahakala.is"
+    "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"
+    "1" "https://hosts-file.net/ad_servers.txt"
+    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
+    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
+    "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"
+    "1" "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
+    "1" "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
+    "1" "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+    "1" "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
+    "1" "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"
+    "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt"
+    "1" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
+    "1" "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
+    "1" "https://raw.githubusercontent.com/yous/YousList/master/hosts.txt"
+    "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"
+    "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")
 
 
 # Add AdBlock Plus rules files in this array
 #RULES=(
-#    "http://abp.mozilla-hispano.org/nauscopio/filtros.txt"
-#    "https://adguard.com/en/filter-rules.html?id=2"
-#    "https://adguard.com/en/filter-rules.html?id=3"
-#    "https://adguard.com/en/filter-rules.html?id=9"
-#    "https://data.getadblock.com/filters/adblock_custom.txt"
-#    "https://easylist-downloads.adblockplus.org/easylist.txt"
-#    "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
-#    "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt")
+#    "0" "http://abp.mozilla-hispano.org/nauscopio/filtros.txt"
+#    "0" "https://adguard.com/en/filter-rules.html?id=2"
+#    "0" "https://adguard.com/en/filter-rules.html?id=3"
+#    "0" "https://adguard.com/en/filter-rules.html?id=9"
+#    "0" "https://data.getadblock.com/filters/adblock_custom.txt"
+#    "0" "https://easylist-downloads.adblockplus.org/easylist.txt"
+#    "0" "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
+#    "0" "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt")
 
 
 # Colors
@@ -60,8 +63,19 @@ echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
 echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
 
 
+# Set Magic
+magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
+clean='-e s/\(127\.0\.0\.1[ \t]\|0\.0\.0\.0[ \t]\|www\.\)//g'
+
+
 # Set IP to redirect
 IP="0.0.0.0"
+
+
+# Set counters to 1
+#erules=1
+ehosts=1
+tolog=1
 
 
 # Temporal files
@@ -79,6 +93,20 @@ if [ -f "$HOME"/.hosty ]; then
     while read -r line; do
         HOSTS+=("$line")
     done < "$HOME"/.hosty
+fi
+
+
+# Check OS
+if [[ "$OSTYPE" == linux* ]] || [[ "$OSTYPE" == darwin* ]]; then
+    inslocal="/usr/local/bin/"
+    hmelocal="$HOME/"
+    isunix="true"
+
+    finalmsg(){
+        echo
+        echo -e "${bldwhi} * ${bldgrn}Now Please restart the system to apply the changes${rst}"
+        echo
+    }
 fi
 
 
@@ -102,7 +130,7 @@ gnused() {
 
 # Method for download hosts
 dwn() {
-    if (curl -A "unknown" -s "$i" -o "$aux"); then
+    if (curl -A "unknown" -s "$1" -o "$aux"); then
         if [[ "$1" == *.zip ]] || [[ "$1" == *.7z ]]; then
             if ! (7z e -so -bd "$aux" 2>/dev/null > "$zip"; cat "$zip" > "$aux"); then
                 echo -e "${bldwhi}   * ${bldred}Failed to extract the zip or 7z file ${bldwhi}$i"
@@ -121,7 +149,7 @@ ln=$(gnused -n '/^# Hosty - Ad blocker script for Linux/=' /etc/hosts)
 if [ -z "$ln" ]; then
     if [ "$1" == "--restore" ]; then
         echo
-        echo -e "${bldwhi} * ${bldgrn}There is nothing to restore."
+        echo -e "${bldwhi} * ${bldgrn}There is nothing to restore.${rst}"
         echo
         exit 1
     fi
@@ -132,7 +160,7 @@ else
     if [ "$1" == "--restore" ]; then
         sudoc bash -c "cat $orig > /etc/hosts"
         echo
-        echo -e "${bldwhi} * ${bldcya}/etc/hosts${bldgrn} restore completed."
+        echo -e "${bldwhi} * ${bldcya}/etc/hosts${bldgrn} restore completed.${rst}"
         echo
         exit 1
     fi
@@ -165,9 +193,11 @@ fi
 echo
 echo -e "${bldwhi} * ${bldgrn}Downloading Hosts files..."
 for i in "${HOSTS[@]}"; do
-    dwn "$i"
-    gnused -e 's/\(127\.0\.0\.1[ \t]\|0\.0\.0\.0[ \t]\)//g' -i "$aux"
-    awk '$1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($1)}' "$aux" >> "$host"
+    if [ "$i" == "1" ]; then
+        dwn "${HOSTS[$ehosts]}"
+        gnused "$clean" "$aux" | awk "$magic" >> "$host"
+    fi
+    ehosts=$((ehosts + 1))
 done
 
 
@@ -175,73 +205,64 @@ done
 #echo
 #echo -e "${bldwhi} * ${bldgrn}Downloading AdBlock Plus files..."
 #for i in "${RULES[@]}"; do
-#    dwn "$i"
-#    awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
+#    if [ "$i" == "1" ]; then
+#        dwn "${RULES[$erules]}"
+#        awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
+#    fi
+#    erules=$((erules + 1))
 #done
 
 
 # Excluding localhost and similar domains
 echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
-gnused -e '/^\(localhost\|localhost\.localdomain\|local\|broadcasthost\|ip6-localhost\|ip6-loopback\|ip6-localnet\|ip6-mcastprefix\|ip6-allnodes\|ip6-allrouters\)$/d' -i "$host"
+gnused -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
 
 
-# Applying Hosty recommended whitelist
-if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
-    echo
-    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}Hosty ${bldgrn}recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
-    gnused -e '/\(smarturl\.it\|da\.feedsportal\.com\|any\.gs\|pixel\.everesttech\.net\|www\.googleadservices\.com\|maxcdn\.com\|static\.addtoany\.com\|addthis\.com\|googletagmanager\.com\|addthiscdn\.com\|sharethis\.com\|twitter\.com\|pinterest\.com\|ojrq\.net\|rpxnow\.com\|google-analytics\.com\|shorte\.st\|adf\.ly\|www\.linkbucks\.com\|static\.linkbucks\.com\)$/d' -i "$host"
-fi
-
-
-# Applying JoseGalRe's recommended whitelist
-if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
-    echo
-    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}JoseGalRe's ${bldgrn}recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
-    gnused -e '/\(config\.skype\.com\|dl\.delivery\.mp\.microsoft\.com\|clients6\.google\.com\|graph\.facebook\.com\|nanigans\.com\|iadsdk\.apple\.com\|branch\.io\|adfoc\.us\|vo\.msecnd\.net\|linkbucks\.com\|solvemedia\.com\|jwpcdn\.com\)$/d' -i "$host"
-fi
-
-
-# Applying AdAway recommended whitelist (https://github.com/AdAway/AdAway/wiki/ProblematicApps)
-if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
-    echo
-    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}AdAway ${bldgrn}recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
-    gnused -e '/\(redirect\.viglink\.com\|intsig\.net\|connect\.tapjoy\.com\|data\.flurry\.com\)$/d' -i "$host"
-fi
-
-
-# Applying Dev blacklist
-if [ -f "devlist.txt" ]; then
-    echo
-    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}Dev ${bldgrn}blacklist..."
-    cat "devlist.txt" >> "$host" 2>/dev/null
-fi
-
-
-# Applying user blacklist
-if [ -f "/etc/hosts.blacklist" ] || [ -f "$HOME"/.hosty.blacklist ] ; then
-    echo
-    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}User ${bldgrn}blacklist..."
-    cat "/etc/hosts.blacklist" >> "$host" 2>/dev/null
-    cat "$HOME"/.hosty.blacklist >> "$host" 2>/dev/null
-fi
-
-
-# Applying user whitelist
+# Applying User whitelist
 if [ -f "/etc/hosts.whitelist" ] || [ -f "$HOME"/.hosty.whitelist ]; then
     echo
     echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}User ${bldgrn}whitelist..."
-    cat "/etc/hosts.whitelist" >> "$host" 2>/dev/null
-    cat "$HOME"/.hosty.whitelist >> "$white" 2>/dev/null
+    awk "$magic" "/etc/hosts.whitelist" >> "$white" 2>/dev/null
+    awk "$magic" "$HOME"/.hosty.whitelist >> "$white" 2>/dev/null
 fi
 
 
-# Cleaning and de-duplicating
+# Applying recommended whitelist
+if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
+    if [ -f "$inslocal"hosty.whitelist ]; then
+        echo
+        echo -e "${bldwhi} * ${bldgrn}Applying recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
+        awk "$magic" "$inslocal"hosty.whitelist >> "$white" 2>/dev/null
+    fi
+fi
+
+
+# Applying recommended blacklist
+if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
+    if [ -f "$inslocal"hosty.blacklist ]; then
+        echo
+        echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty --all to avoid this step)..."
+        awk "$magic" "$inslocal"hosty.blacklist >> "$host" 2>/dev/null
+    fi
+fi
+
+
+# Applying User blacklist
+if [ -f "/etc/hosts.blacklist" ] || [ -f "$HOME"/.hosty.blacklist ] ; then
+    echo
+    echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}User ${bldgrn}blacklist..."
+    awk "$magic" "/etc/hosts.blacklist" >> "$host" 2>/dev/null
+    awk "$magic" "$HOME"/.hosty.blacklist >> "$host" 2>/dev/null
+fi
+
+
+# Alphabetizing, Cleaning and eliminating duplicates hosts
 echo
-echo -e "${bldwhi} * ${bldgrn}Cleaning and de-duplicating..."
-awk '/^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ {print $2}' "$orig" >> "$white"
-awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$white" "$host" > "$aux"
-#gnused -e '/\<0.0.0.0 .doubleclick.com\>/d'  -e '/\<0.0.0.0 .doubleclick.net\>/d' -i "$aux" # remove derp by adblock.mahakala.is
+echo -e "${bldwhi} * ${bldgrn}Alphabetizing, Cleaning and eliminating duplicates hosts..."
+sed 's/\r//' "$host" | sort -u > "$ord"
+gnused "$clean" "$orig" | awk "$magic" >> "$white"
+awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$white" "$ord" > "$aux"
 
 
 # Get the final number of hosts
@@ -256,7 +277,7 @@ if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     cat "$orig" > "$hosty"
     echo "" >> "$hosty"
 else
-    echo -e "${bldwhi} * ${bldgrn}Building debug ${bldcya}\"./hosty.txt\" ${bldgrn}file..."
+    echo -e "${bldwhi} * ${bldgrn}Building debug ${bldcya}\"$hmelocal/hosty.txt\" ${bldgrn}file..."
 fi
 
 
@@ -268,7 +289,7 @@ echo "# This hosts file is a free download from:"
 echo "# https://github.com/JoseGalRe/Hosty"
 echo "#"
 echo "# This hosts file is generated from the following sources:"
-for i in "${HOSTS[@]}"; do echo "#  * $i" ; done
+for i in "${HOSTS[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${HOSTS[$tolog]}"; fi; tolog=$((tolog + 1)); done
 echo "#"
 echo "# Update Date: $(LC_TIME=en_US date)"
 echo "# Number of domains: $FL"
@@ -288,16 +309,12 @@ echo "# [Start of entries generated by Hosty]"
 } >> "$hosty"
 
 
-# Alphabetize final hosts
-sort "$aux" > "$ord"
-cat "$ord" >> "$hosty"
-
-
 # Save hosts file
+cat "$aux" >> "$hosty"
 if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     sudoc bash -c "cat $hosty > /etc/hosts"
 else
-    cat "$hosty" > hosty.txt
+    cat "$hosty" > "$hmelocal"hosty.txt
 fi
 
 
@@ -314,12 +331,9 @@ if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
     echo
     echo -e "${bldwhi} * ${bldgrn}You can always restore your original hosts file with this command:"
     echo -e "   $ sudo hosty --restore${rst}"
+    finalmsg
 fi
 
 
-# Final
-if [[ "$OSTYPE" == linux* ]] || [[ "$OSTYPE" == darwin* ]]; then
-    echo
-    echo -e "${bldwhi} * ${bldgrn}Now Please restart the system to apply the changes${rst}"
-    echo
-fi
+# Exit
+if [ "$isunix" == "true" ]; then echo; fi; exit 1

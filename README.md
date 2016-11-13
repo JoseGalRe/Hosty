@@ -8,7 +8,6 @@ Ad blocker script for all Unix and Unix-like operating systems (Linux, GNU, BSD,
 
 ### Requires
 * sudo
-* Wget
 * cURL
 * Gawk
 * Gsed
@@ -18,22 +17,22 @@ Ad blocker script for all Unix and Unix-like operating systems (Linux, GNU, BSD,
 #### How to install the requirements
 
 * **Ubuntu/Mint/Debian:**  
-$ sudo apt-get install wget curl gawk p7zip
+$ sudo apt-get install sed curl gawk p7zip
 
 * **Arch/Manjaro/Antergos:**  
-$ sudo pacman -S wget curl gawk p7zip
+$ sudo pacman -S sed curl gawk p7zip
 
 * **Fedora/RHEL/CentOS:**  
-$ sudo dnf install wget curl gawk p7zip
+$ sudo dnf install sed curl gawk p7zip
 
 * **SUSE:**  
-$ sudo zypper in wget curl gawk p7zip
+$ sudo zypper in sed curl gawk p7zip
 
 * **Mac OS X:**  
 First install Homebrew if you didn't before:  
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
 Once installed:  
-$ brew install coreutils gnu-sed wget curl gawk p7zip
+$ brew install coreutils gnu-sed curl gawk p7zip
 
 ### How to install hosty
 
@@ -72,4 +71,4 @@ $ hosty --debug
 
 ## How to uninstall hosty
 
-$ sudo rm /usr/local/bin/hosty
+$ sudo rm /usr/local/bin/hosty*

@@ -9,12 +9,11 @@ pkgbase = hosty
 	arch = any
 	license = GPL2
 	depends = sudo
-	depends = wget
+	depends = sed
 	depends = curl
 	depends = gawk
 	options = !strip
-	source = https://github.com/JoseGalRe/Hosty/raw/5564c7fa544b4484bb23913359159e070c8abd47/hosty
-	md5sums = 6604fa5d83ed54ff06c5146093048404
+	source = https://raw.githubusercontent.com/JoseGalRe/Hosty/master/hosty
+	md5sums = 5509d3d410b210786b7d5843c928d9de
 
 pkgname = hosty
-
