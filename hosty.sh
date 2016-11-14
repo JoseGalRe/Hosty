@@ -32,15 +32,41 @@ HOSTS=(
 
 
 # Add AdBlock Plus rules files in this array
-#RULES=(
-#    "0" "http://abp.mozilla-hispano.org/nauscopio/filtros.txt"
-#    "0" "https://adguard.com/en/filter-rules.html?id=2"
-#    "0" "https://adguard.com/en/filter-rules.html?id=3"
-#    "0" "https://adguard.com/en/filter-rules.html?id=9"
-#    "0" "https://data.getadblock.com/filters/adblock_custom.txt"
-#    "0" "https://easylist-downloads.adblockplus.org/easylist.txt"
-#    "0" "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
-#    "0" "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt")
+RULES=(
+    "0" "https://adguard.com/en/filter-rules.html?id=1"                                     # Adguard Russian Filter
+    "0" "https://adguard.com/en/filter-rules.html?id=2"                                     # Adguard English filter
+    "0" "https://adguard.com/en/filter-rules.html?id=3"                                     # Adguard Spyware filter
+    "0" "https://adguard.com/en/filter-rules.html?id=6"                                     # Adguard German Filter
+    "0" "https://adguard.com/en/filter-rules.html?id=7"                                     # Adguard Japanese Filter
+    "0" "https://adguard.com/en/filter-rules.html?id=8"                                     # Adguard Dutch Filter
+    "1" "https://adguard.com/en/filter-rules.html?id=9"                                     # Adguard Spanish filter
+    "1" "https://adguard.com/en/filter-rules.html?id=11"                                    # Adguard Mobile filter
+    "1" "https://adguard.com/en/filter-rules.html?id=12"                                    # Adguard IOS filter
+    "0" "https://adguard.com/en/filter-rules.html?id=13"                                    # Adguard Turkish filter
+    "1" "https://adguard.com/en/filter-rules.html?id=15"                                    # Adguard DNS filter
+    "1" "https://easylist-downloads.adblockplus.org/adwarefilters.txt"                      # ABP Adware filters
+    "0" "https://easylist-downloads.adblockplus.org/easylist.txt"                           # ABP EasyList
+    "0" "https://easylist-downloads.adblockplus.org/easyprivacy.txt"                        # ABP EasyPrivacy
+    "1" "https://easylist-downloads.adblockplus.org/easyprivacy+easylist.txt"               # ABP EasyPrivacy+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/abpindo+easylist.txt"                   # ABP ABPindo+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/bulgarian_list+easylist.txt"            # ABP Bulgarian+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt"             # ABP China+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/easylistdutch+easylist.txt"             # ABP Dutch+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt"           # ABP Germany+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/easylistitaly+easylist.txt"             # ABP Italy+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/israellist+easylist.txt"                # ABP Hebrew+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/latvianlist+easylist.txt"               # ABP Latvian+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/liste_fr+easylist.txt"                  # ABP FR+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/rolist+easylist.txt"                    # ABP ROList+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt"                  # ABP RuAdList+EasyList
+    "1" "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt"                # ABP MalwareDomains
+    "0" "https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"                   # Fanboy's Annoyance List
+    "0" "https://easylist-downloads.adblockplus.org/fanboy-social.txt"                      # Fanboy's Social List
+    "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/adblock-list.txt"          # Spam404 filters
+    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt" # uBlock badware filters
+    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt" # uBlock main filters
+    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt" # uBlock privacy filters
+    "1" "https://raw.githubusercontent.com/yous/YousList/master/youslist.txt")              # YousList filters
 
 
 # Colors
@@ -64,6 +90,7 @@ echo -e "   This hosts file is a free download from: ${bldcya}https://github.com
 
 
 # Set Magic
+alist='$ 0 ~/^\|\|([A-Za-z0-9_-]+\.){1,}[A-Za-z]+\^$/{print tolower($ 3)}'
 magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
 clean='-e s/\(127\.0\.0\.1[ \t]\|0\.0\.0\.0[ \t]\|www\.\)//g'
 
@@ -73,9 +100,10 @@ IP="0.0.0.0"
 
 
 # Set counters to 1
-#erules=1
+erules=1
 ehosts=1
-tolog=1
+lrules=1
+lhosts=1
 
 
 # Temporal files
@@ -202,15 +230,15 @@ done
 
 
 # Download and merge AdBlock Plus rules into one file
-#echo
-#echo -e "${bldwhi} * ${bldgrn}Downloading AdBlock Plus files..."
-#for i in "${RULES[@]}"; do
-#    if [ "$i" == "1" ]; then
-#        dwn "${RULES[$erules]}"
-#        awk '/^\|\|[a-z][a-z0-9\-_.]+\.[a-z]+\^$/ {substr($0,3,length($0)-3)}' "$aux" >> "$host"
-#    fi
-#    erules=$((erules + 1))
-#done
+echo
+echo -e "${bldwhi} * ${bldgrn}Downloading AdBlock Plus rules..."
+for i in "${RULES[@]}"; do
+    if [ "$i" == "1" ]; then
+        dwn "${RULES[$erules]}"
+        awk -v FS="[|^]" "$alist" "$aux" >> "$host"
+    fi
+    erules=$((erules + 1))
+done
 
 
 # Excluding localhost and similar domains
@@ -289,7 +317,8 @@ echo "# This hosts file is a free download from:"
 echo "# https://github.com/JoseGalRe/Hosty"
 echo "#"
 echo "# This hosts file is generated from the following sources:"
-for i in "${HOSTS[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${HOSTS[$tolog]}"; fi; tolog=$((tolog + 1)); done
+for i in "${HOSTS[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${HOSTS[$lhosts]}"; fi; lhosts=$((lhosts + 1)); done
+for i in "${RULES[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${RULES[$lrules]}"; fi; lrules=$((lrules + 1)); done
 echo "#"
 echo "# Update Date: $(LC_TIME=en_US date)"
 echo "# Number of domains: $FL"
