@@ -5,14 +5,9 @@ intsig.net
 redirect.viglink.com
 
 # Main Recommended whitelist
-addthis.com
-addthiscdn.com
 adf.ly
 any.gs
 da.feedsportal.com
-google-analytics.com
-googleadservices.com
-googletagmanager.com
 linkbucks.com
 maxcdn.com
 ojrq.net
@@ -24,7 +19,9 @@ smarturl.it
 # JoseGalRe Recommended whitelist
 adfoc.us
 akadns.net
+boldchat.com
 branch.io
+cdn.phoenix.intergi.com
 clients6.google.com
 config.skype.com
 crashlytics.com
@@ -36,8 +33,10 @@ jwpcdn.com
 logw306.ati-host.net
 nanigans.com
 pd-st.itunes-apple.com.akadns.net
+redirector.googlevideo.com
 solvemedia.com
 symcd.com
 tqn.com
 urbanairship.com
 vo.msecnd.net
+yui.yahooapis.com
