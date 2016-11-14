@@ -19,7 +19,7 @@ HOSTS=(
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
     "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"
     "1" "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
-    "1" "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
+    "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
     "1" "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
     "1" "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
     "1" "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"
