@@ -24,7 +24,7 @@ HOSTS=(
     "1" "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
     "1" "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"
     "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt"
-    "1" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
+    "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
     "1" "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
     "1" "https://raw.githubusercontent.com/yous/YousList/master/hosts.txt"
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"
