@@ -21,7 +21,7 @@ HOSTS=(
     "1" "https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt"                       # AdAway blocklist
     "0" "https://rawgit.com/Dawsey21/Lists/master/main-blacklist.txt"                       # Spam404 blocklist
     "1" "https://rawgit.com/StevenBlack/hosts/master/hosts"                                 # StevenBlack's list
-    "1" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
+    "0" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win7/spy.txt"     # Windows 7 Spy Blocker
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win81/spy.txt"    # Windows 8.1 Spy Blocker
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"    # Windows 10 Spy Blocker
