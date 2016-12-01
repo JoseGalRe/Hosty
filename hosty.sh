@@ -15,6 +15,8 @@ HOSTS=(
     "0" "https://adblock.mahakala.is"                                                       # Unknown big list
     "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
     "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts blocklist
+    "0" "https://hosts-file.net/download/hosts.txt"                                         # HpHosts main blocklist
+    "0" "https://hosts-file.net/hphosts-partial.txt"                                        # HpHosts partial list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"              # Mozilla malware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"                   # Mozilla malware list
     "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"                         # Ransomware Domain list
