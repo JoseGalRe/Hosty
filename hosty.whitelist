@@ -16,6 +16,18 @@ sharethis.com
 shorte.st
 smarturl.it
 
+# Microsoft Recommended whitelist
+answers.microsoft.com
+fe2.update.microsoft.com
+fe2.update.microsoft.com.akadns.net
+fe3.delivery.dsp.mp.microsoft.com.nsatc.net
+sls.update.microsoft.com
+sls.update.microsoft.com.akadns.net
+statsfe1.ws.microsoft.com
+statsfe2.update.microsoft.com
+statsfe2.update.microsoft.com.akadns.net
+statsfe2.ws.microsoft.com
+
 # JoseGalRe Recommended whitelist
 adfoc.us
 akadns.net
