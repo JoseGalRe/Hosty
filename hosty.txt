@@ -4,7 +4,7 @@
 # https://github.com/JoseGalRe/Hosty
 #
 # This hosts file is generated from the following sources:
-#  * http://www.malwaredomainlist.com/hostslist/hosts.txt
+#  * http://malwaredomainlist.com/hostslist/hosts.txt
 #  * http://mirror1.malwaredomains.com/files/immortal_domains.txt
 #  * http://mirror1.malwaredomains.com/files/justdomains
 #  * http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext
@@ -15,12 +15,13 @@
 #  * https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
 #  * https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt
 #  * https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt
-#  * https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
-#  * https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-#  * https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts
-#  * https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt
-#  * https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt
-#  * https://raw.githubusercontent.com/yous/YousList/master/hosts.txt
+#  * https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt
+#  * https://rawgit.com/StevenBlack/hosts/master/hosts
+#  * https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win7/spy.txt
+#  * https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win81/spy.txt
+#  * https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt
+#  * https://rawgit.com/quidsup/notrack/master/trackers.txt
+#  * https://rawgit.com/yous/YousList/master/hosts.txt
 #  * https://zeustracker.abuse.ch/blocklist.php?download=baddomains
 #  * https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
 #  * https://adguard.com/en/filter-rules.html?id=9
@@ -30,12 +31,12 @@
 #  * https://easylist-downloads.adblockplus.org/adwarefilters.txt
 #  * https://easylist-downloads.adblockplus.org/easyprivacy+easylist.txt
 #  * https://easylist-downloads.adblockplus.org/malwaredomains_full.txt
-#  * https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
-#  * https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
-#  * https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
-#  * https://raw.githubusercontent.com/yous/YousList/master/youslist.txt
+#  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/badware.txt
+#  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/filters.txt
+#  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt
+#  * https://rawgit.com/yous/YousList/master/youslist.txt
 #
-# Update Date: Wed, Nov 30, 2016  8:56:51 PM
+# Update Date: Thu, Dec  1, 2016 12:35:01 AM
 # Number of domains: 108296
 #
 # Licence:
@@ -27256,7 +27257,6 @@
 0.0.0.0 answerbag.us.intellitxt.com
 0.0.0.0 answerhub.com
 0.0.0.0 answermedia.com
-0.0.0.0 answers.microsoft.com
 0.0.0.0 answers.us.intellitxt.com
 0.0.0.0 answerscloud.com
 0.0.0.0 ant.com
@@ -41660,6 +41660,7 @@
 0.0.0.0 crittercism.com
 0.0.0.0 crkgtnad.com
 0.0.0.0 crkld.voluumtrk.com
+0.0.0.0 crl.microsoft.com
 0.0.0.0 crm.3dots.co.il
 0.0.0.0 crm.aaditech.com
 0.0.0.0 crm.pinion.gg
@@ -42053,6 +42054,7 @@
 0.0.0.0 cxtad.specificmedia.com
 0.0.0.0 cxw73.voluumtrk.com
 0.0.0.0 cxzv260ad-system.16mb.com
+0.0.0.0 cy2.settings.data.microsoft.com.akadns.net
 0.0.0.0 cya1t.net
 0.0.0.0 cya2.net
 0.0.0.0 cyberbounty.com
@@ -43010,6 +43012,7 @@
 0.0.0.0 db4.net-filter.com
 0.0.0.0 db4.sitestats.com
 0.0.0.0 db5.net-filter.com
+0.0.0.0 db5.settings.data.microsoft.com.akadns.net
 0.0.0.0 db5.sitestats.com
 0.0.0.0 db5.wns.windows.com
 0.0.0.0 db5sch101100917.wns.windows.com
@@ -48385,9 +48388,7 @@
 0.0.0.0 fe1-au.imrworldwide.com
 0.0.0.0 fe1-fi.imrworldwide.com
 0.0.0.0 fe1-it.imrworldwide.com
-0.0.0.0 fe2.update.microsoft.com.akadns.net
 0.0.0.0 fe2-au.imrworldwide.com
-0.0.0.0 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
 0.0.0.0 fe3-au.imrworldwide.com
 0.0.0.0 fe3-gc.imrworldwide.com
 0.0.0.0 fe3-uk.imrworldwide.com
@@ -51433,6 +51434,7 @@
 0.0.0.0 geo.query.yahoo.com
 0.0.0.0 geo.safelinktracker.com
 0.0.0.0 geo.sanoma.fi
+0.0.0.0 geo.settings.data.microsoft.com.akadns.net
 0.0.0.0 geo.smaato.net
 0.0.0.0 geo.startappservice.com
 0.0.0.0 geo.theawesomer.com
@@ -89232,7 +89234,6 @@
 0.0.0.0 sl-retargeting.adsonar.com
 0.0.0.0 slrtyiqi007.us
 0.0.0.0 sls.go2cloud.org
-0.0.0.0 sls.update.microsoft.com.akadns.net
 0.0.0.0 slsahghs.edu.bd
 0.0.0.0 sltravelcom.112.2o7.net
 0.0.0.0 slundi.com
@@ -91521,9 +91522,6 @@
 0.0.0.0 statsector.hu
 0.0.0.0 statsession.com
 0.0.0.0 statsevent.com
-0.0.0.0 statsfe1.ws.microsoft.com
-0.0.0.0 statsfe2.update.microsoft.com.akadns.net
-0.0.0.0 statsfe2.ws.microsoft.com
 0.0.0.0 statsforever.com
 0.0.0.0 statsie.com
 0.0.0.0 statsimg.com
@@ -93583,6 +93581,7 @@
 0.0.0.0 telagospel.net
 0.0.0.0 telderi.ru
 0.0.0.0 tele.oewabox.at
+0.0.0.0 tele.trafficmanager.net
 0.0.0.0 tele2nl.112.2o7.net
 0.0.0.0 teleam.com
 0.0.0.0 teleboer.ivwbox.de
@@ -93674,6 +93673,7 @@
 0.0.0.0 terapiafacil.net
 0.0.0.0 terapiya-spb.ru
 0.0.0.0 terapou.com
+0.0.0.0 teredo.ipv6.microsoft.com
 0.0.0.0 terem.eltransbt.ro
 0.0.0.0 teresaestel.be
 0.0.0.0 teresa-noriega.us
@@ -105014,6 +105014,7 @@
 0.0.0.0 win64.ws
 0.0.0.0 win64issue.in.net
 0.0.0.0 win7affiliates.com
+0.0.0.0 win8.ipv6.microsoft.com
 0.0.0.0 win8080.ws
 0.0.0.0 winadiscount.com
 0.0.0.0 winaproduct.com
