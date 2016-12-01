@@ -3,8 +3,8 @@
 
 # Add ad-blocking hosts files in this array
 HOSTS=(
-    "1" "http://www.malwaredomainlist.com/hostslist/hosts.txt"                              # Main Hosts blocklist
     "0" "http://hostsfile.mine.nu/hosts0.txt"                                               # Global Advert list
+    "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Main Hosts blocklist
     "1" "http://mirror1.malwaredomains.com/files/immortal_domains.txt"                      # Long-lived blocklist
     "1" "http://mirror1.malwaredomains.com/files/justdomains"                               # Malware domains list
     "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                   # Yoyo blocklist
