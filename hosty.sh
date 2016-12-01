@@ -158,7 +158,7 @@ gnused() {
 
 # Method for download hosts
 dwn() {
-    if (curl -A "unknown" -s "$1" -o "$aux"); then
+    if (curl -A "unknown" -L -s "$1" -o "$aux"); then
         if [[ "$1" == *.zip ]] || [[ "$1" == *.7z ]]; then
             if ! (7z e -so -bd "$aux" 2>/dev/null > "$zip"; cat "$zip" > "$aux"); then
                 echo -e "${bldwhi}   * ${bldred}Failed to extract the zip or 7z file ${bldwhi}$i"
