@@ -3,32 +3,32 @@
 
 # Add ad-blocking hosts files in this array
 HOSTS=(
-    "1" "http://www.malwaredomainlist.com/hostslist/hosts.txt"
-    "0" "http://hostsfile.mine.nu/hosts0.txt"
-    "1" "http://mirror1.malwaredomains.com/files/immortal_domains.txt"
-    "1" "http://mirror1.malwaredomains.com/files/justdomains"
-    "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"
-    "0" "http://securemecca.com/Downloads/hosts.txt"
-    "1" "http://someonewhocares.org/hosts/hosts"
-    "0" "http://sysctl.org/cameleon/hosts"
-    "1" "http://winhelp2002.mvps.org/hosts.txt"
-    "0" "https://adblock.mahakala.is"
-    "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"
-    "1" "https://hosts-file.net/ad_servers.txt"
-    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"
-    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"
-    "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"
-    "1" "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
-    "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"
-    "1" "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-    "1" "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"
-    "1" "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"
-    "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt"
-    "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt"
-    "1" "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt"
-    "1" "https://raw.githubusercontent.com/yous/YousList/master/hosts.txt"
-    "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"
-    "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")
+    "1" "http://www.malwaredomainlist.com/hostslist/hosts.txt"                              # Main Hosts blocklist
+    "0" "http://hostsfile.mine.nu/hosts0.txt"                                               # Global Advert list
+    "1" "http://mirror1.malwaredomains.com/files/immortal_domains.txt"                      # Long-lived blocklist
+    "1" "http://mirror1.malwaredomains.com/files/justdomains"                               # Malware domains list
+    "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                   # Yoyo blocklist
+    "0" "http://securemecca.com/Downloads/hosts.txt"                                        # Securemecca blocklist
+    "1" "http://someonewhocares.org/hosts/hosts"                                            # Whocares blocklist
+    "0" "http://sysctl.org/cameleon/hosts"                                                  # Sysctl blocklist
+    "1" "http://winhelp2002.mvps.org/hosts.txt"                                             # MVPS blocklist
+    "0" "https://adblock.mahakala.is"                                                       # Unknown big list
+    "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
+    "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts blocklist
+    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"              # Mozilla malware list
+    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"                   # Mozilla malware list
+    "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"                         # Ransomware Domain list
+    "1" "https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt"                       # AdAway blocklist
+    "0" "https://rawgit.com/Dawsey21/Lists/master/main-blacklist.txt"                       # Spam404 blocklist
+    "1" "https://rawgit.com/StevenBlack/hosts/master/hosts"                                 # StevenBlack's list
+    "1" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
+    "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"    # Windows 10 Spy Blocker
+    "0" "https://rawgit.com/notracking/hosts-blocklists/master/domains.txt"                 # Notracking domains
+    "0" "https://rawgit.com/notracking/hosts-blocklists/master/hostnames.txt"               # Notracking hostsnames
+    "1" "https://rawgit.com/quidsup/notrack/master/trackers.txt"                            # NoTrack blocklist
+    "1" "https://rawgit.com/yous/YousList/master/hosts.txt"                                 # YousList blocklist
+    "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"                    # ZeuS baddomains list
+    "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")              # ZeuS domain list
 
 
 # Add AdBlock Plus rules files in this array
@@ -62,11 +62,11 @@ RULES=(
     "1" "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt"                # ABP MalwareDomains
     "0" "https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"                   # Fanboy's Annoyance List
     "0" "https://easylist-downloads.adblockplus.org/fanboy-social.txt"                      # Fanboy's Social List
-    "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/adblock-list.txt"          # Spam404 filters
-    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt" # uBlock badware filters
-    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt" # uBlock main filters
-    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt" # uBlock privacy filters
-    "1" "https://raw.githubusercontent.com/yous/YousList/master/youslist.txt")              # YousList filters
+    "0" "https://rawgit.com/Dawsey21/Lists/master/adblock-list.txt"                         # Spam404 filters
+    "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/badware.txt"                # uBlock badware filters
+    "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/filters.txt"                # uBlock main filters
+    "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt"                # uBlock privacy filters
+    "1" "https://rawgit.com/yous/YousList/master/youslist.txt")                             # YousList filters
 
 
 # Colors
