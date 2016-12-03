@@ -324,7 +324,7 @@ echo "# This hosts file is generated from the following sources:"
 for i in "${HOSTS[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${HOSTS[$lhosts]}"; fi; lhosts=$((lhosts + 1)); done
 for i in "${RULES[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${RULES[$lrules]}"; fi; lrules=$((lrules + 1)); done
 echo "#"
-echo "# Update Date: $(LC_TIME=en_US date)"
+echo "# Update Date: $(LC_TIME=en_US date -u)"
 echo "# Number of domains: $FL"
 echo "#"
 echo "# Licence:"
