@@ -181,8 +181,8 @@ dwn() {
 
 
 # Method for restore original host
-ln=$(gnused -n '/^# Hosty - Ad blocker script for Linux/=' /etc/hosts)
-if [ -z "$ln" ]; then
+lines=$(gnused -n '/^# Hosty - Ad blocker script for Linux/=' /etc/hosts)
+if [ -z "$lines" ]; then
     if [ "$1" == "--restore" ]; then
         echo
         echo -e "${bldwhi} * ${bldgrn}There is nothing to restore.${rst}"
@@ -191,8 +191,8 @@ if [ -z "$ln" ]; then
     fi
     cat /etc/hosts > "$orig"
 else
-    let ln-=1
-    head -n "$ln" /etc/hosts > "$orig"
+    lines=$((lines - 1))
+    head -n "$lines" /etc/hosts > "$orig"
     if [ "$1" == "--restore" ]; then
         sudoc bash -c "cat $orig > /etc/hosts"
         echo
