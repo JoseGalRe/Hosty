@@ -36,8 +36,8 @@
 #  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt
 #  * https://rawgit.com/yous/YousList/master/youslist.txt
 #
-# Update Date: Sun Dec  4 16:09:31 UTC 2016
-# Number of domains: 106493
+# Update Date: Mon Dec  5 08:35:19 UTC 2016
+# Number of domains: 106527
 #
 # Licence:
 # CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
@@ -29070,6 +29070,7 @@
 0.0.0.0 avsxrcoq2q5fgrw2.79j8fm.top
 0.0.0.0 avsxrcoq2q5fgrw2.8l4jpw.top
 0.0.0.0 avsxrcoq2q5fgrw2.9c431m.bid
+0.0.0.0 avsxrcoq2q5fgrw2.arpbxw.top
 0.0.0.0 avsxrcoq2q5fgrw2.ayjy5d.top
 0.0.0.0 avsxrcoq2q5fgrw2.dgjpgy.top
 0.0.0.0 avsxrcoq2q5fgrw2.et7izd.top
@@ -29091,6 +29092,7 @@
 0.0.0.0 avsxrcoq2q5fgrw2.y1fx4w.top
 0.0.0.0 avsxrcoq2q5fgrw2.y9kxz2.bid
 0.0.0.0 avsxrcoq2q5fgrw2.yr1h37.top
+0.0.0.0 avsxrcoq2q5fgrw2.z0mkoc.top
 0.0.0.0 avsxrcoq2q5fgrw2.zi842m.bid
 0.0.0.0 avt.hit.gemius.pl
 0.0.0.0 avtobanka.ru
@@ -47928,41 +47930,54 @@
 0.0.0.0 ffhvtest.2cnt.net
 0.0.0.0 ffioravante.com.br
 0.0.0.0 fflotte.oewabox.at
+0.0.0.0 ffoqr3ug7m726zou.04hyxg.top
 0.0.0.0 ffoqr3ug7m726zou.0v7hry.bid
 0.0.0.0 ffoqr3ug7m726zou.1feasu.top
 0.0.0.0 ffoqr3ug7m726zou.2fu7bc.top
 0.0.0.0 ffoqr3ug7m726zou.2msuuj.top
 0.0.0.0 ffoqr3ug7m726zou.2rl0pv.top
 0.0.0.0 ffoqr3ug7m726zou.4tkb0d.top
+0.0.0.0 ffoqr3ug7m726zou.5e4u7d.bid
+0.0.0.0 ffoqr3ug7m726zou.5hmjh7.bid
 0.0.0.0 ffoqr3ug7m726zou.5m2n7x.top
 0.0.0.0 ffoqr3ug7m726zou.735giv.top
 0.0.0.0 ffoqr3ug7m726zou.8uvtsg.top
+0.0.0.0 ffoqr3ug7m726zou.9yim37.top
+0.0.0.0 ffoqr3ug7m726zou.ac7zvz.top
 0.0.0.0 ffoqr3ug7m726zou.b31wkh.bid
 0.0.0.0 ffoqr3ug7m726zou.b4abvx.top
+0.0.0.0 ffoqr3ug7m726zou.bd7tlu.top
 0.0.0.0 ffoqr3ug7m726zou.bdlvdy.top
 0.0.0.0 ffoqr3ug7m726zou.bpuhab.top
 0.0.0.0 ffoqr3ug7m726zou.bwei9h.top
+0.0.0.0 ffoqr3ug7m726zou.ca15sj.top
 0.0.0.0 ffoqr3ug7m726zou.do9wwg.top
 0.0.0.0 ffoqr3ug7m726zou.e1e7w2.top
+0.0.0.0 ffoqr3ug7m726zou.efebgv.top
 0.0.0.0 ffoqr3ug7m726zou.f5x6ws.top
 0.0.0.0 ffoqr3ug7m726zou.ffsm1a.bid
 0.0.0.0 ffoqr3ug7m726zou.gwz8gh.top
 0.0.0.0 ffoqr3ug7m726zou.hajw7w.bid
 0.0.0.0 ffoqr3ug7m726zou.hpwom3.top
+0.0.0.0 ffoqr3ug7m726zou.hy6dxo.bid
 0.0.0.0 ffoqr3ug7m726zou.hzrekn.top
 0.0.0.0 ffoqr3ug7m726zou.i4ucg2.bid
 0.0.0.0 ffoqr3ug7m726zou.iocvou.top
 0.0.0.0 ffoqr3ug7m726zou.jye7lt.top
 0.0.0.0 ffoqr3ug7m726zou.kfymbh.top
 0.0.0.0 ffoqr3ug7m726zou.l4dlll.bid
+0.0.0.0 ffoqr3ug7m726zou.l6r7i9.top
 0.0.0.0 ffoqr3ug7m726zou.lc1xfc.top
 0.0.0.0 ffoqr3ug7m726zou.le6611.bid
 0.0.0.0 ffoqr3ug7m726zou.lruwth.top
+0.0.0.0 ffoqr3ug7m726zou.m3cvi8.top
+0.0.0.0 ffoqr3ug7m726zou.momg04.top
 0.0.0.0 ffoqr3ug7m726zou.ndnmuk.top
 0.0.0.0 ffoqr3ug7m726zou.ptnbfm.top
 0.0.0.0 ffoqr3ug7m726zou.rssh3l.bid
 0.0.0.0 ffoqr3ug7m726zou.rxmbsm.top
 0.0.0.0 ffoqr3ug7m726zou.rzvhne.top
+0.0.0.0 ffoqr3ug7m726zou.s611js.top
 0.0.0.0 ffoqr3ug7m726zou.sg9lxh.bid
 0.0.0.0 ffoqr3ug7m726zou.tsrwj3.top
 0.0.0.0 ffoqr3ug7m726zou.tx0igu.bid
@@ -47974,6 +47989,7 @@
 0.0.0.0 ffoqr3ug7m726zou.w22p3v.top
 0.0.0.0 ffoqr3ug7m726zou.w67y8u.bid
 0.0.0.0 ffoqr3ug7m726zou.wf912u.bid
+0.0.0.0 ffoqr3ug7m726zou.wwa4tu.top
 0.0.0.0 ffoqr3ug7m726zou.wx2n44.top
 0.0.0.0 ffoqr3ug7m726zou.x8p2m7.bid
 0.0.0.0 ffoqr3ug7m726zou.xe1ws1.top
@@ -47983,6 +47999,7 @@
 0.0.0.0 ffoqr3ug7m726zou.zjfbxy.top
 0.0.0.0 ffoqr3ug7m726zou.zkxb17.top
 0.0.0.0 ffoqr3ug7m726zou.zn90h4.bid
+0.0.0.0 ffoqr3ug7m726zou.zpjpsf.top
 0.0.0.0 ffoqr3ug7m726zou.zu3fzc.bid
 0.0.0.0 ffrggthty.2fh.in
 0.0.0.0 ffsi.info
@@ -48654,6 +48671,8 @@
 0.0.0.0 fnf-industrietechnk.com
 0.0.0.0 fnjyygovdjyemga.xyz
 0.0.0.0 fnlpic.com
+0.0.0.0 fnmi62725zfti2vy.o08ra6.top
+0.0.0.0 fnmi62725zfti2vy.p9wol3.top
 0.0.0.0 fnyoga.biz
 0.0.0.0 fo-api.omnitagjs.com
 0.0.0.0 fo4n.com
@@ -49857,6 +49876,7 @@
 0.0.0.0 ftimer.pl
 0.0.0.0 ftjcfx.com
 0.0.0.0 ftop9000.com
+0.0.0.0 ftoxmpdipwobp4qy.10nzk9.top
 0.0.0.0 ftoxmpdipwobp4qy.7pnxn9.top
 0.0.0.0 ftoxmpdipwobp4qy.lxvmhm.top
 0.0.0.0 ftp-identification.com
@@ -51335,6 +51355,7 @@
 0.0.0.0 global.msmtrakk03a.com
 0.0.0.0 global.reporo.net
 0.0.0.0 global.ymtrack.com
+0.0.0.0 globaladmedia.net
 0.0.0.0 globaladsales.com
 0.0.0.0 globaladv.net
 0.0.0.0 globalcantractors.com
@@ -57430,6 +57451,7 @@
 0.0.0.0 jkgah.voluumtrk.com
 0.0.0.0 jkhteqa.com
 0.0.0.0 jkjlaawd.cz.cc
+0.0.0.0 jkjoxlhkwnxd.com
 0.0.0.0 jkkernvkrwdr.com
 0.0.0.0 jkkf.pl
 0.0.0.0 jkmodz.com
@@ -60905,6 +60927,7 @@
 0.0.0.0 logyd.voluumtrk.com
 0.0.0.0 logz.ikimfm.my
 0.0.0.0 lohud.us.intellitxt.com
+0.0.0.0 loipinel.net
 0.0.0.0 lojafnac.com
 0.0.0.0 lojaodaconstrucao.com
 0.0.0.0 lojaps4.com.br
@@ -63268,6 +63291,7 @@
 0.0.0.0 meigert.com
 0.0.0.0 meihaoddos.3322.org
 0.0.0.0 meijersa.bighosted.com
+0.0.0.0 meilleuremutuelle.xyz
 0.0.0.0 meiluziai.info
 0.0.0.0 mein.monster.de
 0.0.0.0 meincheck.de-informationallekunden.eu
@@ -73542,6 +73566,7 @@
 0.0.0.0 mutlubak.com
 0.0.0.0 mutrik.com
 0.0.0.0 muttr.ru
+0.0.0.0 mutuel.xyz
 0.0.0.0 muuojcu.xyz
 0.0.0.0 muv.famousintactswitch.com
 0.0.0.0 muwmedia.com
@@ -77816,6 +77841,7 @@
 0.0.0.0 p.cpx.to
 0.0.0.0 p.cpxinteractive.com
 0.0.0.0 p.ctasnet.com
+0.0.0.0 p.d.0emn.com
 0.0.0.0 p.de
 0.0.0.0 p.delivery.net
 0.0.0.0 p.dsero.net
@@ -78727,6 +78753,10 @@
 0.0.0.0 pe2cku7pebkpgeko.bw9e2z.top
 0.0.0.0 pe2cku7pebkpgeko.dj68hn.top
 0.0.0.0 pe2cku7pebkpgeko.hclz73.top
+0.0.0.0 pe2cku7pebkpgeko.kwrd4f.bid
+0.0.0.0 pe2cku7pebkpgeko.rjf9yn.top
+0.0.0.0 pe2cku7pebkpgeko.tsrwj3.top
+0.0.0.0 pe2cku7pebkpgeko.vfe2f1.top
 0.0.0.0 pe2k2dty.com
 0.0.0.0 peace-security.ru
 0.0.0.0 peace.biz
@@ -92536,6 +92566,7 @@
 0.0.0.0 thewebgemnetwork.com
 0.0.0.0 thewebologists.myjino.ru
 0.0.0.0 thewheelof.com
+0.0.0.0 thewhizproducts.com
 0.0.0.0 thewindsorclinic.co.uk
 0.0.0.0 thewinesteward.com
 0.0.0.0 thewrap.rotator.hadj7.adjuggler.net
@@ -101749,6 +101780,7 @@
 0.0.0.0 vyohacxzoue32vvk.fp6fj6.top
 0.0.0.0 vyohacxzoue32vvk.fsly47.top
 0.0.0.0 vyohacxzoue32vvk.g7rst5.bid
+0.0.0.0 vyohacxzoue32vvk.gjbmis.top
 0.0.0.0 vyohacxzoue32vvk.h2xun1.top
 0.0.0.0 vyohacxzoue32vvk.ibar8s.top
 0.0.0.0 vyohacxzoue32vvk.jb4uh0.top
@@ -101757,6 +101789,7 @@
 0.0.0.0 vyohacxzoue32vvk.jwi2ek.bid
 0.0.0.0 vyohacxzoue32vvk.k9p80d.top
 0.0.0.0 vyohacxzoue32vvk.kfymbh.top
+0.0.0.0 vyohacxzoue32vvk.kwrd4f.bid
 0.0.0.0 vyohacxzoue32vvk.l4dlll.bid
 0.0.0.0 vyohacxzoue32vvk.mayrwf.top
 0.0.0.0 vyohacxzoue32vvk.mpduf5.bid
@@ -101766,6 +101799,7 @@
 0.0.0.0 vyohacxzoue32vvk.o5b17o.top
 0.0.0.0 vyohacxzoue32vvk.p9su2u.top
 0.0.0.0 vyohacxzoue32vvk.pr52ni.top
+0.0.0.0 vyohacxzoue32vvk.r31sot.top
 0.0.0.0 vyohacxzoue32vvk.r3b2sh.top
 0.0.0.0 vyohacxzoue32vvk.roep3o.top
 0.0.0.0 vyohacxzoue32vvk.ss8doe.top
