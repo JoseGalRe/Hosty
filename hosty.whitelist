@@ -18,6 +18,8 @@ smarturl.it
 
 # Microsoft Recommended whitelist
 answers.microsoft.com
+displaycatalog.mp.microsoft.com
+emdl.ws.microsoft.com
 fe2.update.microsoft.com
 fe2.update.microsoft.com.akadns.net
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
