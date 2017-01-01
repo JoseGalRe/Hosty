@@ -36,8 +36,8 @@
 #  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt
 #  * https://rawgit.com/yous/YousList/master/youslist.txt
 #
-# Update Date: Fri Dec 30 21:09:02 UTC 2016
-# Number of domains: 107778
+# Update Date: Sun Jan  1 21:36:35 UTC 2017
+# Number of domains: 107789
 #
 # Licence:
 # CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
@@ -997,6 +997,7 @@
 0.0.0.0 2014reltimes.ru
 0.0.0.0 2015rewardopportunities.com
 0.0.0.0 2017rev1ews.com
+0.0.0.0 201ddlyh.com
 0.0.0.0 202.6.87.194.dynamic.dol.ru
 0.0.0.0 2020careyway.com
 0.0.0.0 2026953308.go2cloud.org
@@ -27187,6 +27188,7 @@
 0.0.0.0 ankursociety.org
 0.0.0.0 anlacviettravel.com.vn
 0.0.0.0 anlt.dnsdynamic.com
+0.0.0.0 anluecyopslm.com
 0.0.0.0 anm.112.2o7.net
 0.0.0.0 anm.co.uk
 0.0.0.0 anm.intelli-direct.com
@@ -34738,6 +34740,7 @@
 0.0.0.0 buzzfeed.d1.sc.omtrdc.net
 0.0.0.0 buzzfoto.us.intellitxt.com
 0.0.0.0 buzzhumor.us.intellitxt.com
+0.0.0.0 buzzie.net
 0.0.0.0 buzznet.112.2o7.net
 0.0.0.0 buzzonclick.com
 0.0.0.0 buzzoola.com
@@ -42049,6 +42052,7 @@
 0.0.0.0 d1988.com
 0.0.0.0 d19972r8wdpby8.cloudfront.net
 0.0.0.0 d1ade4ciw4bqyc.cloudfront.net
+0.0.0.0 d1aezk8tun0dhm.cloudfront.net
 0.0.0.0 d1af033869koo7.cloudfront.net
 0.0.0.0 d1byvlfiet2h9q.cloudfront.net
 0.0.0.0 d1cdnlzf6usiff.cloudfront.net
@@ -42091,6 +42095,7 @@
 0.0.0.0 d1qpxk1wfeh8v1.cloudfront.net
 0.0.0.0 d1qqddufal4d58.cloudfront.net
 0.0.0.0 d1r27qvpjiaqj3.cloudfront.net
+0.0.0.0 d1r55yzuc1b1bw.cloudfront.net
 0.0.0.0 d1rdh3xxuqlqfo.cloudfront.net
 0.0.0.0 d1rgnfh960lz2b.cloudfront.net
 0.0.0.0 d1ros97qkrwjf5.cloudfront.net
@@ -42292,6 +42297,7 @@
 0.0.0.0 d3t9ip55bsuxrf.cloudfront.net
 0.0.0.0 d3td6g0k30g56f.cloudfront.net
 0.0.0.0 d3tdefw8pwfkbk.cloudfront.net
+0.0.0.0 d3tglifpd8whs6.cloudfront.net
 0.0.0.0 d3ujids68p6xmp.cloudfront.net
 0.0.0.0 d3ujids68p6xmq.cloudfront.net
 0.0.0.0 d3v1lb83psg9di.cloudfront.net
@@ -45302,6 +45308,7 @@
 0.0.0.0 ea.sport365.fr
 0.0.0.0 ea.zebestof.com
 0.0.0.0 eaae-france.org
+0.0.0.0 eacash.streamplay.to
 0.0.0.0 eacdn.com
 0.0.0.0 eacvb.com
 0.0.0.0 ead-soft.popunder.ru
@@ -46895,7 +46902,6 @@
 0.0.0.0 etiiisallat.bugs3.com
 0.0.0.0 etisalatebill.net
 0.0.0.0 etissalat.ultimatefreehost.com
-0.0.0.0 etl.tindersparks.com
 0.0.0.0 etl.xlmc.sandai.net
 0.0.0.0 etlpa.voluumtrk.com
 0.0.0.0 etmanly.ru
@@ -60771,6 +60777,7 @@
 0.0.0.0 linktracker.angelfire.com
 0.0.0.0 linktrackerinc.go2cloud.org
 0.0.0.0 linktraff.ru
+0.0.0.0 linktrker.com
 0.0.0.0 linkunder.ru
 0.0.0.0 linkunit.ru
 0.0.0.0 linkwall.ru
@@ -61200,6 +61207,7 @@
 0.0.0.0 log.sz-online.de
 0.0.0.0 log.tagcade.com
 0.0.0.0 log.tapatalk.com
+0.0.0.0 log.thevideo.me
 0.0.0.0 log.trafic.ro
 0.0.0.0 log.umsns.com
 0.0.0.0 log.v.iask.com
@@ -77132,6 +77140,7 @@
 0.0.0.0 offended.feenode.net
 0.0.0.0 offer.17bullets.com
 0.0.0.0 offer.alibaba.com
+0.0.0.0 offer.camp
 0.0.0.0 offer.dimplexx.net
 0.0.0.0 offer002.dimplexx.net
 0.0.0.0 offeradvertising.biz
@@ -78855,6 +78864,7 @@
 0.0.0.0 palmebi.popunder.ru
 0.0.0.0 palochusvet.szm.com
 0.0.0.0 palwhich.com
+0.0.0.0 pam.nextinpact.com
 0.0.0.0 pamedia.com.au
 0.0.0.0 pamela-bax.us
 0.0.0.0 pamela-wanamaker.us
@@ -80053,7 +80063,6 @@
 0.0.0.0 pillsmoney.com
 0.0.0.0 pilltabletsrxbargain.net
 0.0.0.0 pilmedia.ads.visionweb.no
-0.0.0.0 pim.nextinpact.com
 0.0.0.0 pimbarendse.nl
 0.0.0.0 pimpb.us
 0.0.0.0 pimpmypr.de
@@ -94108,6 +94117,7 @@
 0.0.0.0 toofanshadid.com
 0.0.0.0 tool-service.clickamplify.com
 0.0.0.0 tool-site.com
+0.0.0.0 tool.acces-vod.com
 0.0.0.0 toolbar.adperium.com
 0.0.0.0 toolbar.aol.com
 0.0.0.0 toolbar.baidu.com
@@ -104753,6 +104763,7 @@
 0.0.0.0 wmte3.onlinenewgreecetrips.xyz
 0.0.0.0 wmtrackinglink.com
 0.0.0.0 wmtrafficentry.com
+0.0.0.0 wmunigeria.org
 0.0.0.0 wmwkwubufart.com
 0.0.0.0 wmwyq.xyz
 0.0.0.0 wmzona.com
