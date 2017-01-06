@@ -36,8 +36,8 @@
 #  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt
 #  * https://rawgit.com/yous/YousList/master/youslist.txt
 #
-# Update Date: Thu Jan  5 06:15:39 UTC 2017
-# Number of domains: 108698
+# Update Date: Fri Jan  6 04:57:21 UTC 2017
+# Number of domains: 108725
 #
 # Licence:
 # CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
@@ -17718,6 +17718,7 @@
 0.0.0.0 ad1.kde.cz
 0.0.0.0 ad1.lbn.ru
 0.0.0.0 ad1.logger.co.kr
+0.0.0.0 ad1.nend.net
 0.0.0.0 ad1.netshelter.net
 0.0.0.0 ad1.nownews.com
 0.0.0.0 ad1.pamedia.com.au
@@ -18154,6 +18155,7 @@
 0.0.0.0 ad2.emediate.se
 0.0.0.0 ad2.ero-advertising.com
 0.0.0.0 ad2.firehousezone.com
+0.0.0.0 ad2.fivecdm.com
 0.0.0.0 ad2.gammae.com
 0.0.0.0 ad2.hotel.com
 0.0.0.0 ad2.hotels.com
@@ -20254,6 +20256,7 @@
 0.0.0.0 adopt.specificclick.net
 0.0.0.0 adoptim.com
 0.0.0.0 adoreclothing.co.uk
+0.0.0.0 adoric.com
 0.0.0.0 adorigin.com
 0.0.0.0 adorika.com
 0.0.0.0 adorika.net
@@ -27370,7 +27373,6 @@
 0.0.0.0 anvikbiotech.com
 0.0.0.0 anvimob.ro
 0.0.0.0 anwufkjjja.com
-0.0.0.0 anx.mindspark.com
 0.0.0.0 anxiety-depression.com.au
 0.0.0.0 anxiety.1.p2l.info
 0.0.0.0 anycast.fw.adsafeprotected.com
@@ -31317,6 +31319,7 @@
 0.0.0.0 bc.kuaiche.com
 0.0.0.0 bc.marfeel.com
 0.0.0.0 bc.yahoo.com
+0.0.0.0 bc2.fivecdm.com
 0.0.0.0 bc3zyznqra.ru
 0.0.0.0 bc685d37-266c-488e-824e-dd95d1c0e98b.statcamp.net
 0.0.0.0 bc84-88b8-96b7-6515.reporo.net
@@ -31442,6 +31445,7 @@
 0.0.0.0 beacon.sina.com.cn
 0.0.0.0 beacon.sinauda.com
 0.0.0.0 beacon.sojern.com
+0.0.0.0 beacon.squixa.net
 0.0.0.0 beacon.stage.walmart.com
 0.0.0.0 beacon.thred.woven.com
 0.0.0.0 beacon.tracelytics.com
@@ -31790,7 +31794,6 @@
 0.0.0.0 bet.122.2o7.net
 0.0.0.0 bet.demdex.net
 0.0.0.0 bet3000partners.com
-0.0.0.0 bet365.com
 0.0.0.0 bet365affiliates.com
 0.0.0.0 beta-i.pt
 0.0.0.0 beta-old.superstats.com
@@ -35592,6 +35595,7 @@
 0.0.0.0 caixaimobiliario.net
 0.0.0.0 caixapre.com.br
 0.0.0.0 caiyun72.com
+0.0.0.0 cajkov.ru
 0.0.0.0 cakedon.com.au
 0.0.0.0 cakemamaatin.id
 0.0.0.0 cakessolovely.ca
@@ -36211,6 +36215,7 @@
 0.0.0.0 cdata.carambo.la
 0.0.0.0 cdate.122.2o7.net
 0.0.0.0 cdb.hitbox.com
+0.0.0.0 cdbkxcnfmehf.com
 0.0.0.0 cdcenterco.com
 0.0.0.0 cdcwn.xyz
 0.0.0.0 cddbshred.ru
@@ -38562,6 +38567,7 @@
 0.0.0.0 cloudown.ienet.pl
 0.0.0.0 cloudprice.net
 0.0.0.0 clouds-pros-services.goo.vg
+0.0.0.0 cloudsdns.net
 0.0.0.0 cloudset.xyz
 0.0.0.0 cloudtech.com.sg
 0.0.0.0 cloudtracer101.com
@@ -42228,6 +42234,7 @@
 0.0.0.0 d.serve-sys.com
 0.0.0.0 d.shareaholic.com
 0.0.0.0 d.skimresources.com
+0.0.0.0 d.socdm.com
 0.0.0.0 d.srui.cn
 0.0.0.0 d.sspcash.adxcore.com
 0.0.0.0 d.t.tailtarget.com
@@ -44784,7 +44791,6 @@
 0.0.0.0 download-123.cn
 0.0.0.0 download-archiver.ru
 0.0.0.0 download-file24.pl
-0.0.0.0 download-performance.com
 0.0.0.0 download.56.com
 0.0.0.0 download.58611.net
 0.0.0.0 download.abetterinternet.com
@@ -46903,6 +46909,7 @@
 0.0.0.0 eqads.com
 0.0.0.0 eqdtosryllef.biz
 0.0.0.0 eqgdx.voluumtrk.com
+0.0.0.0 eqs-redserver.appspot.com
 0.0.0.0 equallyyolked.com
 0.0.0.0 equantum.com
 0.0.0.0 equilibrioanimais.com.br
@@ -50542,6 +50549,7 @@
 0.0.0.0 fs-11.com
 0.0.0.0 fs-hongsheng.com
 0.0.0.0 fs.moatads.com
+0.0.0.0 fs.onehorseopensleighion.ru
 0.0.0.0 fs10.fusestats.com
 0.0.0.0 fsafedepositvaultltd.com
 0.0.0.0 fsagkp.com
@@ -52973,6 +52981,7 @@
 0.0.0.0 greatcarrates.com
 0.0.0.0 greatcpm.com
 0.0.0.0 greateasy.cn
+0.0.0.0 greaternoakhali.net.bd
 0.0.0.0 greatgoods2.bravepages.com
 0.0.0.0 greatliteautobest.cn
 0.0.0.0 greatmeeting.org
@@ -55288,6 +55297,7 @@
 0.0.0.0 i.simpli.fi
 0.0.0.0 i.skimresources.com
 0.0.0.0 i.smartwebads.com
+0.0.0.0 i.socdm.com
 0.0.0.0 i.static.zaplata.bg
 0.0.0.0 i.tapit.com
 0.0.0.0 i.tfag.de
@@ -56363,6 +56373,7 @@
 0.0.0.0 img05.webtrekk.net
 0.0.0.0 img06.webtrekk.net
 0.0.0.0 img1.ncsreporting.com
+0.0.0.0 img1.nend.net
 0.0.0.0 img1.ru.redtram.com
 0.0.0.0 img1.webring.com
 0.0.0.0 img1.zergnet.com
@@ -57552,6 +57563,7 @@
 0.0.0.0 irsgov.heliohost.org
 0.0.0.0 irsgov.nswsoccer.com.au
 0.0.0.0 irstaxrefund.com.graficaolivense.com
+0.0.0.0 irtula.ru
 0.0.0.0 irudhkunrlfu25fhkaqw34blr5qlby4tgq43t.orrisbirth.com
 0.0.0.0 irvanismed.com
 0.0.0.0 irxpndjg.com
@@ -57757,6 +57769,7 @@
 0.0.0.0 iusacomlive.112.2o7.net
 0.0.0.0 iut4u.voluumtrk.com
 0.0.0.0 iuy7.pl
+0.0.0.0 iuymaolvzery.com
 0.0.0.0 iv.doubleclick.net
 0.0.0.0 ivakil.com
 0.0.0.0 ivanie.com
@@ -57860,6 +57873,7 @@
 0.0.0.0 izmirtrekkingkulubu.com
 0.0.0.0 izolat.w8w.pl
 0.0.0.0 izoyshe6.review
+0.0.0.0 iztsbnkxphnj.com
 0.0.0.0 izvozic.ru
 0.0.0.0 izwsvyqv.com
 0.0.0.0 izww.cn
@@ -58066,6 +58080,7 @@
 0.0.0.0 jbrotrk.com
 0.0.0.0 jbugk.com
 0.0.0.0 jbvisobwrlcv.com
+0.0.0.0 jbyksmjmbmku.com
 0.0.0.0 jc-c.com
 0.0.0.0 jc.revolvermaps.com
 0.0.0.0 jcardoso.adv.br
@@ -76226,6 +76241,7 @@
 0.0.0.0 ngdeffqvwhie.com
 0.0.0.0 ngecity.com
 0.0.0.0 ngl.kr
+0.0.0.0 nglmedia.com
 0.0.0.0 ngmckvucrjbnyybvgesxozxcwpgnaljhpedttelavqmpgvfsxg.com
 0.0.0.0 ngmco.net
 0.0.0.0 ngohq.us.intellitxt.com
@@ -78901,6 +78917,7 @@
 0.0.0.0 outofsightmedia.us.intellitxt.com
 0.0.0.0 outporn.com
 0.0.0.0 outpost.real.com
+0.0.0.0 output.nend.net
 0.0.0.0 outrageousclick.com
 0.0.0.0 outsidethebeltway.us.intellitxt.com
 0.0.0.0 outstanding-basketball.site44.com
@@ -82043,6 +82060,7 @@
 0.0.0.0 premiumtrack04.webtrekk.net
 0.0.0.0 premiumtv.122.2o7.net
 0.0.0.0 premiumvideoupdates.com
+0.0.0.0 prenvifxzjuo.com
 0.0.0.0 prerelease.rts.doublepimp.com
 0.0.0.0 prerelease.rts.phn.doublepimp.com
 0.0.0.0 prerelease.streamate.doublepimp.com
@@ -83345,6 +83363,7 @@
 0.0.0.0 qii678.com
 0.0.0.0 qijffgqsbkii.com
 0.0.0.0 qijiaosoft.com
+0.0.0.0 qiktwikahncl.com
 0.0.0.0 qiluceo001.cn
 0.0.0.0 qimuj.voluumtrk.com
 0.0.0.0 qingcdn.com
@@ -83631,6 +83650,7 @@
 0.0.0.0 r.adrolays.de
 0.0.0.0 r.ads.zynga.com
 0.0.0.0 r.adserver01.de
+0.0.0.0 r.af-share.jp
 0.0.0.0 r.aol.com
 0.0.0.0 r.apina.biz
 0.0.0.0 r.bbci.co.uk
@@ -86083,6 +86103,7 @@
 0.0.0.0 s-adserver.cxad.cxense.com
 0.0.0.0 s-adserver.sandbox.cxad.cxense.com
 0.0.0.0 s-assets.tp-cdn.com
+0.0.0.0 s-cs.send.microad.jp
 0.0.0.0 s-jsonp.moatads.com
 0.0.0.0 s-manager.com
 0.0.0.0 s-parta.za.pl
@@ -94086,6 +94107,7 @@
 0.0.0.0 tfpmmoz.com
 0.0.0.0 tftsbqbeuthh.com
 0.0.0.0 tg.mybb.ru
+0.0.0.0 tg.socdm.com
 0.0.0.0 tg2016.net
 0.0.0.0 tga.acs86.com
 0.0.0.0 tga.csbew.com
@@ -94256,6 +94278,7 @@
 0.0.0.0 thehomelabs.ru
 0.0.0.0 thehomo.org
 0.0.0.0 thehut.net
+0.0.0.0 theih1w.top
 0.0.0.0 theinquirer.uk.intellitxt.com
 0.0.0.0 theinternetworksltd-news.t.domdex.com
 0.0.0.0 theinterwebs.space
@@ -95531,6 +95554,7 @@
 0.0.0.0 track.justcloud.com
 0.0.0.0 track.justdoing.biz
 0.0.0.0 track.justhookup.com
+0.0.0.0 track.kandle.org
 0.0.0.0 track.keywordstrategy.org
 0.0.0.0 track.kscentraltrack.us
 0.0.0.0 track.lativio.com
@@ -99393,6 +99417,7 @@
 0.0.0.0 vgtuiy.com
 0.0.0.0 vgwort.de
 0.0.0.0 vh1com.112.2o7.net
+0.0.0.0 vhctcywajcwv.com
 0.0.0.0 vhi1.surf-town.net
 0.0.0.0 vhiaxerjzbqi.com
 0.0.0.0 vhmnetwork.com
@@ -107071,6 +107096,7 @@
 0.0.0.0 xigushan.net
 0.0.0.0 xilonem.ca
 0.0.0.0 ximad.com
+0.0.0.0 ximeldnjuusl.com
 0.0.0.0 xin-lian.cn
 0.0.0.0 xindalawyer.com
 0.0.0.0 xingqibaile.com
@@ -107252,6 +107278,7 @@
 0.0.0.0 xrhwryizf5mui7a5.rt01jw.top
 0.0.0.0 xrhwryizf5mui7a5.uw9x7z.bid
 0.0.0.0 xrhwryizf5mui7a5.vgxcci.top
+0.0.0.0 xrivpngzagpy.com
 0.0.0.0 xrs56.com
 0.0.0.0 xs.mochiads.com
 0.0.0.0 xsd6.com
