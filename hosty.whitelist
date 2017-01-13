@@ -18,11 +18,14 @@ smarturl.it
 
 # Microsoft Recommended whitelist
 answers.microsoft.com
+cloudapp.net
 displaycatalog.mp.microsoft.com
 emdl.ws.microsoft.com
 fe2.update.microsoft.com
 fe2.update.microsoft.com.akadns.net
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
+m.hotmail.com
+officeclient.microsoft.com
 sls.update.microsoft.com
 sls.update.microsoft.com.akadns.net
 statsfe1.ws.microsoft.com
@@ -45,6 +48,7 @@ etl.tindersparks.com
 graph.facebook.com
 iadsdk.apple.com
 jwpcdn.com
+llnwd.net
 logw306.ati-host.net
 myapp.com
 nanigans.com
