@@ -5,8 +5,8 @@
 HOSTS=(
     "0" "http://hostsfile.mine.nu/hosts0.txt"                                               # Global Advert list
     "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Main Hosts blocklist
-    "1" "http://mirror1.malwaredomains.com/files/immortal_domains.txt"                      # Long-lived blocklist
-    "1" "http://mirror1.malwaredomains.com/files/justdomains"                               # Malware domains list
+    "1" "http://malware-domains.com/files/immortal_domains.zip"                             # Long-lived blocklist
+    "1" "http://malware-domains.com/files/justdomains.zip"                                  # Malware domains list
     "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                   # Yoyo blocklist
     "0" "http://securemecca.com/Downloads/hosts.txt"                                        # Securemecca blocklist
     "1" "http://someonewhocares.org/hosts/hosts"                                            # Whocares blocklist
