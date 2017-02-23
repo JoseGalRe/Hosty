@@ -37,21 +37,29 @@ statsfe2.ws.microsoft.com
 
 # JoseGalRe Recommended whitelist
 adfoc.us
+adwords.google.com
 akadns.net
 boldchat.com
 branch.io
 cdn.phoenix.intergi.com
+clients2.google.com
+clients3.google.com
+clients4.google.com
+clients5.google.com
 clients6.google.com
 config.skype.com
 crashlytics.com
+desktop.google.com
 dl.delivery.mp.microsoft.com
 edgekey.net
 etl.tindersparks.com
+gacollector.l.google.com
 graph.facebook.com
 iadsdk.apple.com
 jwpcdn.com
 llnwd.net
 logw306.ati-host.net
+mine.nu
 myapp.com
 nanigans.com
 pd-st.itunes-apple.com.akadns.net
@@ -63,5 +71,6 @@ symcd.com
 tqn.com
 urbanairship.com
 viglink.com
+video-stats.l.google.com
 vo.msecnd.net
 yui.yahooapis.com
