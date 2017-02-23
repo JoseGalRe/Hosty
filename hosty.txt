@@ -12,8 +12,10 @@
 #  * http://winhelp2002.mvps.org/hosts.txt
 #  * https://dshield.org/feeds/suspiciousdomains_Low.txt
 #  * https://hosts-file.net/ad_servers.txt
+#  * https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
 #  * https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
 #  * https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt
+#  * https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
 #  * https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt
 #  * https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt
 #  * https://rawgit.com/StevenBlack/hosts/master/hosts
@@ -30,14 +32,14 @@
 #  * https://adguard.com/en/filter-rules.html?id=15
 #  * https://easylist-downloads.adblockplus.org/adwarefilters.txt
 #  * https://easylist-downloads.adblockplus.org/easyprivacy+easylist.txt
-#  * https://easylist-downloads.adblockplus.org/malwaredomains_full.txt
+#  * https://easylist-downloads.adblockplus.org/easylistspanish+easylist.txt
 #  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/badware.txt
 #  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/filters.txt
 #  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt
 #  * https://rawgit.com/yous/YousList/master/youslist.txt
 #
-# Update Date: Thu, Feb 23, 2017  1:30:05 AM
-# Number of domains: 119091
+# Update Date: Thu, Feb 23, 2017  6:14:30 AM
+# Number of domains: 119094
 #
 # Licence:
 # CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
@@ -49648,6 +49650,7 @@
 0.0.0.0 enfintrouver.com
 0.0.0.0 enfreine.com
 0.0.0.0 engage.everyone.net
+0.0.0.0 engage.morespeck.com
 0.0.0.0 engage.speedera.net
 0.0.0.0 engage2.advanstar.com
 0.0.0.0 engagebdr.com
@@ -85692,6 +85695,7 @@
 0.0.0.0 p27dokhpz2n7nvgr.1h23cc.top
 0.0.0.0 p27dokhpz2n7nvgr.1jw2lx.top
 0.0.0.0 p27dokhpz2n7nvgr.1kja1j.top
+0.0.0.0 p27dokhpz2n7nvgr.1kq4l8.top
 0.0.0.0 p27dokhpz2n7nvgr.1ktjse.top
 0.0.0.0 p27dokhpz2n7nvgr.1l4zyd.top
 0.0.0.0 p27dokhpz2n7nvgr.1lt2pn.top
@@ -113211,6 +113215,7 @@
 0.0.0.0 vogozara.ru
 0.0.0.0 vogozaw.ru
 0.0.0.0 vogueshaire.com
+0.0.0.0 voicebomber.com
 0.0.0.0 voicefive.com
 0.0.0.0 voiceministries.com
 0.0.0.0 voicenetplus.com
