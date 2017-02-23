@@ -3,7 +3,7 @@
 
 # Add ad-blocking hosts files in this array
 HOSTS=(
-    "0" "http://hostsfile.mine.nu/hosts0.txt"                                               # Global Advert list
+    "0" "http://hostsfile.mine.nu/hosts.txt"                                                # Global Advert list
     "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Main Hosts blocklist
     "1" "http://malware-domains.com/files/immortal_domains.zip"                             # Long-lived blocklist
     "1" "http://malware-domains.com/files/justdomains.zip"                                  # Malware domains list
