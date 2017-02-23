@@ -175,7 +175,7 @@ dwn() {
         lln=$(grep -c . "$aux")
         echo -e "${bldgrn}   + ${bldcya}Downloaded ${bldgrn}$lln ${bldcya}hosts blocked from ${bldgrn}$1"
     else
-        echo -e "${bldwhi}   * ${bldred}Error downloading ${bldwhi}$i"
+        echo -e "${bldwhi}   * ${bldred}Error downloading ${bldwhi}$1"
     fi
 }
 
