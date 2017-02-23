@@ -21,10 +21,13 @@ HOSTS=(
     "0" "https://hosts-file.net/hphosts-partial.txt"                                        # HpHosts partial list
     "0" "https://hosts-file.net/mmt.txt"                                                    # HpHosts MMT blocklist
     "0" "https://hosts-file.net/psh.txt"                                                    # HpHosts PSH blocklist
+    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"                        # Mozilla adware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"              # Mozilla malware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"                   # Mozilla malware list
+    "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"                  # Mozilla tracking list
     "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"                         # Ransomware Domain list
     "1" "https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt"                       # AdAway blocklist
+    "0" "https://rawgit.com/byaka/ublock-antiskimming-list/master/source/data.txt"          # Anti-Skimming list
     "0" "https://rawgit.com/Dawsey21/Lists/master/main-blacklist.txt"                       # Spam404 blocklist
     "1" "https://rawgit.com/StevenBlack/hosts/master/hosts"                                 # StevenBlack's list
     "0" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
@@ -44,6 +47,8 @@ RULES=(
     "0" "https://adguard.com/en/filter-rules.html?id=1"                                     # Adguard Russian Filter
     "0" "https://adguard.com/en/filter-rules.html?id=2"                                     # Adguard English filter
     "0" "https://adguard.com/en/filter-rules.html?id=3"                                     # Adguard Spyware filter
+    "0" "https://adguard.com/en/filter-rules.html?id=4"                                     # Adguard Social filter
+    "0" "https://adguard.com/en/filter-rules.html?id=5"                                     # Adguard Tests filter
     "0" "https://adguard.com/en/filter-rules.html?id=6"                                     # Adguard German Filter
     "0" "https://adguard.com/en/filter-rules.html?id=7"                                     # Adguard Japanese Filter
     "0" "https://adguard.com/en/filter-rules.html?id=8"                                     # Adguard Dutch Filter
@@ -51,10 +56,9 @@ RULES=(
     "1" "https://adguard.com/en/filter-rules.html?id=11"                                    # Adguard Mobile filter
     "1" "https://adguard.com/en/filter-rules.html?id=12"                                    # Adguard IOS filter
     "0" "https://adguard.com/en/filter-rules.html?id=13"                                    # Adguard Turkish filter
+    "0" "https://adguard.com/en/filter-rules.html?id=14"                                    # Adguard Hassle filter
     "1" "https://adguard.com/en/filter-rules.html?id=15"                                    # Adguard DNS filter
     "1" "https://easylist-downloads.adblockplus.org/adwarefilters.txt"                      # ABP Adware filters
-    "0" "https://easylist-downloads.adblockplus.org/easylist.txt"                           # ABP EasyList
-    "0" "https://easylist-downloads.adblockplus.org/easyprivacy.txt"                        # ABP EasyPrivacy
     "1" "https://easylist-downloads.adblockplus.org/easyprivacy+easylist.txt"               # ABP EasyPrivacy+EasyList
     "0" "https://easylist-downloads.adblockplus.org/abpindo+easylist.txt"                   # ABP ABPindo+EasyList
     "0" "https://easylist-downloads.adblockplus.org/bulgarian_list+easylist.txt"            # ABP Bulgarian+EasyList
@@ -62,20 +66,21 @@ RULES=(
     "0" "https://easylist-downloads.adblockplus.org/easylistdutch+easylist.txt"             # ABP Dutch+EasyList
     "0" "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt"           # ABP Germany+EasyList
     "0" "https://easylist-downloads.adblockplus.org/easylistitaly+easylist.txt"             # ABP Italy+EasyList
+    "1" "https://easylist-downloads.adblockplus.org/easylistspanish+easylist.txt"           # ABP Spanish+EasyList
     "0" "https://easylist-downloads.adblockplus.org/israellist+easylist.txt"                # ABP Hebrew+EasyList
     "0" "https://easylist-downloads.adblockplus.org/latvianlist+easylist.txt"               # ABP Latvian+EasyList
-    "0" "https://easylist-downloads.adblockplus.org/liste_fr+easylist.txt"                  # ABP FR+EasyList
+    "0" "https://easylist-downloads.adblockplus.org/liste_fr+easylist.txt"                  # ABP French+EasyList
     "0" "https://easylist-downloads.adblockplus.org/rolist+easylist.txt"                    # ABP ROList+EasyList
     "0" "https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt"                  # ABP RuAdList+EasyList
-    "1" "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt"                # ABP MalwareDomains
     "0" "https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"                   # Fanboy's Annoyance List
     "0" "https://easylist-downloads.adblockplus.org/fanboy-social.txt"                      # Fanboy's Social List
     "0" "https://rawgit.com/Dawsey21/Lists/master/adblock-list.txt"                         # Spam404 filters
     "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/badware.txt"                # uBlock badware filters
     "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/filters.txt"                # uBlock main filters
     "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt"                # uBlock privacy filters
-    "1" "https://rawgit.com/yous/YousList/master/youslist.txt")                             # YousList filters
-
+    "0" "https://rawgit.com/Yhonay/antipopads/master/popads.txt"                            # Anti-PopADS filters
+    "1" "https://rawgit.com/yous/YousList/master/youslist.txt"                              # YousList filters
+    "0" "https://rawgit.com/zpacman/Blockzilla/master/Blockzilla.txt")                      # Blockzilla filters
 
 # Colors
 esc="\033"             #  Bold
