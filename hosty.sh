@@ -252,7 +252,7 @@ done
 # Excluding localhost and similar domains
 echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
-gnused -e 's/\(^www\.\)//g' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
+gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
 
 
 # Applying User whitelist
