@@ -105,7 +105,7 @@ echo -e "   This hosts file is a free download from: ${bldcya}https://github.com
 # Set Magic
 alist='$ 0 ~/^\|\|([A-Za-z0-9_-]+\.){1,}[A-Za-z]+\^$/{print tolower($ 3)}'
 magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
-clean='-e s/\(127\.0\.0\.1[ \t]\|0\.0\.0\.0[ \t]\)//g'
+clean='-e s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\)//g'
 
 
 # Set IP to redirect
