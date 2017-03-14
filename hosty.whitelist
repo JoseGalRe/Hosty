@@ -18,22 +18,37 @@ smarturl.it
 
 # Microsoft Recommended whitelist
 answers.microsoft.com
+apps.skype.com
 choice.microsoft.com
 choice.microsoft.com.nsatc.net
 cloudapp.net
 displaycatalog.mp.microsoft.com
+download.microsoft.com
 emdl.ws.microsoft.com
 fe2.update.microsoft.com
 fe2.update.microsoft.com.akadns.net
 fe3.delivery.dsp.mp.microsoft.com.nsatc.net
+feedback.microsoft-hohm.com
+feedback.search.microsoft.com
+feedback.windows.com
+g.bing.com
+g.live.com
+login.live.com
 m.hotmail.com
+msftncsi.com
 officeclient.microsoft.com
+pricelist.skype.com
+s.gateway.messenger.live.com
 sls.update.microsoft.com
 sls.update.microsoft.com.akadns.net
 statsfe1.ws.microsoft.com
 statsfe2.update.microsoft.com
 statsfe2.update.microsoft.com.akadns.net
 statsfe2.ws.microsoft.com
+time.windows.com
+ui.skype.com
+windowsupdate.com
+windowupdate.org
 
 # JoseGalRe Recommended whitelist
 1.bp.blogspot.com
@@ -59,6 +74,7 @@ gacollector.l.google.com
 graph.facebook.com
 iadsdk.apple.com
 jwpcdn.com
+kcsoftwares.com
 llnwd.net
 logw306.ati-host.net
 mine.nu
@@ -74,7 +90,8 @@ solvemedia.com
 symcd.com
 tqn.com
 urbanairship.com
-viglink.com
 video-stats.l.google.com
+viglink.com
 vo.msecnd.net
 yui.yahooapis.com
+zytpirwai.net
