@@ -17,13 +17,14 @@ shorte.st
 smarturl.it
 
 # Microsoft Recommended whitelist
-a000202-1.l.windowsupdate.com
 0002c3-1.l.windowsupdate.com
 0002fd-1.l.windowsupdate.com
 00149f-1.l.windowsupdate.com
 001891-1.l.windowsupdate.com
 002062-1.l.windowsupdate.com
 0021d0-1.l.windowsupdate.com
+a000202-1.l.windowsupdate.com
+aka.ms
 answers.microsoft.com
 apps.skype.com
 ars.smartscreen.microsoft.com
@@ -37,10 +38,10 @@ cdn.content.prod.cms.msn.com
 cdn.onenote.net
 choice.microsoft.com
 choice.microsoft.com.nsatc.net
-cloudapp.net
 client-s.gateway.messenger.live.com
 client.wns.windows.com
 clientconfig.passport.net
+cloudapp.net
 ctldl.windowsupdate.com
 deploy.static.akamaitechnologies.com
 device.auth.xboxlive.com
@@ -49,6 +50,7 @@ dl.delivery.mp.microsoft.com
 dmd.metaservices.microsoft.com
 dns.msftncsi.com
 download.microsoft.com
+download.visualstudio.microsoft.com
 download.windowsupdate.com
 emdl.ws.microsoft.com
 fe2.update.microsoft.com
