@@ -17,6 +17,7 @@ shorte.st
 smarturl.it
 
 # Microsoft Recommended whitelist
+000202-1.l.windowsupdate.com
 0002c3-1.l.windowsupdate.com
 0002fd-1.l.windowsupdate.com
 00149f-1.l.windowsupdate.com
@@ -98,6 +99,7 @@ ui.skype.com
 urs.smartscreen.microsoft.com
 v4.download.windowsupdate.com
 wdcp.microsoft.com
+wdcpalt.microsoft.com
 windowsupdate.com
 windowupdate.org
 wscont.apps.microsoft.com
