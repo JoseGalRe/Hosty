@@ -82,6 +82,11 @@ RULES=(
     "1" "https://rawgit.com/yous/YousList/master/youslist.txt"                              # YousList filters
     "0" "https://rawgit.com/zpacman/Blockzilla/master/Blockzilla.txt")                      # Blockzilla filters
 
+# Add Phishing files in this array
+PHISH=(
+    "1" "https://openphish.com/feed.txt")                                                   # Phishing list
+
+
 # Colors
 esc="\033"             #  Bold
 bld="${esc}[1m"        #  Bold
@@ -105,6 +110,7 @@ echo -e "   This hosts file is a free download from: ${bldcya}https://github.com
 # Set Magic
 alist='$ 0 ~/^\|\|([A-Za-z0-9_-]+\.){1,}[A-Za-z]+\^$/{print tolower($ 3)}'
 magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
+phshl='$ 3 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 3)}'
 clean='-e s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\)//g'
 
 
@@ -114,8 +120,10 @@ IP="0.0.0.0"
 
 # Set counters to 1
 erules=1
+ephish=1
 ehosts=1
 lrules=1
+lphish=1
 lhosts=1
 
 
@@ -254,6 +262,18 @@ for i in "${RULES[@]}"; do
 done
 
 
+# Download and merge Phishing lists into one file
+echo
+echo -e "${bldwhi} * ${bldgrn}Downloading Phishing files..."
+for i in "${PHISH[@]}"; do
+    if [ "$i" == "1" ]; then
+        dwn "${PHISH[$ephish]}"
+        awk -v FS="[|/]" "$phshl" "$aux" >> "$host"
+    fi
+    ephish=$((ephish + 1))
+done
+
+
 # Excluding localhost and similar domains
 echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
@@ -332,6 +352,7 @@ echo "#"
 echo "# This hosts file is generated from the following sources:"
 for i in "${HOSTS[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${HOSTS[$lhosts]}"; fi; lhosts=$((lhosts + 1)); done
 for i in "${RULES[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${RULES[$lrules]}"; fi; lrules=$((lrules + 1)); done
+for i in "${PHISH[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${PHISH[$lphish]}"; fi; lphish=$((lphish + 1)); done
 echo "#"
 echo "# Update Date: $(LC_TIME=en_US date -u)"
 echo "# Number of domains: $FL"
