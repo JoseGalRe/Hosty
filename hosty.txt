@@ -38,8 +38,8 @@
 #  * https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt
 #  * https://rawgit.com/yous/YousList/master/youslist.txt
 #
-# Update Date: Sat, Aug 26, 2017  4:59:04 AM
-# Number of domains: 136428
+# Update Date: Mon, Aug 28, 2017  1:23:16 AM
+# Number of domains: 136442
 #
 # Licence:
 # CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
@@ -98,6 +98,7 @@
 0.0.0.0 021id.net
 0.0.0.0 021ycjc.com
 0.0.0.0 022sy.com
+0.0.0.0 023hysj.com
 0.0.0.0 024xuyisheng.com
 0.0.0.0 025zd.com
 0.0.0.0 027i.com
@@ -4324,6 +4325,7 @@
 0.0.0.0 a1.dnbizcdn.com
 0.0.0.0 a1.dp25.kr
 0.0.0.0 a1.greenadworks.net
+0.0.0.0 a1.huiqituan.com
 0.0.0.0 a1.interclick.com
 0.0.0.0 a1.suntimes.com
 0.0.0.0 a1.vdna-assets.com
@@ -36026,7 +36028,6 @@
 0.0.0.0 bistroduy.ru
 0.0.0.0 bit.do
 0.0.0.0 bit.ehow.com
-0.0.0.0 bit.ly
 0.0.0.0 bitable.com
 0.0.0.0 bitads.net
 0.0.0.0 bitburg.adtech.de
@@ -42610,6 +42611,7 @@
 0.0.0.0 chefti.info
 0.0.0.0 chefua.net
 0.0.0.0 chegouaahora.16mb.com
+0.0.0.0 cheka228.ddns.net
 0.0.0.0 cheks122.again-confi.gq
 0.0.0.0 cheksfanpagesuport242.confrimsuportfanpage9888.gq
 0.0.0.0 chelick.net
@@ -53347,6 +53349,7 @@
 0.0.0.0 eastsideboxing.us.intellitxt.com
 0.0.0.0 eastwestnursingcollegebd.com
 0.0.0.0 easy.eu.ai
+0.0.0.0 easy.mmoney.services
 0.0.0.0 easy2.cn
 0.0.0.0 easy2busy.com
 0.0.0.0 easy2date.net
@@ -63995,6 +63998,8 @@
 0.0.0.0 hackedgadgets.us.intellitxt.com
 0.0.0.0 hacker.com.hk
 0.0.0.0 hackers.lv
+0.0.0.0 hackerss.ddns.net
+0.0.0.0 hackertestes.ddns.net
 0.0.0.0 hackerupizda.ddns.net
 0.0.0.0 hackerz.ir
 0.0.0.0 hackfacebookprofiles.com
@@ -76845,6 +76850,7 @@
 0.0.0.0 lxkqybzanzug.com
 0.0.0.0 lxpl6t0t.cricket
 0.0.0.0 lxpwv.voluumtrk.com
+0.0.0.0 lxqcgj.com
 0.0.0.0 lxsg.net
 0.0.0.0 lxtrack.com
 0.0.0.0 lxtwdmgbjdfws.com
@@ -79515,6 +79521,7 @@
 0.0.0.0 meiksc.com
 0.0.0.0 meilleuremutuelle.xyz
 0.0.0.0 meiluziai.info
+0.0.0.0 meimega.ddns.net
 0.0.0.0 mein.monster.de
 0.0.0.0 meincheck.de-informationallekunden.eu
 0.0.0.0 meinkonto-ebay.de-kundeninformationen2333233.ru
@@ -79602,6 +79609,7 @@
 0.0.0.0 memeva.com
 0.0.0.0 memnahyaho.wildcitymedia.com
 0.0.0.0 memoclic.fr.intellitxt.com
+0.0.0.0 memoli42.duckdns.org
 0.0.0.0 memopumpkin.com
 0.0.0.0 memoriasdarevolucao.pt
 0.0.0.0 memorix.sdv.fr
@@ -79809,6 +79817,7 @@
 0.0.0.0 methuenedge.com
 0.0.0.0 methuenmorgan.com
 0.0.0.0 metin2-video.com
+0.0.0.0 metin5.duckdns.org
 0.0.0.0 metodikadeneg.info
 0.0.0.0 metogo.work
 0.0.0.0 metok.sys.miui.com
@@ -94975,6 +94984,7 @@
 0.0.0.0 oceansrock.org
 0.0.0.0 oceanup.us.intellitxt.com
 0.0.0.0 oceanwebcraft.com
+0.0.0.0 ocelotunit.ddns.net
 0.0.0.0 ocenka34.ru
 0.0.0.0 ochistka-stokov.ru
 0.0.0.0 ochrona-kety.com.pl
@@ -103971,6 +103981,7 @@
 0.0.0.0 rastreiofoxobjeto.com
 0.0.0.0 rastypasty34.top
 0.0.0.0 rasvek.com
+0.0.0.0 rat.ddn.net
 0.0.0.0 rat.ddns.net
 0.0.0.0 rat.rakuten.co.jp
 0.0.0.0 rat2.100geili.com
@@ -115327,6 +115338,7 @@
 0.0.0.0 sub070145.codns.com
 0.0.0.0 sub070145.codnss.com
 0.0.0.0 sub070145.condns.com
+0.0.0.0 sub070145.conds.com
 0.0.0.0 sub2tech.com
 0.0.0.0 subaat.com
 0.0.0.0 subad-server.com
@@ -117748,6 +117760,7 @@
 0.0.0.0 temporaryhold-webappssvcs.com
 0.0.0.0 tempviolation.cf
 0.0.0.0 temscox.com
+0.0.0.0 tencent.com.605631.com
 0.0.0.0 tenda.it
 0.0.0.0 tendanse.nl
 0.0.0.0 tendatta.com
@@ -134539,6 +134552,7 @@
 0.0.0.0 xz.duba.net
 0.0.0.0 xz.hkfg.net
 0.0.0.0 xz1013.com
+0.0.0.0 xz15801.com
 0.0.0.0 xz618.com
 0.0.0.0 xz6h6zj3.com
 0.0.0.0 xz9u.com
