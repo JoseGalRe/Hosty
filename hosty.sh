@@ -88,7 +88,7 @@ PHISH=(
 
 
 # Colors
-esc="\033"             #  Bold
+esc="\\033"            #  Bold
 bld="${esc}[1m"        #  Bold
 rst="${esc}[0m"        #  Reset
 red="${esc}[31m"       #  Red      - Text
