@@ -1,0 +1,76 @@
+# Bits Blacklist - Hosty - Ad blocker script for Linux.
+#
+# This hosts file is a free download from:
+# https://github.com/JoseGalRe/Hosty
+#
+# Licence:
+# CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
+#
+# Contributions by:
+# astrolince, s-nt-s, JoseGalRe
+#
+# Don't write below this line. It will be lost if you run hosty again.
+
+# General ADS List
+0.0.0.0 2mdn.net
+0.0.0.0 adageindia.in
+0.0.0.0 adform.net
+0.0.0.0 adnxs.com
+0.0.0.0 adroll.com
+0.0.0.0 adsafeprotected.com
+0.0.0.0 adsrvr.org
+0.0.0.0 adsymptotic.com
+0.0.0.0 adtech.de
+0.0.0.0 advertising.com
+0.0.0.0 afy11.net
+0.0.0.0 amazon-adsystem.com
+0.0.0.0 atdmt.com
+0.0.0.0 brightcove.com
+0.0.0.0 btrll.com
+0.0.0.0 chartbeat.com
+0.0.0.0 clmbtech.com
+0.0.0.0 contextweb.com
+0.0.0.0 convertro.com
+0.0.0.0 creative-serving.com
+0.0.0.0 criteo.com
+0.0.0.0 crwdcntrl.net
+0.0.0.0 doubleclick.net
+0.0.0.0 exponential.com
+0.0.0.0 flashtalking.com
+0.0.0.0 fwmrm.net
+0.0.0.0 getclicky.com
+0.0.0.0 imrworldwide.com
+0.0.0.0 inmobi.com
+0.0.0.0 innovid.com
+0.0.0.0 intellitxt.com
+0.0.0.0 krxd.net
+0.0.0.0 mixpanel.com
+0.0.0.0 moatads.com
+0.0.0.0 mopub.com
+0.0.0.0 mouseflow.com
+0.0.0.0 outbrain.com
+0.0.0.0 pubexchange.com
+0.0.0.0 pubmatic.com
+0.0.0.0 pubnative.net
+0.0.0.0 quantserve.com
+0.0.0.0 rubiconproject.com
+0.0.0.0 scorecardresearch.com
+0.0.0.0 serving-sys.com
+0.0.0.0 taboola.com
+0.0.0.0 tubemogul.com
+0.0.0.0 yieldmo.com
+
+# Google ADS List
+0.0.0.0 analytic-google.com
+0.0.0.0 googleadapis.l.google.com
+0.0.0.0 googleadservices.com
+0.0.0.0 googlesyndication.com
+0.0.0.0 googletagmanager.com
+0.0.0.0 googletagservices.com
+0.0.0.0 ssl.google-analytics.com
+0.0.0.0 www-google-analytics.l.google.com
+
+# YouTube ADS List
+0.0.0.0 ad.youtube.com
+0.0.0.0 ads.youtube.com
+0.0.0.0 s.youtube.com
