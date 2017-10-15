@@ -141,8 +141,6 @@ esac
 
 # Set defaults
 if [ "$iswin" == "false" ]; then
-    inslocal="/usr/local/bin"
-
     finalmsg(){
         echo
         echo -e "${bldwhi} * ${bldgrn}Now Please restart the system to apply the changes${rst}"
@@ -207,8 +205,20 @@ echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
 echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
 
 
-# Set debug file path
+# Set default path's
+bitspath="$(pwd)/bits"
 debugpath="$(pwd)/dist"
+
+
+# Options for debugging
+if [ "$opt_debug" -eq 0 ] ; then
+    if [ "$iswin" == "false" ]; then
+        bitspath="/usr/local/bin"
+    fi
+fi
+
+
+# Set debug file path
 if [ "$opt_dhome" -eq 1 ] ; then
     opt_debug=1
     debugpath="$HOME"
@@ -355,20 +365,24 @@ fi
 
 # Applying recommended whitelist
 if [ "$opt_usewl" -eq 1 ]; then
-    if [ -f "$inslocal"hosty.whitelist ]; then
-        echo
+    echo
+    if [ -f "$bitspath"/hosty.whitelist ]; then
         echo -e "${bldwhi} * ${bldgrn}Applying recommended whitelist ${bldcya}(Run hosty -w to avoid this step)..."
-        awk "$magic" "$inslocal"hosty.whitelist >> "$white" 2>/dev/null
+        awk "$magic" "$bitspath"/hosty.whitelist >> "$white" 2>/dev/null
+    else
+        echo -e "${bldwhi} * ${bldred}Hosty whitelist not found ${bldcya}Check bits path or download project again"
     fi
 fi
 
 
 # Applying recommended blacklist
 if [ "$opt_usebl" -eq 1 ]; then
-    if [ -f "$inslocal"hosty.blacklist ]; then
-        echo
+    echo
+    if [ -f "$bitspath"/hosty.blacklist ]; then
         echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty -b to avoid this step)..."
-        gnused "$clean" "$inslocal"hosty.blacklist | awk "$magic" >> "$host" 2>/dev/null
+        gnused "$clean" "$bitspath"/hosty.blacklist | awk "$magic" >> "$host" 2>/dev/null
+    else
+        echo -e "${bldwhi} * ${bldred}Hosty blacklist not found ${bldcya}Check bits path or download project again"
     fi
 fi
 
