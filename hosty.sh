@@ -113,6 +113,10 @@ clean='-e s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\)//g'
 IP="0.0.0.0"
 
 
+# Hosty version
+hostyv="1.0.0"
+
+
 # Set counters to 1
 erules=1
 ephish=1
@@ -147,6 +151,12 @@ if [ "$iswin" == "false" ]; then
         echo
     }
 fi
+
+
+# Welcome Message
+echo
+echo -e " ${bldwhi}Hosty v$hostyv ${bldgrn}- Ad blocker script for Linux."
+echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
 
 
 # Usage Options
@@ -211,12 +221,6 @@ if [ "$opt_dfopt" -eq 1 ] ; then
         exit 1
     fi
 fi
-
-
-# Welcome Message
-echo
-echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
-echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
 
 
 # Set default path's
