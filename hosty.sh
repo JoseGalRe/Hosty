@@ -371,7 +371,7 @@ done
 # Excluding localhost and similar domains
 echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
-if [ "$opt_dfopt" -eq 0 ] ; then
+if [ "$opt_dfopt" -eq 1 ] ; then
     gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
 else
     gnused -e 's/\(\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
