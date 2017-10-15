@@ -159,6 +159,8 @@ usage() {
     echo -e "    -b  Not use Hosty's backlist"
     echo -e "    -d  Run Hosty for get debug host file in hosty dist directory"
     echo -e "    -h  Run Hosty for get debug host file in user HOME directory"
+    echo -e "    -o  Run Hosty for get debug host file optimized (without www in all urls)"
+    echo -e "        (best option for Tomato USB or DD-WRT with adblock support)"
     echo -e "    -r  Restore original Host file"
     echo -e "    -w  Not use Hosty's whitelist"
     echo
@@ -175,16 +177,18 @@ usage() {
 opt_usewl=1
 opt_usebl=1
 opt_dhome=0
+opt_dfopt=0
 opt_restr=0
 opt_debug=0
 
 
 # Set user options
-while getopts "dbhrw" options; do
+while getopts "dbhorw" options; do
     case "$options" in
         d) opt_debug=1;;
         b) opt_usebl=0;;
         h) opt_dhome=1;;
+        o) opt_dfopt=1;;
         r) opt_restr=1;;
         w) opt_usewl=0;;
         *) usage
@@ -199,6 +203,16 @@ if [[ ! "$*" == "build" ]]; then
 fi
 
 
+# Options for optimized debug file
+if [ "$opt_dfopt" -eq 1 ] ; then
+    if [[ "$opt_debug" -eq 0 ]] && [[ "$opt_dhome" -eq 0 ]] ; then
+        echo
+        echo -e "${bldred} ERROR, for optimized flag, you need set -d or -h too"
+        exit 1
+    fi
+fi
+
+
 # Welcome Message
 echo
 echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
@@ -210,18 +224,18 @@ bitspath="$(pwd)/bits"
 debugpath="$(pwd)/dist"
 
 
+# Set debug file path
+if [ "$opt_dhome" -eq 1 ] ; then
+    opt_debug=1
+    debugpath="$HOME"
+fi
+
+
 # Options for debugging
 if [ "$opt_debug" -eq 0 ] ; then
     if [ "$iswin" == "false" ]; then
         bitspath="/usr/local/bin"
     fi
-fi
-
-
-# Set debug file path
-if [ "$opt_dhome" -eq 1 ] ; then
-    opt_debug=1
-    debugpath="$HOME"
 fi
 
 
@@ -351,8 +365,11 @@ done
 # Excluding localhost and similar domains
 echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
-gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
-
+if [ "$opt_dfopt" -eq 0 ] ; then
+    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
+else
+    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
+fi
 
 # Applying User whitelist
 if [ -f "/etc/hosts.whitelist" ] || [ -f "$HOME"/.hosty.whitelist ]; then
