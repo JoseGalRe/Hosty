@@ -133,10 +133,15 @@ hosty=$(mktemp) # Temp file for final hosts file
 
 
 # Check OS
-if [[ "$OSTYPE" == linux* ]] || [[ "$OSTYPE" == darwin* ]]; then
-    inslocal="/usr/local/bin/"
-    hmelocal="$HOME/"
-    isunix="true"
+case "$(uname -s)" in
+    Darwin|Linux) iswin="false";;
+    CYGWIN*|MINGW*|MSYS*) iswin="true";;
+esac
+
+
+# Set defaults
+if [ "$iswin" == "false" ]; then
+    inslocal="/usr/local/bin"
 
     finalmsg(){
         echo
@@ -154,13 +159,14 @@ usage() {
     echo
     echo -e "${bldgrn}  Options:${bldcya}"
     echo -e "    -b  Not use Hosty's backlist"
-    echo -e "    -d  Run Hosty for get debug host file in HOME directory"
+    echo -e "    -d  Run Hosty for get debug host file in hosty dist directory"
+    echo -e "    -h  Run Hosty for get debug host file in user HOME directory"
     echo -e "    -r  Restore original Host file"
     echo -e "    -w  Not use Hosty's whitelist"
     echo
     echo -e "${bldgrn}  Example:${bldcya}"
     echo -e "    hosty -d build${rst}"
-    if [ "$isunix" == "true" ]; then
+    if [ "$iswin" == "false" ]; then
         echo
     fi
     exit 1
@@ -170,15 +176,17 @@ usage() {
 # Set default options
 opt_usewl=1
 opt_usebl=1
+opt_dhome=0
 opt_restr=0
 opt_debug=0
 
 
 # Set user options
-while getopts "dbrw" options; do
+while getopts "dbhrw" options; do
     case "$options" in
         d) opt_debug=1;;
         b) opt_usebl=0;;
+        h) opt_dhome=1;;
         r) opt_restr=1;;
         w) opt_usewl=0;;
         *) usage
@@ -197,6 +205,14 @@ fi
 echo
 echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
 echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
+
+
+# Set debug file path
+debugpath="$(pwd)/dist"
+if [ "$opt_dhome" -eq 1 ] ; then
+    opt_debug=1
+    debugpath="$HOME"
+fi
 
 
 # Init User hosts file
@@ -386,7 +402,7 @@ if [ "$opt_debug" -eq 0 ]; then
     cat "$orig" > "$hosty"
     echo "" >> "$hosty"
 else
-    echo -e "${bldwhi} * ${bldgrn}Building debug ${bldcya}\"$hmelocal/hosty.txt\" ${bldgrn}file..."
+    echo -e "${bldwhi} * ${bldgrn}Building debug ${bldcya}\"$debugpath/hosty.txt\" ${bldgrn}file..."
 fi
 
 
@@ -425,7 +441,7 @@ cat "$aux" >> "$hosty"
 if [ "$opt_debug" -eq 0 ]; then
     sudoc bash -c "cat $hosty > /etc/hosts"
 else
-    cat "$hosty" > "$hmelocal"hosty.txt
+    cat "$hosty" > "$debugpath"/hosty.txt
 fi
 
 
@@ -447,4 +463,4 @@ fi
 
 
 # Exit
-if [ "$isunix" == "true" ]; then echo; fi; exit 1
+if [ "$iswin" == "false" ]; then echo; fi; exit 1
