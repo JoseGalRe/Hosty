@@ -156,7 +156,9 @@ fi
 # Welcome Message
 echo
 echo -e " ${bldwhi}Hosty v$hostyv ${bldgrn}- Ad blocker script for Linux."
-echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
+echo -e "   This project is free and open source"
+echo -e "   Download available in: ${bldcya}https://github.com/JoseGalRe/Hosty${bldgrn}"
+echo -e "   Licensed by: ${bldcya}CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)${rst}"
 
 
 # Usage Options
