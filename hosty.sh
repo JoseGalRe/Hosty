@@ -102,12 +102,6 @@ bldcya=${bld}${cya}    #  Cyan     - Bold Text
 bldwhi=${bld}${whi}    #  White    - Bold Text
 
 
-# Welcome Message
-echo
-echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
-echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
-
-
 # Set Magic
 alist='$ 0 ~/^\|\|([A-Za-z0-9_-]+\.){1,}[A-Za-z]+\^$/{print tolower($ 3)}'
 magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
@@ -138,14 +132,6 @@ white=$(mktemp) # Temp file for save the hosts for the whitelist
 hosty=$(mktemp) # Temp file for final hosts file
 
 
-# Init User hosts file
-if [ -f "$HOME"/.hosty ]; then
-    while read -r line; do
-        HOSTS+=("$line")
-    done < "$HOME"/.hosty
-fi
-
-
 # Check OS
 if [[ "$OSTYPE" == linux* ]] || [[ "$OSTYPE" == darwin* ]]; then
     inslocal="/usr/local/bin/"
@@ -157,6 +143,67 @@ if [[ "$OSTYPE" == linux* ]] || [[ "$OSTYPE" == darwin* ]]; then
         echo -e "${bldwhi} * ${bldgrn}Now Please restart the system to apply the changes${rst}"
         echo
     }
+fi
+
+
+# Usage Options
+usage() {
+    echo
+    echo -e "${bldgrn}  Usage:${bldcya}"
+    echo -e "    hosty [options] build"
+    echo
+    echo -e "${bldgrn}  Options:${bldcya}"
+    echo -e "    -b  Not use Hosty's backlist"
+    echo -e "    -d  Run Hosty for get debug host file in HOME directory"
+    echo -e "    -r  Restore original Host file"
+    echo -e "    -w  Not use Hosty's whitelist"
+    echo
+    echo -e "${bldgrn}  Example:${bldcya}"
+    echo -e "    hosty -d build${rst}"
+    if [ "$isunix" == "true" ]; then
+        echo
+    fi
+    exit 1
+}
+
+
+# Set default options
+opt_usewl=1
+opt_usebl=1
+opt_restr=0
+opt_debug=0
+
+
+# Set user options
+while getopts "dbrw" options; do
+    case "$options" in
+        d) opt_debug=1;;
+        b) opt_usebl=0;;
+        r) opt_restr=1;;
+        w) opt_usewl=0;;
+        *) usage
+    esac
+done
+
+
+# Set party command
+shift $((OPTIND-1))
+if [[ ! "$*" == "build" ]]; then
+    usage
+fi
+
+
+# Welcome Message
+echo
+echo -e " ${bldwhi}Hosty ${bldgrn}- Ad blocker script for Linux."
+echo -e "   This hosts file is a free download from: ${bldcya}https://github.com/JoseGalRe/Hosty${rst}"
+
+
+# Init User hosts file
+if [ -f "$HOME"/.hosty ]; then
+    while read -r line; do
+        HOSTS+=("$line")
+    done < "$HOME"/.hosty
 fi
 
 
@@ -197,7 +244,7 @@ dwn() {
 # Method for restore original host
 lines=$(gnused -n '/^# Hosty - Ad blocker script for Linux/=' /etc/hosts)
 if [ -z "$lines" ]; then
-    if [ "$1" == "--restore" ]; then
+    if [ "$opt_restr" -eq 1 ]; then
         echo
         echo -e "${bldwhi} * ${bldgrn}There is nothing to restore.${rst}"
         echo
@@ -207,7 +254,7 @@ if [ -z "$lines" ]; then
 else
     lines=$((lines - 1))
     head -n "$lines" /etc/hosts > "$orig"
-    if [ "$1" == "--restore" ]; then
+    if [ "$opt_restr" -eq 1 ]; then
         sudoc bash -c "cat $orig > /etc/hosts"
         echo
         echo -e "${bldwhi} * ${bldcya}/etc/hosts${bldgrn} restore completed.${rst}"
@@ -218,7 +265,7 @@ fi
 
 
 # If this is our first run, create a whitelist file and set to read-only for safety
-if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
+if [ "$opt_debug" -eq 0 ]; then
     if [ ! -f /etc/hosts.whitelist ]; then
         echo
         echo -e "${bldwhi} * ${bldgrn}Creating whitelist file..."
@@ -229,7 +276,7 @@ fi
 
 
 # If this is our first run, create a blacklist file and set to read-only for safety
-if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
+if [ "$opt_debug" -eq 0 ]; then
     if [ ! -f /etc/hosts.blacklist ]; then
         echo
         echo -e "${bldwhi} * ${bldgrn}Creating blacklist file..."
@@ -291,20 +338,20 @@ fi
 
 
 # Applying recommended whitelist
-if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
+if [ "$opt_usewl" -eq 1 ]; then
     if [ -f "$inslocal"hosty.whitelist ]; then
         echo
-        echo -e "${bldwhi} * ${bldgrn}Applying recommended whitelist ${bldcya}(Run hosty --all to avoid this step)..."
+        echo -e "${bldwhi} * ${bldgrn}Applying recommended whitelist ${bldcya}(Run hosty -w to avoid this step)..."
         awk "$magic" "$inslocal"hosty.whitelist >> "$white" 2>/dev/null
     fi
 fi
 
 
 # Applying recommended blacklist
-if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
+if [ "$opt_usebl" -eq 1 ]; then
     if [ -f "$inslocal"hosty.blacklist ]; then
         echo
-        echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty --all to avoid this step)..."
+        echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty -b to avoid this step)..."
         gnused "$clean" "$inslocal"hosty.blacklist | awk "$magic" >> "$host" 2>/dev/null
     fi
 fi
@@ -333,7 +380,7 @@ FL=$(grep -c "$IP" "$aux")
 
 # Building
 echo
-if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
+if [ "$opt_debug" -eq 0 ]; then
     echo -e "${bldwhi} * ${bldgrn}Building ${bldcya}/etc/hosts..."
     sed '$ d' -i "$orig"
     cat "$orig" > "$hosty"
@@ -375,7 +422,7 @@ echo "# [Start of entries generated by Hosty]"
 
 # Save hosts file
 cat "$aux" >> "$hosty"
-if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
+if [ "$opt_debug" -eq 0 ]; then
     sudoc bash -c "cat $hosty > /etc/hosts"
 else
     cat "$hosty" > "$hmelocal"hosty.txt
@@ -391,7 +438,7 @@ rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white"
 # Done
 echo
 echo -e "${bldwhi} * ${bldgrn}Done, ${bldcya}$FL ${bldgrn}websites blocked.${rst}"
-if [ "$1" != "--debug" ] && [ "$2" != "--debug" ]; then
+if [ "$opt_debug" -eq 0 ]; then
     echo
     echo -e "${bldwhi} * ${bldgrn}You can always restore your original hosts file with this command:"
     echo -e "   $ sudo hosty --restore${rst}"
