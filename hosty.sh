@@ -1,7 +1,7 @@
 #!/bin/bash
 # Modified by JoseGalRe
 
-# Add ad-blocking hosts files in this array
+# Add Hosts files in this array
 HOSTS=(
     "0" "http://hostsfile.mine.nu/hosts.txt"                                                # Global Advert list
     "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Main Hosts blocklist
@@ -42,7 +42,7 @@ HOSTS=(
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")              # ZeuS domain list
 
 
-# Add AdBlock Plus rules files in this array
+# Add AdBlock files in this array
 RULES=(
     "0" "https://adguard.com/en/filter-rules.html?id=1"                                     # Adguard Russian Filter
     "0" "https://adguard.com/en/filter-rules.html?id=2"                                     # Adguard English filter
@@ -83,7 +83,7 @@ RULES=(
     "1" "https://rawgit.com/yous/YousList/master/youslist.txt"                              # YousList filters
     "0" "https://rawgit.com/zpacman/Blockzilla/master/Blockzilla.txt")                      # Blockzilla filters
 
-# Add Phishing files in this array
+# Add Anti-Phishing files in this array
 PHISH=(
     "1" "https://openphish.com/feed.txt")                                                   # Phishing list
 
@@ -155,7 +155,7 @@ fi
 
 # Welcome Message
 echo
-echo -e " ${bldwhi}Hosty v$hostyv ${bldgrn}- Ad blocker script for Linux."
+echo -e " ${bldwhi}Hosty v$hostyv ${bldgrn}- AdBlock/Host File Manager Script for Linux."
 echo -e "   This project is free and open source"
 echo -e "   Download available in: ${bldcya}https://github.com/JoseGalRe/Hosty${bldgrn}"
 echo -e "   Licensed by: ${bldcya}CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)${rst}"
@@ -171,7 +171,7 @@ usage() {
     echo -e "    -b  Not use Hosty's backlist"
     echo -e "    -d  Run Hosty for get debug host file in hosty dist directory"
     echo -e "    -h  Run Hosty for get debug host file in user HOME directory"
-    echo -e "    -o  Run Hosty for get debug host file optimized (without www in all urls)"
+    echo -e "    -o  Run Hosty for get debug host file optimized (without WWW in all URLs)"
     echo -e "        (best option for Tomato USB or DD-WRT with adblock support)"
     echo -e "    -r  Restore original Host file"
     echo -e "    -w  Not use Hosty's whitelist"
@@ -271,7 +271,7 @@ gnused() {
 }
 
 
-# Method for download hosts
+# Method for download files
 dwn() {
     if (curl -A "unknown" -L -s "$1" -o "$aux"); then
         if [[ "$1" == *.zip ]] || [[ "$1" == *.7z ]]; then
@@ -280,7 +280,7 @@ dwn() {
             fi
         fi
         lln=$(grep -c . "$aux")
-        echo -e "${bldgrn}   + ${bldcya}Downloaded ${bldgrn}$lln ${bldcya}hosts blocked from ${bldgrn}$1"
+        echo -e "${bldgrn}   + ${bldcya}Downloaded approx ${bldgrn}$lln ${bldcya}$2 from ${bldgrn}$1"
     else
         echo -e "${bldwhi}   * ${bldred}Error downloading ${bldwhi}$1"
     fi
@@ -288,7 +288,7 @@ dwn() {
 
 
 # Method for restore original host
-lines=$(gnused -n '/^# Hosty - Ad blocker script for Linux/=' /etc/hosts)
+lines=$(gnused -n '/^# Hosty - AdBlock\/Host File Manager Script for Linux/=' /etc/hosts)
 if [ -z "$lines" ]; then
     if [ "$opt_restr" -eq 1 ]; then
         echo
@@ -337,31 +337,31 @@ echo
 echo -e "${bldwhi} * ${bldgrn}Downloading Hosts files..."
 for i in "${HOSTS[@]}"; do
     if [ "$i" == "1" ]; then
-        dwn "${HOSTS[$ehosts]}"
+        dwn "${HOSTS[$ehosts]}" "URLs"
         gnused "$clean" "$aux" | awk "$magic" >> "$host"
     fi
     ehosts=$((ehosts + 1))
 done
 
 
-# Download and merge AdBlock Plus rules into one file
+# Download and merge AdBlock rules into one file
 echo
-echo -e "${bldwhi} * ${bldgrn}Downloading AdBlock Plus rules..."
+echo -e "${bldwhi} * ${bldgrn}Downloading AdBlock files..."
 for i in "${RULES[@]}"; do
     if [ "$i" == "1" ]; then
-        dwn "${RULES[$erules]}"
+        dwn "${RULES[$erules]}" "Rules"
         awk -v FS="[|^]" "$alist" "$aux" >> "$host"
     fi
     erules=$((erules + 1))
 done
 
 
-# Download and merge Phishing lists into one file
+# Download and merge Anti-Phishing lists into one file
 echo
-echo -e "${bldwhi} * ${bldgrn}Downloading Phishing files..."
+echo -e "${bldwhi} * ${bldgrn}Downloading Anti-Phishing files..."
 for i in "${PHISH[@]}"; do
     if [ "$i" == "1" ]; then
-        dwn "${PHISH[$ephish]}"
+        dwn "${PHISH[$ephish]}" "URLs"
         awk -v FS="[|/]" "$phshl" "$aux" >> "$host"
     fi
     ephish=$((ephish + 1))
@@ -445,7 +445,7 @@ fi
 
 # Print information on the head of the host file
 {
-echo "# Hosty - Ad blocker script for Linux."
+echo "# Hosty - AdBlock/Host File Manager Script for Linux."
 echo "#"
 echo "# This hosts file is a free download from:"
 echo "# https://github.com/JoseGalRe/Hosty"

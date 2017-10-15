@@ -1,12 +1,8 @@
-#Hosty - Ad blocker script for Linux.
+# Hosty - AdBlocker/Host File Manager Script for Linux.
 
-Ad blocker script for all Unix and Unix-like operating systems (Linux, GNU, BSD, Mac OS X, FreeBSD, OpenBSD).
+## AdBlocker/Host File Manager Script for all Unix and Unix-like OS (Linux, GNU, BSD, Mac OS X, FreeBSD, OpenBSD).
 
-![Comparison of total memory usage](http://chart.apis.google.com/chart?chs=450x150&cht=bhs&chtt=Comparison%20of%20total%20memory%20usage&chd=s:0489&chxl=0:|AdBlock%20(849.8%20MB)|Adblock%20Plus%20(838.7%20MB)|No%20ad%20blocker%20(775.3%20MB)|Hosty%20(725.6%20MB)|&chxt=y)
-
-## Manual instalation
-
-### Requires
+## Requirements.
 * sudo
 * cURL
 * Gawk
@@ -14,61 +10,72 @@ Ad blocker script for all Unix and Unix-like operating systems (Linux, GNU, BSD,
 * 7z
 * zcat
 
-#### How to install the requirements
-
-* **Ubuntu/Mint/Debian:**  
+## How to install the requirements.
+* **Ubuntu/Mint/Debian:**
+```shell
 $ sudo apt-get install sed curl gawk p7zip
+```
 
-* **Arch/Manjaro/Antergos:**  
+* **Arch/Manjaro/Antergos:**
+```shell
 $ sudo pacman -S sed curl gawk p7zip
+```
 
-* **Fedora/RHEL/CentOS:**  
+* **Fedora/RHEL/CentOS:**
+```shell
 $ sudo dnf install sed curl gawk p7zip
+```
 
-* **SUSE:**  
+* **SUSE:**
+```shell
 $ sudo zypper in sed curl gawk p7zip
+```
 
-* **Mac OS X:**  
-First install Homebrew if you didn't before:  
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
-Once installed:  
-$ brew install coreutils gnu-sed curl gawk p7zip
+* **Mac OS X:**
+    First install Homebrew if you didn't before:
+    ```shell
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ```
+    Once installed:
+    ```shell
+    $ brew install coreutils gnu-sed curl gawk p7zip
+    ```
 
-### How to install hosty
-
+## How to install hosty
+```shell
 $ curl -L goo.gl/dtFRbn | sh
+```
 
 ## How to run hosty
+```shell
+$ sudo hosty make
+```
 
-$ sudo hosty
+## Hosty options
+    Usage:"
+        hosty [options] make"
+
+    Options:"
+        -b  Not use Hosty's backlist"
+        -d  Run Hosty for get debug host file in hosty dist directory"
+        -h  Run Hosty for get debug host file in user HOME directory"
+        -o  Run Hosty for get debug host file optimized (without WWW in all URLs)"
+            (best option for Tomato USB or DD-WRT with adblock support)"
+        -r  Restore original Host file"
+        -w  Not use Hosty's whitelist"
+
+    Example:"
+        hosty -d make"
 
 ## Whitelist
-
-You can include exceptions editing the file `/etc/hosts.whitelist` (With root permissions) or `~/.hosty.whitelist`, one domain name per line.
-
-Besides, hosty apply a internal whitelist for safety. If you want only use your custom whitelist and avoid the internal whitelist run:
-
-$ sudo hosty --all
+You can include exceptions editing the file `/etc/hosts.whitelist` (With root permissions)
+or `$HOME/.hosty.whitelist`, one domain name per line.
 
 ## Blacklist
-
-You can add domains to block editing the file `/etc/hosts.blacklist` (With root permissions) or `~/.hosty.blacklist`, one domain name per line.
-
-## Add host files sources
-
-If you want to feed hosty with additional sources you just have to create a text file in `~/.hosty` and write in it one url per line.
-
-$ echo "http://15hack.tomalaplaza.net/files/aede.txt" > ~/.hosty  
-$ echo "http://datasaver.orgfree.com/hosts.zip" >> ~/.hosty
-
-## How to restore your original hosts file
-
-$ sudo hosty --restore
-
-## How to see the result without changing the file
-
-$ hosty --debug
+You can add domains to block editing the file `/etc/hosts.blacklist` (With root permissions)
+or `$HOME/.hosty.blacklist`, one domain name per line.
 
 ## How to uninstall hosty
-
+```shell
 $ sudo rm /usr/local/bin/hosty*
+```
