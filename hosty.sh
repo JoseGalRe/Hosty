@@ -305,7 +305,7 @@ if [ "$1" != "--all" ] && [ "$2" != "--all" ]; then
     if [ -f "$inslocal"hosty.blacklist ]; then
         echo
         echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty --all to avoid this step)..."
-        awk "$magic" "$inslocal"hosty.blacklist >> "$host" 2>/dev/null
+        gnused "$clean" "$inslocal"hosty.blacklist | awk "$magic" >> "$host" 2>/dev/null
     fi
 fi
 
