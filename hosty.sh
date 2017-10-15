@@ -153,7 +153,7 @@ fi
 usage() {
     echo
     echo -e "${bldgrn}  Usage:${bldcya}"
-    echo -e "    hosty [options] build"
+    echo -e "    hosty [options] make"
     echo
     echo -e "${bldgrn}  Options:${bldcya}"
     echo -e "    -b  Not use Hosty's backlist"
@@ -165,7 +165,7 @@ usage() {
     echo -e "    -w  Not use Hosty's whitelist"
     echo
     echo -e "${bldgrn}  Example:${bldcya}"
-    echo -e "    hosty -d build${rst}"
+    echo -e "    hosty -d make${rst}"
     if [ "$iswin" == "false" ]; then
         echo
     fi
@@ -198,7 +198,7 @@ done
 
 # Set party command
 shift $((OPTIND-1))
-if [[ ! "$*" == "build" ]]; then
+if [[ ! "$*" == "make" ]]; then
     usage
 fi
 
