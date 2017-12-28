@@ -34,10 +34,12 @@ HOSTS=(
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win7/spy.txt"     # Windows 7 Spy Blocker
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win81/spy.txt"    # Windows 8.1 Spy Blocker
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"    # Windows 10 Spy Blocker
+    "1" "https://rawgit.com/hoshsadiq/adblock-nocoin-list/blob/master/hosts.txt"            # NoCoin blocklist
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/domains.txt"                 # Notracking domains
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/hostnames.txt"               # Notracking hostsnames
     "1" "https://rawgit.com/quidsup/notrack/master/trackers.txt"                            # NoTrack blocklist
     "1" "https://rawgit.com/yous/YousList/master/hosts.txt"                                 # YousList blocklist
+    "1" "https://rawgit.com/ZeroDot1/CoinBlockerLists/master/hosts"                         # Coin blocklist
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"                    # ZeuS baddomains list
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")              # ZeuS domain list
 
