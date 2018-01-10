@@ -3,12 +3,11 @@
 
 # Add Hosts files in this array
 HOSTS=(
-    "0" "http://hostsfile.mine.nu/hosts.txt"                                                # Global Advert list
-    "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Main Hosts blocklist
+    "0" "http://hostsfile.mine.nu/hosts.txt"                                                # Andy Short blocklist
+    "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Malware Domain blocklist
     "1" "http://malware-domains.com/files/immortal_domains.zip"                             # Long-lived blocklist
-    "1" "http://malware-domains.com/files/justdomains.zip"                                  # Malware domains list
+    "1" "http://malware-domains.com/files/justdomains.zip"                                  # DNS-BH Malware list
     "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                   # Yoyo blocklist
-    "0" "http://securemecca.com/Downloads/hosts.txt"                                        # Securemecca blocklist
     "1" "http://someonewhocares.org/hosts/hosts"                                            # Whocares blocklist
     "0" "http://sysctl.org/cameleon/hosts"                                                  # Sysctl blocklist
     "1" "http://winhelp2002.mvps.org/hosts.txt"                                             # MVPS blocklist
@@ -18,28 +17,47 @@ HOSTS=(
     "0" "https://hosts-file.net/download/hosts.txt"                                         # HpHosts main blocklist
     "0" "https://hosts-file.net/emd.txt"                                                    # HpHosts EMD blocklist
     "0" "https://hosts-file.net/exp.txt"                                                    # HpHosts EXP blocklist
+    "0" "https://hosts-file.net/grm.txt"                                                    # HpHosts GRM blocklist
     "0" "https://hosts-file.net/hphosts-partial.txt"                                        # HpHosts partial list
     "0" "https://hosts-file.net/mmt.txt"                                                    # HpHosts MMT blocklist
     "0" "https://hosts-file.net/psh.txt"                                                    # HpHosts PSH blocklist
+    "0" "https://hostsfile.org/downloads/hosts.txt"                                         # Hostfile blocklist
+    "0" "https://joewein.net/dl/bl/dom-bl-base.txt"                                         # Joe Wein blocklist
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"                        # Mozilla adware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"              # Mozilla malware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"                   # Mozilla malware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"                  # Mozilla tracking list
     "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"                         # Ransomware Domain list
     "1" "https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt"                       # AdAway blocklist
-    "0" "https://rawgit.com/byaka/ublock-antiskimming-list/master/source/data.txt"          # Anti-Skimming list
+    "0" "https://rawgit.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt"                    # CHEF-KOCH WebRTC list
     "0" "https://rawgit.com/Dawsey21/Lists/master/main-blacklist.txt"                       # Spam404 blocklist
     "1" "https://rawgit.com/StevenBlack/hosts/master/hosts"                                 # StevenBlack's list
     "0" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
+    "0" "https://rawgit.com/byaka/ublock-antiskimming-list/master/source/data.txt"          # Anti-Skimming list
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win7/spy.txt"     # Windows 7 Spy Blocker
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win81/spy.txt"    # Windows 8.1 Spy Blocker
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"    # Windows 10 Spy Blocker
-    "1" "https://rawgit.com/hoshsadiq/adblock-nocoin-list/blob/master/hosts.txt"            # NoCoin blocklist
+    "0" "https://rawgit.com/matomo-org/referrer-spam-blacklist/master/spammers.txt"         # Piwik Spam blocklist
+    "1" "https://rawgit.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"                 # NoCoin blocklist
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/domains.txt"                 # Notracking domains
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/hostnames.txt"               # Notracking hostsnames
-    "1" "https://rawgit.com/quidsup/notrack/master/trackers.txt"                            # NoTrack blocklist
+    "0" "https://rawgit.com/quidsup/notrack/master/malicious-sites.txt"                     # Quidsup Malicious list
+    "1" "https://rawgit.com/quidsup/notrack/master/trackers.txt"                            # Quidsup NoTrack list
+    "0" "https://rawgit.com/vokins/yhosts/master/hosts.txt"                                 # Vokins blocklist
     "1" "https://rawgit.com/yous/YousList/master/hosts.txt"                                 # YousList blocklist
-    "1" "https://rawgit.com/ZeroDot1/CoinBlockerLists/master/hosts"                         # Coin blocklist
+    "1" "https://rawgit.com/ZeroDot1/CoinBlockerLists/master/hosts"                         # ZeroDot1 Coin list
+    "0" "https://v.firebog.net/hosts/AdguardDNS.txt"                                        # AdguardDNS blocklist
+    "0" "https://v.firebog.net/hosts/Airelle-hrsk.txt"                                      # Airelle High Rick list
+    "0" "https://v.firebog.net/hosts/Airelle-trc.txt"                                       # Airelle Trackers list
+    "0" "https://v.firebog.net/hosts/BillStearns.txt"                                       # Bill Stearns blocklist
+    "0" "https://v.firebog.net/hosts/Easylist.txt"                                          # Easylist blocklist
+    "0" "https://v.firebog.net/hosts/Easyprivacy.txt"                                       # Easyprivacy blocklist
+    "0" "https://v.firebog.net/hosts/Kowabit.txt"                                           # Kowabit blocklist
+    "0" "https://v.firebog.net/hosts/Prigent-Ads.txt"                                       # Prigent's Ads list
+    "0" "https://v.firebog.net/hosts/Prigent-Malware.txt"                                   # Prigent's Malware list
+    "0" "https://v.firebog.net/hosts/Prigent-Phishing.txt"                                  # Prigent's Phishing list
+    "0" "https://v.firebog.net/hosts/Shalla-mal.txt"                                        # Shalla Malicious list
+    "0" "https://v.firebog.net/hosts/static/w3kbl.txt"                                      # WaLLy3K's blocklist
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"                    # ZeuS baddomains list
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")              # ZeuS domain list
 
@@ -108,7 +126,7 @@ bldwhi=${bld}${whi}    #  White    - Bold Text
 alist='$ 0 ~/^\|\|([A-Za-z0-9_-]+\.){1,}[A-Za-z]+\^$/{print tolower($ 3)}'
 magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
 phshl='$ 3 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 3)}'
-clean='-e s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\)//g'
+clean='-e s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\|[:-;]\+[0-9]\+\)//g'
 
 
 # Set IP to redirect
@@ -116,7 +134,7 @@ IP="0.0.0.0"
 
 
 # Hosty version
-hostyv="1.0.0"
+hostyv="1.0.1"
 
 
 # Set counters to 1
