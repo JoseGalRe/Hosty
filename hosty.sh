@@ -126,7 +126,8 @@ bldwhi=${bld}${whi}    #  White    - Bold Text
 alist='$ 0 ~/^\|\|([A-Za-z0-9_-]+\.){1,}[A-Za-z]+\^$/{print tolower($ 3)}'
 magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
 phshl='$ 3 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 3)}'
-clean='-e s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\|[:-;]\+[0-9]\+\)//g'
+clean='s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\|[:-;]\+[0-9]\+\)//g'
+noptr='^[[:ascii:]]+$'
 
 
 # Set IP to redirect
@@ -358,7 +359,7 @@ echo -e "${bldwhi} * ${bldgrn}Downloading Hosts files..."
 for i in "${HOSTS[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${HOSTS[$ehosts]}" "URLs"
-        gnused "$clean" "$aux" | awk "$magic" >> "$host"
+        gnused -e "$clean" "$aux" | grep -P "$noptr" | awk "$magic" >> "$host"
     fi
     ehosts=$((ehosts + 1))
 done
@@ -423,7 +424,7 @@ if [ "$opt_usebl" -eq 1 ]; then
     echo
     if [ -f "$bitspath"/hosty.blacklist ]; then
         echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty -b to avoid this step)..."
-        gnused "$clean" "$bitspath"/hosty.blacklist | awk "$magic" >> "$host" 2>/dev/null
+        gnused -e "$clean" "$bitspath"/hosty.blacklist | grep -P "$noptr" | awk "$magic" >> "$host" 2>/dev/null
     else
         echo -e "${bldwhi} * ${bldred}Hosty blacklist not found ${bldcya}Check bits path or download project again"
     fi
@@ -443,7 +444,7 @@ fi
 echo
 echo -e "${bldwhi} * ${bldgrn}Alphabetizing, Cleaning and eliminating duplicates hosts..."
 sed 's/\r//' "$host" | sort -u > "$ord"
-gnused "$clean" "$orig" | awk "$magic" >> "$white"
+gnused -e "$clean" "$orig" | grep -P "$noptr" | awk "$magic" >> "$white"
 awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$white" "$ord" > "$aux"
 
 
