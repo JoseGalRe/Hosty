@@ -123,10 +123,13 @@ bldwhi=${bld}${whi}    #  White    - Bold Text
 
 
 # Set Magic
-alist='$ 0 ~/^\|\|([A-Za-z0-9_-]+\.){1,}[A-Za-z]+\^$/{print tolower($ 3)}'
-magic='$ 1 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 1)}'
-phshl='$ 3 ~/^([A-Za-z0-9_-]+\.){1,}[A-Za-z]+/{print tolower($ 3)}'
-clean='s/\(127\.0\.0\.1[ \t]\|\/0\.0\.0\.0\|0\.0\.0\.0[ \t]\|address=\/\|[:-;]\+[0-9]\+\)//g'
+alist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\^\|\r])+$/{print tolower($ 3)}'
+rlist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^@@\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\|\^\r])+(\$document)?+$/{print tolower($ 3)}'
+phshl='BEGIN{FS="[/]"} $ 0 ~/^http[s]?:\/\/([[:alnum:]_-]+\.){1,}[[:alpha:]]+(\/|$)/{print tolower($ 3)}'
+clean='s/\(127\.0\.0\.1[[:blank:]]\|\/127\.0\.0\.1\|0\.0\.0\.0[[:blank:]]\|\/0\.0\.0\.0\|address=\/\|[:-;]\+[[:digit:]]\+\)//g'
+magic='$ 0 ~/^([[:alnum:]_-]+\.){1,}[[:alpha:]]+/{print tolower($ 1)}'
+pwlst='# 0.0.0.0|# 127.0.0.1'
+awlst='s/#[[:space:]]//g'
 noptr='^[[:ascii:]]+$'
 
 
@@ -135,7 +138,7 @@ IP="0.0.0.0"
 
 
 # Hosty version
-hostyv="1.0.1"
+hostyv="1.1.0"
 
 
 # Set counters to 1
@@ -149,12 +152,16 @@ lhosts=1
 
 # Temporal files
 aux=$(mktemp)   # Temp file for making some format in downloaded hosts
+twl=$(mktemp)   # Temp file for making white list in downloaded hosts
 ord=$(mktemp)   # Temp file for alphabetize the downloaded hosts
 host=$(mktemp)  # Temp file for concatenate the downloaded hosts
 orig=$(mktemp)  # Temp file for save your current /etc/hosts
 zip=$(mktemp)   # Temp file for save hosts files compressed in zip
 white=$(mktemp) # Temp file for save the hosts for the whitelist
+black=$(mktemp) # Temp file for save the hosts for the blackist
 hosty=$(mktemp) # Temp file for final hosts file
+wlwbl=$(mktemp) # Temp file for final whitelist witout blacklist
+cmplt=$(mktemp) # Temp file for final host file without final whitelist
 
 
 # Check OS
@@ -297,7 +304,7 @@ dwn() {
     if (curl -A "unknown" -L -s "$1" -o "$aux"); then
         if [[ "$1" == *.zip ]] || [[ "$1" == *.7z ]]; then
             if ! (7z e -so -bd "$aux" 2>/dev/null > "$zip"; cat "$zip" > "$aux"); then
-                echo -e "${bldwhi}   * ${bldred}Failed to extract the zip or 7z file ${bldwhi}$i"
+                echo -e "${bldwhi}   * ${bldred}Failed to extract the zip or 7z file ${bldwhi}$1"
             fi
         fi
         lln=$(grep -c . "$aux")
@@ -359,6 +366,8 @@ echo -e "${bldwhi} * ${bldgrn}Downloading Hosts files..."
 for i in "${HOSTS[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${HOSTS[$ehosts]}" "URLs"
+        grep -E "$pwlst" "$aux" | gnused -e "$awlst" | tr -s ' ' >> "$twl"
+        gnused -e "$clean" "$twl" | grep -P "$noptr" | awk "$magic" >> "$white"
         gnused -e "$clean" "$aux" | grep -P "$noptr" | awk "$magic" >> "$host"
     fi
     ehosts=$((ehosts + 1))
@@ -371,7 +380,8 @@ echo -e "${bldwhi} * ${bldgrn}Downloading AdBlock files..."
 for i in "${RULES[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${RULES[$erules]}" "Rules"
-        awk -v FS="[|^]" "$alist" "$aux" >> "$host"
+        grep -vE '/' "$aux" | awk "$rlist" >> "$white"
+        awk "$alist" "$aux" >> "$host"
     fi
     erules=$((erules + 1))
 done
@@ -383,7 +393,7 @@ echo -e "${bldwhi} * ${bldgrn}Downloading Anti-Phishing files..."
 for i in "${PHISH[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${PHISH[$ephish]}" "URLs"
-        awk -v FS="[|/]" "$phshl" "$aux" >> "$host"
+        awk "$phshl" "$aux" >> "$host"
     fi
     ephish=$((ephish + 1))
 done
@@ -394,8 +404,10 @@ echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
 if [ "$opt_dfopt" -eq 1 ] ; then
     gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
+    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$white"
 else
     gnused -e 's/\(\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
+    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$white"
 fi
 
 # Applying User whitelist
@@ -424,7 +436,7 @@ if [ "$opt_usebl" -eq 1 ]; then
     echo
     if [ -f "$bitspath"/hosty.blacklist ]; then
         echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty -b to avoid this step)..."
-        gnused -e "$clean" "$bitspath"/hosty.blacklist | grep -P "$noptr" | awk "$magic" >> "$host" 2>/dev/null
+        gnused -e "$clean" "$bitspath"/hosty.blacklist | grep -P "$noptr" | awk "$magic" >> "$black" 2>/dev/null
     else
         echo -e "${bldwhi} * ${bldred}Hosty blacklist not found ${bldcya}Check bits path or download project again"
     fi
@@ -435,21 +447,23 @@ fi
 if [ -f "/etc/hosts.blacklist" ] || [ -f "$HOME"/.hosty.blacklist ] ; then
     echo
     echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}User ${bldgrn}blacklist..."
-    awk "$magic" "/etc/hosts.blacklist" >> "$host" 2>/dev/null
-    awk "$magic" "$HOME"/.hosty.blacklist >> "$host" 2>/dev/null
+    awk "$magic" "/etc/hosts.blacklist" >> "$black" 2>/dev/null
+    awk "$magic" "$HOME"/.hosty.blacklist >> "$black" 2>/dev/null
 fi
 
 
 # Alphabetizing, Cleaning and eliminating duplicates hosts
 echo
 echo -e "${bldwhi} * ${bldgrn}Alphabetizing, Cleaning and eliminating duplicates hosts..."
+cat "$black" >> "$host"
 sed 's/\r//' "$host" | sort -u > "$ord"
 gnused -e "$clean" "$orig" | grep -P "$noptr" | awk "$magic" >> "$white"
-awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$white" "$ord" > "$aux"
+awk 'NR == FNR { list[$0]=1; next } { if (! list[$0]) print }' "$black" "$white" >> "$wlwbl"
+awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$wlwbl" "$ord" >> "$cmplt"
 
 
 # Get the final number of hosts
-FL=$(grep -c "$IP" "$aux")
+FL=$(grep -c "$IP" "$cmplt")
 
 
 # Building
@@ -466,7 +480,7 @@ fi
 
 # Print information on the head of the host file
 {
-echo "# Hosty - AdBlock/Host File Manager Script for Linux."
+echo "# Hosty - A Hosts File Manager Script for Linux."
 echo "#"
 echo "# This hosts file is a free download from:"
 echo "# https://github.com/JoseGalRe/Hosty"
@@ -495,7 +509,7 @@ echo "# [Start of entries generated by Hosty]"
 
 
 # Save hosts file
-cat "$aux" >> "$hosty"
+cat "$cmplt" >> "$hosty"
 if [ "$opt_debug" -eq 0 ]; then
     sudoc bash -c "cat $hosty > /etc/hosts"
 else
@@ -506,7 +520,7 @@ fi
 # Cleanup
 echo
 echo -e "${bldwhi} * ${bldgrn}Cleanup temporary files"
-rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white"
+rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white" "$twl" "$black" "$wlwbl" "$cmplt"
 
 
 # Done
