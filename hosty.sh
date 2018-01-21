@@ -103,6 +103,12 @@ RULES=(
     "1" "https://rawgit.com/yous/YousList/master/youslist.txt"                              # YousList filters
     "0" "https://rawgit.com/zpacman/Blockzilla/master/Blockzilla.txt")                      # Blockzilla filters
 
+
+# JSON files in this array
+JSONH=(
+    "1" "w" "trusted" "https://rawgit.com/CHEF-KOCH/NoScript-Whitelist/master/NoScript/noscript_data.json") # CHEF-KOCH
+
+
 # Add Anti-Phishing files in this array
 PHISH=(
     "1" "https://openphish.com/feed.txt")                                                   # Phishing list
@@ -127,9 +133,13 @@ alist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\^\
 rlist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^@@\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\|\^\r])+(\$document)?+$/{print tolower($ 3)}'
 phshl='BEGIN{FS="[/]"} $ 0 ~/^http[s]?:\/\/([[:alnum:]_-]+\.){1,}[[:alpha:]]+(\/|$)/{print tolower($ 3)}'
 clean='s/\(127\.0\.0\.1[[:blank:]]\|\/127\.0\.0\.1\|0\.0\.0\.0[[:blank:]]\|\/0\.0\.0\.0\|address=\/\|[:-;]\+[[:digit:]]\+\)//g'
+cnlcl='/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d'
 magic='$ 0 ~/^([[:alnum:]_-]+\.){1,}[[:alpha:]]+/{print tolower($ 1)}'
+mwlst='$ 0 ~/([[:alnum:]_-]+\.){1,}[[:alpha:]]+/{print tolower($ 2)}'
+jspar='s/\("\|\,\|]\|\[\|:\)//g'
 pwlst='# 0.0.0.0|# 127.0.0.1'
-awlst='s/#[[:space:]]//g'
+awlst='s/#[[:space:]]/#/g'
+spcln='s/[[:space:]]//g'
 noptr='^[[:ascii:]]+$'
 
 
@@ -138,16 +148,18 @@ IP="0.0.0.0"
 
 
 # Hosty version
-hostyv="1.1.0"
+hostyv="1.2.0"
 
 
 # Set counters to 1
 erules=1
 ephish=1
 ehosts=1
+ejsonh=1
 lrules=1
 lphish=1
 lhosts=1
+ljsonh=1
 
 
 # Temporal files
@@ -159,6 +171,7 @@ orig=$(mktemp)  # Temp file for save your current /etc/hosts
 zip=$(mktemp)   # Temp file for save hosts files compressed in zip
 white=$(mktemp) # Temp file for save the hosts for the whitelist
 black=$(mktemp) # Temp file for save the hosts for the blackist
+jtmpl=$(mktemp) # Temp file for save the hosts file in jason format
 hosty=$(mktemp) # Temp file for final hosts file
 wlwbl=$(mktemp) # Temp file for final whitelist witout blacklist
 cmplt=$(mktemp) # Temp file for final host file without final whitelist
@@ -316,7 +329,7 @@ dwn() {
 
 
 # Method for restore original host
-lines=$(gnused -n '/^# Hosty - AdBlock\/Host File Manager Script for Linux/=' /etc/hosts)
+lines=$(gnused -n '/^# Hosty - A Hosts File Manager Script for Linux/=' /etc/hosts)
 if [ -z "$lines" ]; then
     if [ "$opt_restr" -eq 1 ]; then
         echo
@@ -366,8 +379,7 @@ echo -e "${bldwhi} * ${bldgrn}Downloading Hosts files..."
 for i in "${HOSTS[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${HOSTS[$ehosts]}" "URLs"
-        grep -E "$pwlst" "$aux" | gnused -e "$awlst" | tr -s ' ' >> "$twl"
-        gnused -e "$clean" "$twl" | grep -P "$noptr" | awk "$magic" >> "$white"
+        grep -E "$pwlst" "$aux" | gnused -e "$awlst" | awk "$mwlst" >> "$white"
         gnused -e "$clean" "$aux" | grep -P "$noptr" | awk "$magic" >> "$host"
     fi
     ehosts=$((ehosts + 1))
@@ -399,15 +411,33 @@ for i in "${PHISH[@]}"; do
 done
 
 
+# Download and merge JSON lists into one file
+echo
+echo -e "${bldwhi} * ${bldgrn}Downloading Hosts JSON files..."
+for i in "${JSONH[@]}"; do
+    if [ "$i" == "1" ]; then
+        dwn "${JSONH[$((ejsonh + 2))]}" "URLs"
+        gnused -n "/\"${JSONH[$((ejsonh + 1))]}\"/,/],/p" "$aux" | \
+        gnused -e "$jspar" -e "$spcln" -e "$clean" | tr -cd '[:print:]\n' > "$jtmpl"
+        case "${JSONH[$ejsonh]}" in
+            b) awk "$magic" "$jtmpl" >> "$black";;
+            w) awk "$magic" "$jtmpl" >> "$white";;
+            *) echo -e "${bldwhi}   * ${bldred}Error parsing json file ${bldwhi}${JSONH[$((ejsonh + 2))]}"
+        esac
+    fi
+    ejsonh=$((ejsonh + 1))
+done
+
+
 # Excluding localhost and similar domains
 echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
 if [ "$opt_dfopt" -eq 1 ] ; then
-    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
-    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$white"
+    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$host"
+    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$white"
 else
-    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$host"
-    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e '/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d' -i "$white"
+    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$host"
+    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$white"
 fi
 
 # Applying User whitelist
@@ -455,10 +485,10 @@ fi
 # Alphabetizing, Cleaning and eliminating duplicates hosts
 echo
 echo -e "${bldwhi} * ${bldgrn}Alphabetizing, Cleaning and eliminating duplicates hosts..."
-cat "$black" >> "$host"
-sed 's/\r//' "$host" | sort -u > "$ord"
+gnused -e "$clean" "$black" | grep -P "$noptr" | awk "$magic" >> "$host"
 gnused -e "$clean" "$orig" | grep -P "$noptr" | awk "$magic" >> "$white"
-awk 'NR == FNR { list[$0]=1; next } { if (! list[$0]) print }' "$black" "$white" >> "$wlwbl"
+gnused -e 's/\r//' "$host" | sort -u > "$ord"
+awk 'FNR==NR {list[$0]=1; next} {if (!list[$0]) print}' "$black" "$white" >> "$wlwbl"
 awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$wlwbl" "$ord" >> "$cmplt"
 
 
@@ -470,8 +500,7 @@ FL=$(grep -c "$IP" "$cmplt")
 echo
 if [ "$opt_debug" -eq 0 ]; then
     echo -e "${bldwhi} * ${bldgrn}Building ${bldcya}/etc/hosts..."
-    sed '$ d' -i "$orig"
-    cat "$orig" > "$hosty"
+    gnused -e '$ d' "$orig" > "$hosty"
     echo "" >> "$hosty"
 else
     echo -e "${bldwhi} * ${bldgrn}Building debug ${bldcya}\"$debugpath/hosty.txt\" ${bldgrn}file..."
@@ -488,6 +517,7 @@ echo "#"
 echo "# This hosts file is generated from the following sources:"
 for i in "${HOSTS[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${HOSTS[$lhosts]}"; fi; lhosts=$((lhosts + 1)); done
 for i in "${RULES[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${RULES[$lrules]}"; fi; lrules=$((lrules + 1)); done
+for i in "${JSONH[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${JSONH[$((ljsonh + 2))]}"; fi; ljsonh=$((ljsonh + 1)); done
 for i in "${PHISH[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${PHISH[$lphish]}"; fi; lphish=$((lphish + 1)); done
 echo "#"
 echo "# Update Date: $(LC_TIME=en_US date -u)"
@@ -520,7 +550,7 @@ fi
 # Cleanup
 echo
 echo -e "${bldwhi} * ${bldgrn}Cleanup temporary files"
-rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white" "$twl" "$black" "$wlwbl" "$cmplt"
+rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white" "$twl" "$black" "$wlwbl" "$cmplt" "$jtmpl"
 
 
 # Done
