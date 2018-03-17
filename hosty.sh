@@ -132,7 +132,7 @@ bldwhi=${bld}${whi}    #  White    - Bold Text
 alist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\^\|\r])+$/{print tolower($ 3)}'
 rlist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^@@\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\|\^\r])+(\$document)?+$/{print tolower($ 3)}'
 phshl='BEGIN{FS="[/]"} $ 0 ~/^http[s]?:\/\/([[:alnum:]_-]+\.){1,}[[:alpha:]]+(\/|$)/{print tolower($ 3)}'
-clean='s/\(127\.0\.0\.1[[:blank:]]\|\/127\.0\.0\.1\|0\.0\.0\.0[[:blank:]]\|\/0\.0\.0\.0\|address=\/\|[:-;]\+[[:digit:]]\+\)//g'
+clean='s/\(127\.0\.0\.1[[:blank:]]\|\/127\.0\.0\.1\|0\.0\.0\.0[[:blank:]]\|\/0\.0\.0\.0\|address=\/\|[:-;]\|[/::]\|\+[[:digit:]]\+\)//g'
 cnlcl='/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d'
 magic='$ 0 ~/^([[:alnum:]_-]+\.){1,}[[:alpha:]]+/{print tolower($ 1)}'
 mwlst='$ 0 ~/([[:alnum:]_-]+\.){1,}[[:alpha:]]+/{print tolower($ 2)}'
