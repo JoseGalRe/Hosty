@@ -34,9 +34,7 @@ HOSTS=(
     "1" "https://rawgit.com/StevenBlack/hosts/master/hosts"                                 # StevenBlack's list
     "0" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
     "0" "https://rawgit.com/byaka/ublock-antiskimming-list/master/source/data.txt"          # Anti-Skimming list
-    "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win7/spy.txt"     # Windows 7 Spy Blocker
-    "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win81/spy.txt"    # Windows 8.1 Spy Blocker
-    "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/win10/spy.txt"    # Windows 10 Spy Blocker
+    "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt"          # Windows Spy Blocker
     "0" "https://rawgit.com/matomo-org/referrer-spam-blacklist/master/spammers.txt"         # Piwik Spam blocklist
     "1" "https://rawgit.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"                 # NoCoin blocklist
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/domains.txt"                 # Notracking domains
