@@ -11,7 +11,9 @@ HOSTS=(
     "1" "http://someonewhocares.org/hosts/hosts"                                            # Whocares blocklist
     "0" "http://sysctl.org/cameleon/hosts"                                                  # Sysctl blocklist
     "1" "http://winhelp2002.mvps.org/hosts.txt"                                             # MVPS blocklist
+    "0" "https://1hosts.cf"                                                                 # 1hosts blocklist
     "0" "https://adblock.mahakala.is"                                                       # Unknown big list
+    "0" "https://adzhosts.fr/hosts/adzhosts-android.txt"                                    # AdZHosts list
     "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
     "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts blocklist
     "0" "https://hosts-file.net/download/hosts.txt"                                         # HpHosts main blocklist
@@ -30,20 +32,23 @@ HOSTS=(
     "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"                         # Ransomware Domain list
     "1" "https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt"                       # AdAway blocklist
     "0" "https://rawgit.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt"                    # CHEF-KOCH WebRTC list
+    "0" "https://rawgit.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/CK's-Ad-Tracker-HOSTS-FilterList.txt" # CHEF-KOCH AdTracker
+    "0" "https://rawgit.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/CK's-Malware-HOSTS-FilterList.txt" # CHEF-KOCH Malware list
     "0" "https://rawgit.com/Dawsey21/Lists/master/main-blacklist.txt"                       # Spam404 blocklist
     "1" "https://rawgit.com/StevenBlack/hosts/master/hosts"                                 # StevenBlack's list
     "0" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
     "0" "https://rawgit.com/byaka/ublock-antiskimming-list/master/source/data.txt"          # Anti-Skimming list
     "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt"          # Windows Spy Blocker
+    "0" "https://rawgit.com/logroid/blogger/master/file/hosts.txt"                          # Japan blocklist
     "0" "https://rawgit.com/matomo-org/referrer-spam-blacklist/master/spammers.txt"         # Piwik Spam blocklist
     "1" "https://rawgit.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"                 # NoCoin blocklist
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/domains.txt"                 # Notracking domains
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/hostnames.txt"               # Notracking hostsnames
     "0" "https://rawgit.com/quidsup/notrack/master/malicious-sites.txt"                     # Quidsup Malicious list
     "1" "https://rawgit.com/quidsup/notrack/master/trackers.txt"                            # Quidsup NoTrack list
+    "0" "https://rawgit.com/Yhonay/antipopads/master/hosts"                                 # Anti-PopADS list
     "0" "https://rawgit.com/vokins/yhosts/master/hosts.txt"                                 # Vokins blocklist
     "1" "https://rawgit.com/yous/YousList/master/hosts.txt"                                 # YousList blocklist
-    "1" "https://rawgit.com/ZeroDot1/CoinBlockerLists/master/hosts"                         # ZeroDot1 Coin list
     "0" "https://v.firebog.net/hosts/AdguardDNS.txt"                                        # AdguardDNS blocklist
     "0" "https://v.firebog.net/hosts/Airelle-hrsk.txt"                                      # Airelle High Rick list
     "0" "https://v.firebog.net/hosts/Airelle-trc.txt"                                       # Airelle Trackers list
@@ -56,6 +61,7 @@ HOSTS=(
     "0" "https://v.firebog.net/hosts/Prigent-Phishing.txt"                                  # Prigent's Phishing list
     "0" "https://v.firebog.net/hosts/Shalla-mal.txt"                                        # Shalla Malicious list
     "0" "https://v.firebog.net/hosts/static/w3kbl.txt"                                      # WaLLy3K's blocklist
+    "1" "https://zerodot1.gitlab.io/CoinBlockerLists/hosts"                                 # ZeroDot1 Coin list
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"                    # ZeuS baddomains list
     "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")              # ZeuS domain list
 
@@ -98,7 +104,6 @@ RULES=(
     "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/badware.txt"                # uBlock badware filters
     "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/filters.txt"                # uBlock main filters
     "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt"                # uBlock privacy filters
-    "0" "https://rawgit.com/Yhonay/antipopads/master/popads.txt"                            # Anti-PopADS filters
     "1" "https://rawgit.com/yous/YousList/master/youslist.txt"                              # YousList filters
     "0" "https://rawgit.com/zpacman/Blockzilla/master/Blockzilla.txt")                      # Blockzilla filters
 
@@ -121,20 +126,21 @@ red="${esc}[31m"       #  Red      - Text
 grn="${esc}[32m"       #  Green    - Text
 cya="${esc}[36m"       #  Cyan     - Text
 whi="${esc}[37m"       #  White    - Text
-bldred=${bld}${red}    #  Red      - Bold Text
-bldgrn=${bld}${grn}    #  Green    - Bold Text
-bldcya=${bld}${cya}    #  Cyan     - Bold Text
-bldwhi=${bld}${whi}    #  White    - Bold Text
+bldred="${bld}${red}"  #  Red      - Bold Text
+bldgrn="${bld}${grn}"  #  Green    - Bold Text
+bldcya="${bld}${cya}"  #  Cyan     - Bold Text
+bldwhi="${bld}${whi}"  #  White    - Bold Text
 
 
 # Set Magic
-alist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\^\|\r])+$/{print tolower($ 3)}'
-rlist='BEGIN{FS="[/|^|\r]"} $ 0 ~/^@@\|\|([[:alnum:]_-]+\.){1,}[[:alpha:]]+([\/\|\^\r])+(\$document)?+$/{print tolower($ 3)}'
-phshl='BEGIN{FS="[/]"} $ 0 ~/^http[s]?:\/\/([[:alnum:]_-]+\.){1,}[[:alpha:]]+(\/|$)/{print tolower($ 3)}'
-clean='s/\(127\.0\.0\.1[[:blank:]]\|\/127\.0\.0\.1\|0\.0\.0\.0[[:blank:]]\|\/0\.0\.0\.0\|address=\/\|[:-;]\|[/::]\|\+[[:digit:]]\+\)//g'
+alist='BEGIN{FS="[/|^|\r]"}/^\|\|([^([:space:]|#|\*|\/).]+\.)+[[:alpha:]]+([\/\^\|\r])+$/{print tolower($ 3)}'
+rlist='BEGIN{FS="[/|^|\r]"}/^@@\|\|([^([:space:]|#|\*|\/).]+\.)+[[:alpha:]]+([\/\|\^\r])+$/{print tolower($ 3)}'
+phshl='BEGIN{FS="[/]"}/^http[s]?:\/\/([^([:space:]|#|\*|\/).]+\.)+[[:alpha:]]+(\/|$)/{print tolower($ 3)}'
+clnin='s/^\(127\.0\.0\.1\|\/127\.0\.0\.1\|0\.0\.0\.0\|\/0\.0\.0\.0\)\+[[:space:]]*//g'
+cleen='s/\(address=\/\|[:-;]\|[/::]\|\+[[:digit:]]\+\)//g'
 cnlcl='/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d'
-magic='$ 0 ~/^([[:alnum:]_-]+\.){1,}[[:alpha:]]+/{print tolower($ 1)}'
-mwlst='$ 0 ~/([[:alnum:]_-]+\.){1,}[[:alpha:]]+/{print tolower($ 2)}'
+magic='/^([^([:space:]|#|\*|\/).]+\.)+[[:alpha:]]+/{print tolower($ 1)}'
+mwlst='/([^([:space:]|#|\*|\/).]+\.)+[[:alpha:]]+/{print tolower($ 2)}'
 jspar='s/\("\|\,\|]\|\[\|:\)//g'
 pwlst='# 0.0.0.0|# 127.0.0.1'
 awlst='s/#[[:space:]]/#/g'
@@ -147,7 +153,7 @@ IP="0.0.0.0"
 
 
 # Hosty version
-hostyv="1.2.0"
+hostyv="1.2.1"
 
 
 # Set counters to 1
@@ -313,7 +319,7 @@ gnused() {
 
 # Method for download files
 dwn() {
-    if (curl -A "unknown" -L -s "$1" -o "$aux"); then
+    if (wget --no-check-certificate --progress=dot "$1" -O "$aux" 2>&1 | grep --line-buffered "%" | awk ''); then
         if [[ "$1" == *.zip ]] || [[ "$1" == *.7z ]]; then
             if ! (7z e -so -bd "$aux" 2>/dev/null > "$zip"; cat "$zip" > "$aux"); then
                 echo -e "${bldwhi}   * ${bldred}Failed to extract the zip or 7z file ${bldwhi}$1"
@@ -378,8 +384,8 @@ echo -e "${bldwhi} * ${bldgrn}Downloading Hosts files..."
 for i in "${HOSTS[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${HOSTS[$ehosts]}" "URLs"
-        grep -E "$pwlst" "$aux" | gnused -e "$awlst" | awk "$mwlst" >> "$white"
-        gnused -e "$clean" "$aux" | grep -P "$noptr" | awk "$magic" >> "$host"
+        grep -vE '/' "$aux" | grep -E "$pwlst" | gnused -e "$awlst" | awk "$mwlst" >> "$white"
+        grep -vE '/' "$aux" | gnused -e "$clnin" -e "$cleen" | grep -P "$noptr" | awk "$magic" >> "$host"
     fi
     ehosts=$((ehosts + 1))
 done
@@ -392,7 +398,7 @@ for i in "${RULES[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${RULES[$erules]}" "Rules"
         grep -vE '/' "$aux" | awk "$rlist" >> "$white"
-        awk "$alist" "$aux" >> "$host"
+        grep -vE '/' "$aux" | awk "$alist" >> "$host"
     fi
     erules=$((erules + 1))
 done
@@ -417,7 +423,7 @@ for i in "${JSONH[@]}"; do
     if [ "$i" == "1" ]; then
         dwn "${JSONH[$((ejsonh + 2))]}" "URLs"
         gnused -n "/\"${JSONH[$((ejsonh + 1))]}\"/,/],/p" "$aux" | \
-        gnused -e "$jspar" -e "$spcln" -e "$clean" | tr -cd '[:print:]\n' > "$jtmpl"
+        gnused -e "$jspar" -e "$spcln" -e "$clnin" -e "$cleen" | tr -cd '[:print:]\n' > "$jtmpl"
         case "${JSONH[$ejsonh]}" in
             b) awk "$magic" "$jtmpl" >> "$black";;
             w) awk "$magic" "$jtmpl" >> "$white";;
@@ -465,7 +471,7 @@ if [ "$opt_usebl" -eq 1 ]; then
     echo
     if [ -f "$bitspath"/hosty.blacklist ]; then
         echo -e "${bldwhi} * ${bldgrn}Applying recommended blacklist ${bldcya}(Run hosty -b to avoid this step)..."
-        gnused -e "$clean" "$bitspath"/hosty.blacklist | grep -P "$noptr" | awk "$magic" >> "$black" 2>/dev/null
+        gnused -e "$clnin" -e "$cleen" "$bitspath"/hosty.blacklist | grep -P "$noptr" | awk "$magic" >> "$black" 2>/dev/null
     else
         echo -e "${bldwhi} * ${bldred}Hosty blacklist not found ${bldcya}Check bits path or download project again"
     fi
@@ -484,8 +490,8 @@ fi
 # Alphabetizing, Cleaning and eliminating duplicates hosts
 echo
 echo -e "${bldwhi} * ${bldgrn}Alphabetizing, Cleaning and eliminating duplicates hosts..."
-gnused -e "$clean" "$black" | grep -P "$noptr" | awk "$magic" >> "$host"
-gnused -e "$clean" "$orig" | grep -P "$noptr" | awk "$magic" >> "$white"
+gnused -e "$clnin" -e "$cleen" "$black" | grep -P "$noptr" | awk "$magic" >> "$host"
+gnused -e "$clnin" -e "$cleen" "$orig" | grep -P "$noptr" | awk "$magic" >> "$white"
 gnused -e 's/\r//' "$host" | sort -u > "$ord"
 awk 'FNR==NR {list[$0]=1; next} {if (!list[$0]) print}' "$black" "$white" >> "$wlwbl"
 awk -v ip="$IP" 'FNR==NR {arr[$1]++} FNR!=NR {if (!arr[$1]++) print ip, $1}' "$wlwbl" "$ord" >> "$cmplt"
@@ -554,7 +560,7 @@ rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white" "$twl" "$black" "$w
 
 # Done
 echo
-echo -e "${bldwhi} * ${bldgrn}Done, ${bldcya}$FL ${bldgrn}websites blocked.${rst}"
+echo -e "${bldwhi} * ${bldgrn}Done! ${bldcya}$FL ${bldgrn}websites blocked.${rst}"
 if [ "$opt_debug" -eq 0 ]; then
     echo
     echo -e "${bldwhi} * ${bldgrn}You can always restore your original hosts file with this command:"
