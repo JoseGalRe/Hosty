@@ -108,11 +108,6 @@ RULES=(
     "0" "https://rawgit.com/zpacman/Blockzilla/master/Blockzilla.txt")                      # Blockzilla filters
 
 
-# JSON files in this array
-JSONH=(
-    "1" "w" "trusted" "https://rawgit.com/CHEF-KOCH/NoScript-Whitelist/master/NoScript/noscript_data.json") # CHEF-KOCH
-
-
 # Add Anti-Phishing files in this array
 PHISH=(
     "1" "https://openphish.com/feed.txt")                                                   # Phishing list
@@ -141,10 +136,8 @@ cleen='s/\(address=\/\|[:-;]\|[/::]\|\+[[:digit:]]\+\)//g'
 cnlcl='/\(localhost\|localhost\.localdomain\|broadcasthost\)$/d'
 magic='/^([^([:space:]|#|\*|\/).]+\.)+[[:alpha:]]+/{print tolower($ 1)}'
 mwlst='/([^([:space:]|#|\*|\/).]+\.)+[[:alpha:]]+/{print tolower($ 2)}'
-jspar='s/\("\|\,\|]\|\[\|:\)//g'
 pwlst='# 0.0.0.0|# 127.0.0.1'
 awlst='s/#[[:space:]]/#/g'
-spcln='s/[[:space:]]//g'
 noptr='^[[:ascii:]]+$'
 
 
@@ -160,11 +153,9 @@ hostyv="1.2.1"
 erules=1
 ephish=1
 ehosts=1
-ejsonh=1
 lrules=1
 lphish=1
 lhosts=1
-ljsonh=1
 
 
 # Temporal files
@@ -176,7 +167,6 @@ orig=$(mktemp)  # Temp file for save your current /etc/hosts
 zip=$(mktemp)   # Temp file for save hosts files compressed in zip
 white=$(mktemp) # Temp file for save the hosts for the whitelist
 black=$(mktemp) # Temp file for save the hosts for the blackist
-jtmpl=$(mktemp) # Temp file for save the hosts file in jason format
 hosty=$(mktemp) # Temp file for final hosts file
 wlwbl=$(mktemp) # Temp file for final whitelist witout blacklist
 cmplt=$(mktemp) # Temp file for final host file without final whitelist
@@ -416,24 +406,6 @@ for i in "${PHISH[@]}"; do
 done
 
 
-# Download and merge JSON lists into one file
-echo
-echo -e "${bldwhi} * ${bldgrn}Downloading Hosts JSON files..."
-for i in "${JSONH[@]}"; do
-    if [ "$i" == "1" ]; then
-        dwn "${JSONH[$((ejsonh + 2))]}" "URLs"
-        gnused -n "/\"${JSONH[$((ejsonh + 1))]}\"/,/],/p" "$aux" | \
-        gnused -e "$jspar" -e "$spcln" -e "$clnin" -e "$cleen" | tr -cd '[:print:]\n' > "$jtmpl"
-        case "${JSONH[$ejsonh]}" in
-            b) awk "$magic" "$jtmpl" >> "$black";;
-            w) awk "$magic" "$jtmpl" >> "$white";;
-            *) echo -e "${bldwhi}   * ${bldred}Error parsing json file ${bldwhi}${JSONH[$((ejsonh + 2))]}"
-        esac
-    fi
-    ejsonh=$((ejsonh + 1))
-done
-
-
 # Excluding localhost and similar domains
 echo
 echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
@@ -522,7 +494,6 @@ echo "#"
 echo "# This hosts file is generated from the following sources:"
 for i in "${HOSTS[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${HOSTS[$lhosts]}"; fi; lhosts=$((lhosts + 1)); done
 for i in "${RULES[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${RULES[$lrules]}"; fi; lrules=$((lrules + 1)); done
-for i in "${JSONH[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${JSONH[$((ljsonh + 2))]}"; fi; ljsonh=$((ljsonh + 1)); done
 for i in "${PHISH[@]}"; do if [ "$i" == "1" ]; then echo "#  * ${PHISH[$lphish]}"; fi; lphish=$((lphish + 1)); done
 echo "#"
 echo "# Update Date: $(LC_TIME=en_US date -u)"
@@ -555,7 +526,7 @@ fi
 # Cleanup
 echo
 echo -e "${bldwhi} * ${bldgrn}Cleanup temporary files"
-rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white" "$twl" "$black" "$wlwbl" "$cmplt" "$jtmpl"
+rm -f "$aux" "$host" "$hosty" "$ord" "$orig" "$zip" "$white" "$twl" "$black" "$wlwbl" "$cmplt"
 
 
 # Done
