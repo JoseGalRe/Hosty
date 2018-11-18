@@ -11,7 +11,7 @@ HOSTS=(
     "1" "http://someonewhocares.org/hosts/hosts"                                            # Whocares blocklist
     "0" "http://sysctl.org/cameleon/hosts"                                                  # Sysctl blocklist
     "1" "http://winhelp2002.mvps.org/hosts.txt"                                             # MVPS blocklist
-    "0" "https://1hosts.cf"                                                                 # 1hosts blocklist
+    "0" "https://1hos.cf"                                                                   # 1hosts blocklist
     "0" "https://adblock.mahakala.is"                                                       # Unknown big list
     "0" "https://adzhosts.fr/hosts/adzhosts-android.txt"                                    # AdZHosts list
     "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
