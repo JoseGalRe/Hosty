@@ -631,6 +631,7 @@ wscont2.apps.microsoft.com
 xml.login.live.com
 
 # JoseGalRe Recommended whitelist
+000webhostapp.com
 01.org
 1.bp.blogspot.com
 24spoilers.com
@@ -649,6 +650,7 @@ aka.ms
 akadns.net
 alicdn.com
 aliexpress.com
+aliez.me
 alldebrid.com
 alluremedia.com.au
 amazon.com
@@ -682,6 +684,7 @@ att.com
 auto.search.msn.com
 aws.amazon.com
 b-api.facebook.com
+b-graph.facebook.com
 baidu.com
 base64decode.org
 basketbuild.com
@@ -708,6 +711,7 @@ brightcove.net
 buff.ly
 bunkus.org
 c.disquscdn.com
+camo.githubusercontent.com
 cbox.ws
 cbs.com
 cbsistatic.com
@@ -715,6 +719,7 @@ cbsnews.com
 cbssports.com
 cdburnerxp.se
 cdn-apple.com
+cdn-hw.aliez.me
 cdn.optimizely.com
 cdn.phoenix.intergi.com
 cdn.rawgit.com
@@ -728,6 +733,7 @@ chrome-extension-downloader.com
 chuyu.me
 clarovideo.net
 cleancss.com
+click.pstmrk.it
 clients1.google.com
 clients2.google.com
 clients3.google.com
@@ -785,6 +791,7 @@ dnstrails.com
 doubleclick.net
 download.visualstudio.microsoft.com
 downloadcrew.com
+downloads.telmex.com
 dreamhost.com
 drive.google.com
 drivereasy.com
@@ -822,6 +829,7 @@ expedia.se
 expressvpn.com
 facebook.com
 fandango.com
+fast.wistia.net
 fastpic.ru
 fayerwayer.com
 feedly.com
@@ -843,17 +851,21 @@ g00.msn.com
 g2a.com
 gacollector.l.google.com
 gamespot.com
+gateway.reddit.com
 genbeta.com
 genbetadev.com
 genbird.com
 geo.opera.com
+geo3.ggpht.com
 getmonero.org
 getmovil.com
+ggpht.com
 ghacks.net
 giphy.com
 git-scm.com
 github.com
 github.io
+githubusercontent.com
 giveawayoftheday.com
 gleam.io
 go.com
@@ -875,7 +887,9 @@ graph.facebook.com
 gravatar.com
 groov.pl
 gstatic.com
+gtarcade.com
 guru3d.com
+gvt1.com
 hackerearth.com
 hastebin.com
 here.com
@@ -924,6 +938,7 @@ kayak.es
 kcsoftwares.com
 kernel.org
 keystone.mwbsys.com
+kinja.com
 kmart.com
 kotaku.com
 l.facebook.com
@@ -998,6 +1013,7 @@ nintendo.com
 nirsoft.net
 niubie.com
 nl.sitestat.com
+nordvpn.com
 nsimg.net
 nvidia.com
 nytimes.com
@@ -1051,6 +1067,7 @@ postimg.cc
 promotions.newegg.com
 protonmail.com
 protonvpn.com
+pstmrk.it
 qifi.org
 qq.com
 qr-code-generator.com
@@ -1091,6 +1108,7 @@ scaleway.com
 scene7.com
 screenshots.firefox.com
 secure.avangate.com
+secure.gravatar.com
 sejda.com
 sevenforums.com
 sh.st
@@ -1114,6 +1132,7 @@ spotify.com
 ssl.gstatic.com
 ssl.p.jwpcdn.com
 st.chatango.com
+stackpathdns.com
 staples.com
 start.me
 statcounter.com
@@ -1128,6 +1147,7 @@ t.me
 t2.hulu.com
 tags.tiqcdn.com
 tcsgo.com
+telmex.com
 temp-mail.org
 tempail.com
 tencent.com
@@ -1177,6 +1197,7 @@ vimeo.com
 vimeocdn.com
 virustotal.com
 visualstudio.microsoft.com
+visualwebsiteoptimizer.com
 vivaldi.com
 vivaldi.net
 vk.com
@@ -1201,6 +1222,7 @@ windowscentral.com
 windscribe.com
 windy.com
 winter15.gosredirector.ea.com
+wistia.net
 wixstatic.com
 wordpress.com
 wordpress.org
