@@ -15,6 +15,8 @@ HOSTS=(
     "0" "https://adblock.mahakala.is"                                                       # Unknown big list
     "0" "https://adzhosts.fr/hosts/adzhosts-android.txt"                                    # AdZHosts list
     "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
+    "0" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"      # Quidsup Malicious list
+    "1" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"    # Quidsup NoTrack list
     "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts blocklist
     "0" "https://hosts-file.net/download/hosts.txt"                                         # HpHosts main blocklist
     "0" "https://hosts-file.net/emd.txt"                                                    # HpHosts EMD blocklist
@@ -44,8 +46,6 @@ HOSTS=(
     "1" "https://rawgit.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"                 # NoCoin blocklist
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/domains.txt"                 # Notracking domains
     "0" "https://rawgit.com/notracking/hosts-blocklists/master/hostnames.txt"               # Notracking hostsnames
-    "0" "https://rawgit.com/quidsup/notrack/master/malicious-sites.txt"                     # Quidsup Malicious list
-    "1" "https://rawgit.com/quidsup/notrack/master/trackers.txt"                            # Quidsup NoTrack list
     "0" "https://rawgit.com/Yhonay/antipopads/master/hosts"                                 # Anti-PopADS list
     "0" "https://rawgit.com/vokins/yhosts/master/hosts.txt"                                 # Vokins blocklist
     "1" "https://rawgit.com/yous/YousList/master/hosts.txt"                                 # YousList blocklist
