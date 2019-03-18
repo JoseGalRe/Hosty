@@ -32,23 +32,21 @@ HOSTS=(
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"                   # Mozilla malware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"                  # Mozilla tracking list
     "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"                         # Ransomware Domain list
-    "1" "https://rawgit.com/AdAway/adaway.github.io/master/hosts.txt"                       # AdAway blocklist
-    "0" "https://rawgit.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt"                    # CHEF-KOCH WebRTC list
-    "0" "https://rawgit.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/CK's-Ad-Tracker-HOSTS-FilterList.txt" # CHEF-KOCH AdTracker
-    "0" "https://rawgit.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/CK's-Malware-HOSTS-FilterList.txt" # CHEF-KOCH Malware list
-    "0" "https://rawgit.com/Dawsey21/Lists/master/main-blacklist.txt"                       # Spam404 blocklist
-    "1" "https://rawgit.com/StevenBlack/hosts/master/hosts"                                 # StevenBlack's list
-    "0" "https://rawgit.com/WindowsLies/BlockWindows/master/hosts"                          # BlockWindows blocklist
-    "0" "https://rawgit.com/byaka/ublock-antiskimming-list/master/source/data.txt"          # Anti-Skimming list
-    "1" "https://rawgit.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt"          # Windows Spy Blocker
-    "0" "https://rawgit.com/logroid/blogger/master/file/hosts.txt"                          # Japan blocklist
-    "0" "https://rawgit.com/matomo-org/referrer-spam-blacklist/master/spammers.txt"         # Piwik Spam blocklist
-    "1" "https://rawgit.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"                 # NoCoin blocklist
-    "0" "https://rawgit.com/notracking/hosts-blocklists/master/domains.txt"                 # Notracking domains
-    "0" "https://rawgit.com/notracking/hosts-blocklists/master/hostnames.txt"               # Notracking hostsnames
-    "0" "https://rawgit.com/Yhonay/antipopads/master/hosts"                                 # Anti-PopADS list
-    "0" "https://rawgit.com/vokins/yhosts/master/hosts.txt"                                 # Vokins blocklist
-    "1" "https://rawgit.com/yous/YousList/master/hosts.txt"                                 # YousList blocklist
+    "1" "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"        # AdAway blocklist
+    "0" "https://raw.githubusercontent.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt"     # CHEF-KOCH WebRTC list
+    "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"        # Spam404 blocklist
+    "1" "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"                  # StevenBlack's list
+    "0" "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"           # BlockWindows blocklist
+    "0" "https://raw.githubusercontent.com/byaka/ublock-antiskimming-list/master/source/data.txt" # Anti-Skimming list
+    "1" "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt" # Windows Spy Blocker
+    "0" "https://raw.githubusercontent.com/logroid/blogger/master/file/hosts.txt"           # Japan blocklist
+    "0" "https://raw.githubusercontent.com/matomo-org/referrer-spam-blacklist/master/spammers.txt" # Piwik Spam blocklist
+    "1" "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"  # NoCoin blocklist
+    "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt"  # Notracking domains
+    "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/hostnames.txt" # Notracking hostsnames
+    "0" "https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts"                  # Anti-PopADS list
+    "0" "https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt"                  # Vokins blocklist
+    "1" "https://raw.githubusercontent.com/yous/YousList/master/hosts.txt"                  # YousList blocklist
     "0" "https://v.firebog.net/hosts/AdguardDNS.txt"                                        # AdguardDNS blocklist
     "0" "https://v.firebog.net/hosts/Airelle-hrsk.txt"                                      # Airelle High Rick list
     "0" "https://v.firebog.net/hosts/Airelle-trc.txt"                                       # Airelle Trackers list
@@ -98,14 +96,14 @@ RULES=(
     "0" "https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt"                  # ABP RuAdList+EasyList
     "0" "https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"                   # Fanboy's Annoyance List
     "0" "https://easylist-downloads.adblockplus.org/fanboy-social.txt"                      # Fanboy's Social List
-    "0" "https://rawgit.com/CHEF-KOCH/CKs-FilterList/master/CK's-FilterList.txt"            # CHEF-KOCH Bullshit list
-    "0" "https://rawgit.com/Dawsey21/Lists/master/adblock-list.txt"                         # Spam404 filters
-    "1" "https://rawgit.com/IDKwhattoputhere/uBlock-Filters-Plus/master/uBlock-Filters-Plus.txt" # uBlock Filters +
-    "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/badware.txt"                # uBlock badware filters
-    "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/filters.txt"                # uBlock main filters
-    "1" "https://rawgit.com/uBlockOrigin/uAssets/master/filters/privacy.txt"                # uBlock privacy filters
-    "1" "https://rawgit.com/yous/YousList/master/youslist.txt"                              # YousList filters
-    "0" "https://rawgit.com/zpacman/Blockzilla/master/Blockzilla.txt")                      # Blockzilla filters
+    "0" "https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList-Mirror/master/CK's-FilterList.txt" # CHEF-KOCH Bullshit list
+    "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/adblock-list.txt"          # Spam404 filters
+    "1" "https://raw.githubusercontent.com/IDKwhattoputhere/uBlock-Filters-Plus/master/uBlock-Filters-Plus.txt" # uBlock Filters +
+    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt" # uBlock badware filters
+    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt" # uBlock main filters
+    "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt" # uBlock privacy filters
+    "1" "https://raw.githubusercontent.com/yous/YousList/master/youslist.txt"               # YousList filters
+    "0" "https://raw.githubusercontent.com/zpacman/Blockzilla/master/Blockzilla.txt")       # Blockzilla filters
 
 
 # Add Anti-Phishing files in this array
@@ -146,7 +144,7 @@ IP="0.0.0.0"
 
 
 # Hosty version
-hostyv="1.2.1"
+hostyv="1.2.2"
 
 
 # Set counters to 1
@@ -406,17 +404,6 @@ for i in "${PHISH[@]}"; do
 done
 
 
-# Excluding localhost and similar domains
-echo
-echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
-if [ "$opt_dfopt" -eq 1 ] ; then
-    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$host"
-    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$white"
-else
-    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$host"
-    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$white"
-fi
-
 # Applying User whitelist
 if [ -f "/etc/hosts.whitelist" ] || [ -f "$HOME"/.hosty.whitelist ]; then
     echo
@@ -456,6 +443,20 @@ if [ -f "/etc/hosts.blacklist" ] || [ -f "$HOME"/.hosty.blacklist ] ; then
     echo -e "${bldwhi} * ${bldgrn}Applying ${bldcya}User ${bldgrn}blacklist..."
     awk "$magic" "/etc/hosts.blacklist" >> "$black" 2>/dev/null
     awk "$magic" "$HOME"/.hosty.blacklist >> "$black" 2>/dev/null
+fi
+
+
+# Excluding localhost and similar domains
+echo
+echo -e "${bldwhi} * ${bldgrn}Excluding localhost and similar domains..."
+if [ "$opt_dfopt" -eq 1 ] ; then
+    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$black"
+    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$host"
+    gnused -e 's/\(^www\.\|\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$white"
+else
+    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$black"
+    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$host"
+    gnused -e 's/\(\.$\)//g' -e '/\./!d' -e "$cnlcl" -i "$white"
 fi
 
 
