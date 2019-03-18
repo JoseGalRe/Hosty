@@ -18,6 +18,9 @@
 0.0.0.0 2youtds.biz
 0.0.0.0 328.hotlaksa.com
 0.0.0.0 5dabf928ad9ad4.com
+0.0.0.0 a.admob.com
+0.0.0.0 a.applovin.com
+0.0.0.0 a.applvn.com
 0.0.0.0 a2017-security.com
 0.0.0.0 aax-eu.amazon-adsystem.com
 0.0.0.0 ab4hr.com
@@ -43,6 +46,9 @@
 0.0.0.0 ads-sp-lon.cdn.spotify.com
 0.0.0.0 ads-west-colo.adsymptotic.com
 0.0.0.0 ads.diamonds
+0.0.0.0 ads.ioob.pw
+0.0.0.0 ads.mopub.com
+0.0.0.0 adsafeprotected.com
 0.0.0.0 adsense.com
 0.0.0.0 adsmena.com
 0.0.0.0 adthis.com
@@ -59,11 +65,16 @@
 0.0.0.0 antivirus360.ru
 0.0.0.0 anycast.pixel.adsafeprotected.com
 0.0.0.0 api-profit.com
+0.0.0.0 app-measurement.com
+0.0.0.0 applovin.com
+0.0.0.0 applvn.com
+0.0.0.0 apps.wortise.com
 0.0.0.0 appsformega.info
 0.0.0.0 apugod.work
 0.0.0.0 aqkujuggztyn.bid
 0.0.0.0 artbreat.com
 0.0.0.0 arxerlxllv.bid
+0.0.0.0 assets.applovin.com
 0.0.0.0 asseverative.party
 0.0.0.0 atjgtndhvbescp.bid
 0.0.0.0 audio-ec.spotify.com
@@ -136,6 +147,8 @@
 0.0.0.0 cs126.wpc.teliasoneracdn.net
 0.0.0.0 cs283.wpc.teliasoneracdn.net
 0.0.0.0 curative.info
+0.0.0.0 d.applovin.com
+0.0.0.0 d.applvn.com
 0.0.0.0 d0z4gwv7.webcam
 0.0.0.0 d2gi7ultltnc2u.cloudfront.net
 0.0.0.0 d361oi6ppvq2ym.cloudfront.net
@@ -162,6 +175,7 @@
 0.0.0.0 docs-goo.org
 0.0.0.0 doremido.com
 0.0.0.0 dorp.press
+0.0.0.0 doubleclick.net
 0.0.0.0 ds.serving-sys.com
 0.0.0.0 eagerse.com
 0.0.0.0 eedicjfwqhqr.bid
@@ -231,6 +245,7 @@
 0.0.0.0 ilquotidianoinclasse.it
 0.0.0.0 ilrxikdjozlk.com
 0.0.0.0 ilsole24ore.com
+0.0.0.0 img.applovin.com
 0.0.0.0 imgfarm.com
 0.0.0.0 inadequal.com
 0.0.0.0 inclk.com
@@ -282,6 +297,7 @@
 0.0.0.0 mdsrggcnmybae.bid
 0.0.0.0 media-match.com
 0.0.0.0 media-rocks.com
+0.0.0.0 media.admob.com
 0.0.0.0 mediaget.com
 0.0.0.0 meilleuremutuelle.xyz
 0.0.0.0 messardu.com
@@ -292,11 +308,16 @@
 0.0.0.0 minidomain4.com
 0.0.0.0 mjlkhnizufhmrt.bid
 0.0.0.0 mlvc4zzw.space
+0.0.0.0 mm.admob.com
+0.0.0.0 mmv.admob.com
 0.0.0.0 mncdrqeqimfgh.bid
 0.0.0.0 mnfioew.info
+0.0.0.0 moatads.com
+0.0.0.0 mobile-static.adsafeprotected.com
 0.0.0.0 mobileofferplace.site
 0.0.0.0 moggattice.com
 0.0.0.0 monhyip.net
+0.0.0.0 mopub.com
 0.0.0.0 motionlessly.xyz
 0.0.0.0 moviecarpet.com
 0.0.0.0 mp-app.info
@@ -329,6 +350,7 @@
 0.0.0.0 ora.tv
 0.0.0.0 overely.com
 0.0.0.0 owcykhrgovbvhh.bid
+0.0.0.0 p.admob.com
 0.0.0.0 pagead2.googlesyndication.com
 0.0.0.0 pagead46.l.doubleclick.net
 0.0.0.0 papgamez.com
@@ -336,6 +358,7 @@
 0.0.0.0 partner.googleadservices.com
 0.0.0.0 passinst.com
 0.0.0.0 patecrafts.com
+0.0.0.0 pdn.applovin.com
 0.0.0.0 peerflyppv.com
 0.0.0.0 pepgamez.com
 0.0.0.0 pheihoe8.com
@@ -344,6 +367,7 @@
 0.0.0.0 pompetegain.com
 0.0.0.0 popads.net
 0.0.0.0 preligions.com
+0.0.0.0 presage.io
 0.0.0.0 primosearch.com
 0.0.0.0 prize6262.cccrcloudcore3.info
 0.0.0.0 prod.spotify-heads.map.fastlylb.net
@@ -352,6 +376,8 @@
 0.0.0.0 pubads.g.doubleclick.net
 0.0.0.0 push-notification.tools
 0.0.0.0 putrr16.com
+0.0.0.0 px.moatads.com
+0.0.0.0 r.admob.com
 0.0.0.0 rad.msn.com
 0.0.0.0 randomwalktab.com
 0.0.0.0 raqueocznwden.bid
@@ -365,6 +391,8 @@
 0.0.0.0 rmlsa764ai.top
 0.0.0.0 ronesio.xyz
 0.0.0.0 rpslkvzymrddjp.bid
+0.0.0.0 rt.applovin.com
+0.0.0.0 rt.applvn.com
 0.0.0.0 rty345663.tumblr.com
 0.0.0.0 rustqlclwuebif.bid
 0.0.0.0 s200.zerocdn.to
@@ -401,7 +429,6 @@
 0.0.0.0 sleeksedfue.site
 0.0.0.0 smartphoneslist.com
 0.0.0.0 somoza.club
-0.0.0.0 spclient.wg.spotify.com
 0.0.0.0 srvr.work
 0.0.0.0 stat3.cybermonitor.com
 0.0.0.0 static.chartbeat.com
@@ -455,6 +482,7 @@
 0.0.0.0 velocecdn.com
 0.0.0.0 versatisfy.com
 0.0.0.0 vid--410--021---5200151.blogspot.com
+0.0.0.0 vid.applovin.com
 0.0.0.0 video-ad-stats.googlesyndication.com
 0.0.0.0 videodownloadconverter.com
 0.0.0.0 view.atdmt.com
@@ -470,6 +498,7 @@
 0.0.0.0 whyawcjjcoexo.bid
 0.0.0.0 winningdealz.com
 0.0.0.0 witchcraftsash.com
+0.0.0.0 wortise.com
 0.0.0.0 ws.sharethis.com
 0.0.0.0 wuhknlrnhcli.net
 0.0.0.0 xcbiscycvs.bid
@@ -482,6 +511,7 @@
 0.0.0.0 youknowbest.com
 0.0.0.0 yournewtab.com
 0.0.0.0 yxtdupqc.bid
+0.0.0.0 z.moatads.com
 0.0.0.0 zai1mai.top
 0.0.0.0 zcqaztillrmmqu.bid
 0.0.0.0 zcuocqfstyne.bid
