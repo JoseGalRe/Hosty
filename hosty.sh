@@ -35,6 +35,7 @@ HOSTS=(
     "1" "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"        # AdAway blocklist
     "0" "https://raw.githubusercontent.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt"     # CHEF-KOCH WebRTC list
     "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"        # Spam404 blocklist
+    "0" "https://raw.githubusercontent.com/EnergizedProtection/block/master/basic/formats/hosts" # Energized blocklist
     "1" "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"                  # StevenBlack's list
     "0" "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"           # BlockWindows blocklist
     "0" "https://raw.githubusercontent.com/byaka/ublock-antiskimming-list/master/source/data.txt" # Anti-Skimming list
@@ -96,7 +97,7 @@ RULES=(
     "0" "https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt"                  # ABP RuAdList+EasyList
     "0" "https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt"                   # Fanboy's Annoyance List
     "0" "https://easylist-downloads.adblockplus.org/fanboy-social.txt"                      # Fanboy's Social List
-    "0" "https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList-Mirror/master/CK's-FilterList.txt" # CHEF-KOCH Bullshit list
+    "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/CK's-FilterList.txt"        # CHEF-KOCH Bullshit list
     "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/adblock-list.txt"          # Spam404 filters
     "1" "https://raw.githubusercontent.com/IDKwhattoputhere/uBlock-Filters-Plus/master/uBlock-Filters-Plus.txt" # uBlock Filters +
     "1" "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt" # uBlock badware filters
