@@ -1,4 +1,17 @@
-# Main Recommended blacklist
+# Hosty - A Hosts File Manager Script for Linux.
+#
+# This blacklist file is a free download from:
+# https://github.com/JoseGalRe/Hosty
+#
+# Update Date: Mon, Apr  7, 2019  1:26:31 AM
+# Number of domains: 519
+#
+# Licence:
+# CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
+#
+# Contributions by:
+# astrolince, s-nt-s, JoseGalRe
+
 0.0.0.0 100daily.xyz
 0.0.0.0 1365scc.download
 0.0.0.0 13vm73vbmp.com
@@ -448,6 +461,7 @@
 0.0.0.0 tdxqgpfkiye.bid
 0.0.0.0 tefwraudu.bid
 0.0.0.0 temp.uno
+0.0.0.0 thanhculyza.dnsfor.me
 0.0.0.0 the.truemobione.com
 0.0.0.0 theih1w.top
 0.0.0.0 themig.com

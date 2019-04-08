@@ -1,26 +1,22 @@
-# AdAway Recommended whitelist
-connect.tapjoy.com
-data.flurry.com
-intsig.net
-redirect.viglink.com
+# Hosty - A Hosts File Manager Script for Linux.
+#
+# This whitelist file is a free download from:
+# https://github.com/JoseGalRe/Hosty
+#
+# Update Date: Mon, Apr  7, 2019  1:26:31 AM
+# Number of domains: 689
+#
+# Licence:
+# CC Attribution 3.0 (https://creativecommons.org/licenses/by/3.0)
+#
+# Contributions by:
+# astrolince, s-nt-s, JoseGalRe
 
-# Main Recommended whitelist
-adf.ly
-any.gs
-da.feedsportal.com
-linkbucks.com
-maxcdn.com
-ojrq.net
-rpxnow.com
-sharethis.com
-shorte.st
-smarturl.it
-
-# JoseGalRe Recommended whitelist
 000webhostapp.com
 01.org
 1.bp.blogspot.com
 24spoilers.com
+a.hulu.com
 a.tiles.mapbox.com
 abc.es
 abc.xyz
@@ -61,17 +57,19 @@ apkmirror.com
 apkpure.com
 apn-settings.com
 apple.com
-appleglobal.112.2o7.net
 applesfera.com
-applestoreus.112.2o7.net
 archive.to
 archlinux.org
 arter97.com
 assets.coinbase.com
+ati-host.net
 att.com
 audio-fac.spotify.com
+auth.samsungosp.com
 auto.search.msn.com
+avangate.com
 aws.amazon.com
+az764295.vo.msecnd.net
 b-api.facebook.com
 b-graph.facebook.com
 b-www.facebook.com
@@ -101,6 +99,7 @@ brightcove.net
 buff.ly
 bunkus.org
 c.disquscdn.com
+c0.wp.com
 camo.githubusercontent.com
 cbox.ws
 cbs.com
@@ -124,6 +123,7 @@ chuyu.me
 clarovideo.net
 cleancss.com
 click.pstmrk.it
+clients.google.com
 clients1.google.com
 clients2.google.com
 clients3.google.com
@@ -133,6 +133,7 @@ clients6.google.com
 cloudapp.net
 cloudconvert.com
 cloudflare.com
+cloudinary.com
 cnet.com
 cnn.com
 cnnespanol.cnn.com
@@ -142,6 +143,7 @@ codeaurora.org
 codecademy.com
 codeplex.com
 coinbase.com
+com.akadns.net
 com.cn
 compileonline.com
 compubinario.com
@@ -226,6 +228,7 @@ fast.wistia.net
 fastpic.ru
 fayerwayer.com
 feedly.com
+feedsportal.com
 file-up.org
 file-upload.com
 filehippo.com
@@ -262,6 +265,7 @@ github.com
 github.io
 githubusercontent.com
 giveawayoftheday.com
+gizmodo.com
 gleam.io
 go.com
 go.redirectingat.com
@@ -293,13 +297,19 @@ highcharts.com
 hipertextual.com
 hollywoodreporter.com
 hostgator.com
+hostinger.com
 hotspotshield.com
 howtogeek.com
 huawei.com
+hulu.com
 hybrid-analysis.com
 i.postimg.cc
 i0.wp.com
+i1.wp.com
+i2.wp.com
+i1.yimg.com
 iadsdk.apple.com
+ibb.co
 icloud.com
 ideone.com
 ign.com
@@ -315,13 +325,16 @@ imgur.com
 indiegogo.com
 inoreader.com
 instagram.com
+intergi.com
 ip2location.com
 ipfire.org
+ipify.org
 ipinfo.io
 ipleak.net
 iplocation.net
 ipsw.me
 iris.tv
+itunes-apple.com.akadns.net
 j.mp
 jdownloader.org
 jetpack.wordpress.com
@@ -336,11 +349,13 @@ kayak.es
 kcsoftwares.com
 kernel.org
 keystone.mwbsys.com
+khanacademy.org
 kinja-static.com
 kinja.com
 kmart.com
 kotaku.com
 l.facebook.com
+l.google.com
 lads.myspace.com
 lapagina.com.sv
 laprensagrafica.com
@@ -367,11 +382,13 @@ mailto.space
 majorgeeks.com
 malwaredomainlist.com
 malwaredomains.com
+manage.smarturl.it
 manjaro.org
 mapbox.com
 marca.com
 marvel.com
 mas.sv
+maxcdn.com
 media-imdb.com
 mediafire.com
 medium.com
@@ -385,6 +402,7 @@ mine.nu
 mirrorservice.org
 mooval.de
 mqtt-mini.facebook.com
+msecnd.net
 msfn.org
 msn.com
 multcloud.com
@@ -392,6 +410,7 @@ muycomputer.com
 muyinteresante.es
 muylinux.com
 muyseguridad.net
+mwbsys.com
 my1login.com
 myanimelist.net
 myapp.com
@@ -408,6 +427,7 @@ neowin.net
 netcraft.com
 netdna.bootstrapcdn.com
 netflix.com
+newegg.com
 newocr.com
 newrelic.com
 newtrackon.com
@@ -427,6 +447,7 @@ olx.com
 omgubuntu.co.uk
 omnirom.org
 onedrive.live.com
+oneplus.com
 oneplus.net
 open.spotify.com
 opengapps.org
@@ -437,6 +458,7 @@ openstreetmap.org
 opensubtitles.org
 opera.com
 opinionstage.com
+optimizely.com
 origin.com
 ospserver.net
 ovh.com
@@ -450,6 +472,7 @@ patorjk.com
 pcmrace.com
 pd-st.itunes-apple.com.akadns.net
 pgl.yoyo.org
+phoenix.intergi.com
 phonearena.com
 photobucket.com
 pinterest.com
@@ -484,9 +507,12 @@ ravenjs.com
 rawgit.com
 reactos.org
 rebrand.ly
+rebrandly.com
 reddit.com
 redditmedia.com
+redirect.viglink.com
 redirectdetective.com
+redirectingat.com
 redirector.googlevideo.com
 redirector.gvt1.com
 res.cloudinary.com
@@ -494,6 +520,7 @@ resizeimage.net
 rg-adguard.net
 rottentomatoes.com
 rover.ebay.com
+rpxnow.com
 rudo.video
 rwilco12.com
 s.gravatar.com
@@ -507,21 +534,28 @@ s3.wp.com
 safelinking.net
 salud.gob.sv
 samsung.com
+samsungosp.com
 scaleway.com
 scene7.com
 screenshots.firefox.com
+search.msn.com
 secure.avangate.com
 secure.gravatar.com
 sejda.com
 sevenforums.com
 sh.st
+sharethis.com
 shellcheck.net
+shopify.com
 signl.uk
 simpleimageresizer.com
 sinaimg.cn
+sitestat.com
 skype.com
 slimroms.net
 smallpdf.com
+smartgit.userecho.com
+smarturl.it
 smithsdownunder.com
 snazzymaps.com
 snet.gob.sv
@@ -549,6 +583,7 @@ surveymonkey.com
 syedgakbar.com
 symbolab.com
 symcd.com
+syndication.twimg.com
 t.me
 t2.hulu.com
 tags.tiqcdn.com
@@ -563,6 +598,7 @@ textuploader.com
 thehackernews.com
 tidal.com
 tiles.mapbox.com
+tindersparks.com
 tiny.cc
 tinyurl.com
 tiqcdn.com
@@ -591,8 +627,10 @@ univision.com
 unpkg.com
 upload.ee
 urbanairship.com
+us-auth2.samsungosp.com
 us.i1.yimg.com
 use.typekit.net
+userecho.com
 userstyles.org
 ustream.tv
 vandal.elespanol.com
@@ -601,6 +639,7 @@ vectorizer.io
 ventusky.com
 vidaextra.com
 video-stats.l.google.com
+vidible.tv
 viglink.com
 vimeo.com
 vimeocdn.com
@@ -621,6 +660,7 @@ wdc.com
 weblogssl.com
 webpagefx.com
 webupd8.org
+wg.spotify.com
 whatsmyip.org
 whoer.net
 wikia.com
@@ -652,6 +692,7 @@ yahooapis.com
 yandex.com
 yandex.ru
 yelp.com
+yimg.com
 yourls.org
 youtu.be
 youtube.com
