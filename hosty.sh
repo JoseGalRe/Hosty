@@ -15,6 +15,12 @@ HOSTS=(
     "0" "https://adblock.mahakala.is"                                                       # Unknown big list
     "0" "https://adzhosts.fr/hosts/adzhosts-android.txt"                                    # AdZHosts list
     "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
+    "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Ads-tracker.txt"      # CHEF-KOCH Ads-tracker blocklist
+    "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/coinminer.txt"        # CHEF-KOCH Coinminer blocklist
+    "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Crashlytics.txt"      # CHEF-KOCH Crashlytics blocklist
+    "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Game.txt"             # CHEF-KOCH Game blocklist
+    "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Malware.txt"          # CHEF-KOCH Malware blocklist
+    "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Popads.txt"           # CHEF-KOCH Popads blocklist
     "0" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"      # Quidsup Malicious list
     "1" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"    # Quidsup NoTrack list
     "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts blocklist
