@@ -32,6 +32,8 @@ ajax.cloudflare.com
 ajax.googleapis.com
 aka.ms
 akadns.net
+akamaihd.net
+akamaized.net
 alicdn.com
 aliexpress.com
 aliez.me
@@ -64,6 +66,7 @@ archive.to
 archlinux.org
 arter97.com
 assets.coinbase.com
+at.alicdn.com
 ati-host.net
 att.com
 audio-fac.spotify.com
@@ -114,6 +117,7 @@ cdn-hw.aliez.me
 cdn.optimizely.com
 cdn.phoenix.intergi.com
 cdn.rawgit.com
+cdn.shortpixel.ai
 cdn.syndication.twimg.com
 cdn.vidible.tv
 cdninstagram.com
@@ -305,6 +309,7 @@ hotspotshield.com
 howtogeek.com
 huawei.com
 hulu.com
+humblebundle-a.akamaihd.net
 hybrid-analysis.com
 i.postimg.cc
 i0.wp.com
@@ -554,6 +559,7 @@ sh.st
 sharethis.com
 shellcheck.net
 shopify.com
+shortpixel.ai
 signl.uk
 simpleimageresizer.com
 sinaimg.cn
@@ -582,9 +588,14 @@ stackpathdns.com
 staples.com
 start.me
 statcounter.com
+static.parastorage.com
+static.wixstatic.com
+statics-storeexp-eus-ms-com.akamaized.net
 station-drivers.com
+steamcdn-a.akamaihd.net
 storage.googleapis.com
 strongpasswordgenerator.com
+support.google.com
 support.hostgator.com
 surveymonkey.com
 syedgakbar.com
@@ -696,6 +707,7 @@ xatakandroid.com
 xatakawindows.com
 xda-developers.com
 xurl.es
+xvp.akamaized.net
 yadi.sk
 yahoo.com
 yahooapis.com
