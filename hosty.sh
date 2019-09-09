@@ -7,12 +7,12 @@ HOSTS=(
     "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Malware Domain blocklist
     "1" "http://malware-domains.com/files/immortal_domains.zip"                             # Long-lived blocklist
     "1" "http://malware-domains.com/files/justdomains.zip"                                  # DNS-BH Malware list
-    "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                   # Yoyo blocklist
+    "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                   # Peter Lowe blocklist
     "1" "http://someonewhocares.org/hosts/hosts"                                            # Whocares blocklist
     "0" "http://sysctl.org/cameleon/hosts"                                                  # Sysctl blocklist
     "1" "http://winhelp2002.mvps.org/hosts.txt"                                             # MVPS blocklist
-    "0" "https://1hos.cf"                                                                   # 1hosts blocklist
-    "0" "https://adblock.mahakala.is"                                                       # Unknown big list
+    "0" "https://1hos.cf"                                                                   # 1Hosts blocklist
+    "0" "https://adblock.mahakala.is"                                                       # MoaAB ad-blocking list
     "0" "https://adzhosts.fr/hosts/adzhosts-android.txt"                                    # AdZHosts list
     "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
     "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Ads-tracker.txt"      # CHEF-KOCH Ads-tracker blocklist
@@ -23,7 +23,7 @@ HOSTS=(
     "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Popads.txt"           # CHEF-KOCH Popads blocklist
     "0" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"      # Quidsup Malicious list
     "1" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"    # Quidsup NoTrack list
-    "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts blocklist
+    "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts ads blocklist
     "0" "https://hosts-file.net/download/hosts.txt"                                         # HpHosts main blocklist
     "0" "https://hosts-file.net/emd.txt"                                                    # HpHosts EMD blocklist
     "0" "https://hosts-file.net/exp.txt"                                                    # HpHosts EXP blocklist
@@ -55,7 +55,7 @@ HOSTS=(
     "0" "https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt"                  # Vokins blocklist
     "1" "https://raw.githubusercontent.com/yous/YousList/master/hosts.txt"                  # YousList blocklist
     "0" "https://v.firebog.net/hosts/AdguardDNS.txt"                                        # AdguardDNS blocklist
-    "0" "https://v.firebog.net/hosts/Airelle-hrsk.txt"                                      # Airelle High Rick list
+    "0" "https://v.firebog.net/hosts/Airelle-hrsk.txt"                                      # Airelle High Risk list
     "0" "https://v.firebog.net/hosts/Airelle-trc.txt"                                       # Airelle Trackers list
     "0" "https://v.firebog.net/hosts/BillStearns.txt"                                       # Bill Stearns blocklist
     "0" "https://v.firebog.net/hosts/Easylist.txt"                                          # Easylist blocklist
@@ -83,7 +83,7 @@ RULES=(
     "0" "https://adguard.com/en/filter-rules.html?id=8"                                     # Adguard Dutch Filter
     "1" "https://adguard.com/en/filter-rules.html?id=9"                                     # Adguard Spanish filter
     "1" "https://adguard.com/en/filter-rules.html?id=11"                                    # Adguard Mobile filter
-    "1" "https://adguard.com/en/filter-rules.html?id=12"                                    # Adguard IOS filter
+    "1" "https://adguard.com/en/filter-rules.html?id=12"                                    # Adguard iOS filter
     "0" "https://adguard.com/en/filter-rules.html?id=13"                                    # Adguard Turkish filter
     "0" "https://adguard.com/en/filter-rules.html?id=14"                                    # Adguard Hassle filter
     "1" "https://adguard.com/en/filter-rules.html?id=15"                                    # Adguard DNS filter
