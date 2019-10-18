@@ -66,9 +66,7 @@ HOSTS=(
     "0" "https://v.firebog.net/hosts/Prigent-Phishing.txt"                                  # Prigent's Phishing list
     "0" "https://v.firebog.net/hosts/Shalla-mal.txt"                                        # Shalla Malicious list
     "0" "https://v.firebog.net/hosts/static/w3kbl.txt"                                      # WaLLy3K's blocklist
-    "1" "https://zerodot1.gitlab.io/CoinBlockerLists/hosts"                                 # ZeroDot1 Coin list
-    "1" "https://zeustracker.abuse.ch/blocklist.php?download=baddomains"                    # ZeuS baddomains list
-    "1" "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist")              # ZeuS domain list
+    "1" "https://zerodot1.gitlab.io/CoinBlockerLists/hosts")                                # ZeroDot1 Coin list
 
 
 # Add AdBlock files in this array
