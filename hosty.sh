@@ -3,15 +3,6 @@
 
 # Add Hosts files in this array
 HOSTS=(
-    "0" "http://hostsfile.mine.nu/hosts.txt"                                                # Andy Short blocklist
-    "1" "http://malwaredomainlist.com/hostslist/hosts.txt"                                  # Malware Domain blocklist
-    "1" "http://malware-domains.com/files/immortal_domains.zip"                             # Long-lived blocklist
-    "1" "http://malware-domains.com/files/justdomains.zip"                                  # DNS-BH Malware list
-    "1" "http://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                   # Peter Lowe blocklist
-    "1" "http://someonewhocares.org/hosts/hosts"                                            # Whocares blocklist
-    "0" "http://sysctl.org/cameleon/hosts"                                                  # Sysctl blocklist
-    "1" "http://winhelp2002.mvps.org/hosts.txt"                                             # MVPS blocklist
-    "0" "https://1hos.cf"                                                                   # 1Hosts blocklist
     "0" "https://adblock.mahakala.is"                                                       # MoaAB ad-blocking list
     "0" "https://adzhosts.fr/hosts/adzhosts-android.txt"                                    # AdZHosts list
     "1" "https://dshield.org/feeds/suspiciousdomains_Low.txt"                               # Suspicious domain list
@@ -31,13 +22,19 @@ HOSTS=(
     "0" "https://hosts-file.net/hphosts-partial.txt"                                        # HpHosts partial list
     "0" "https://hosts-file.net/mmt.txt"                                                    # HpHosts MMT blocklist
     "0" "https://hosts-file.net/psh.txt"                                                    # HpHosts PSH blocklist
+    "0" "https://hostsfile.mine.nu/hosts.txt"                                               # Andy Short blocklist
     "0" "https://hostsfile.org/downloads/hosts.txt"                                         # Hostfile blocklist
     "0" "https://joewein.net/dl/bl/dom-bl-base.txt"                                         # Joe Wein blocklist
+    "1" "https://malwaredomainlist.com/hostslist/hosts.txt"                                 # Malware Domain blocklist
+    "1" "https://mirror1.malwaredomains.com/files/immortal_domains.zip"                     # Long-lived blocklist
+    "1" "https://mirror1.malwaredomains.com/files/justdomains.zip"                          # DNS-BH Malware list
+    "1" "https://pgl.yoyo.org/adservers/serverlist.php?mimetype=plaintext"                  # Peter Lowe blocklist
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"                        # Mozilla adware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt"              # Mozilla malware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt"                   # Mozilla malware list
     "1" "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"                  # Mozilla tracking list
-    "1" "https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt"                         # Ransomware Domain list
+    "1" "https://someonewhocares.org/hosts/hosts"                                           # Whocares blocklist
+    "0" "https://sysctl.org/cameleon/hosts"                                                 # Sysctl blocklist
     "1" "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"        # AdAway blocklist
     "0" "https://raw.githubusercontent.com/CHEF-KOCH/WebRTC-tracking/master/WebRTC.txt"     # CHEF-KOCH WebRTC list
     "0" "https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt"        # Spam404 blocklist
@@ -46,7 +43,7 @@ HOSTS=(
     "0" "https://raw.githubusercontent.com/WindowsLies/BlockWindows/master/hosts"           # BlockWindows blocklist
     "0" "https://raw.githubusercontent.com/byaka/ublock-antiskimming-list/master/source/data.txt" # Anti-Skimming list
     "1" "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt" # Windows Spy Blocker
-    "0" "https://raw.githubusercontent.com/logroid/blogger/master/file/hosts.txt"           # Japan blocklist
+    "0" "https://raw.githubusercontent.com/logroid/adaway-hosts/master/hosts.txt"           # Japan blocklist
     "0" "https://raw.githubusercontent.com/matomo-org/referrer-spam-blacklist/master/spammers.txt" # Piwik Spam blocklist
     "1" "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"  # NoCoin blocklist
     "0" "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt"  # Notracking domains
@@ -66,6 +63,7 @@ HOSTS=(
     "0" "https://v.firebog.net/hosts/Prigent-Phishing.txt"                                  # Prigent's Phishing list
     "0" "https://v.firebog.net/hosts/Shalla-mal.txt"                                        # Shalla Malicious list
     "0" "https://v.firebog.net/hosts/static/w3kbl.txt"                                      # WaLLy3K's blocklist
+    "1" "https://winhelp2002.mvps.org/hosts.txt"                                            # MVPS blocklist
     "1" "https://zerodot1.gitlab.io/CoinBlockerLists/hosts")                                # ZeroDot1 Coin list
 
 
