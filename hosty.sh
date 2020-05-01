@@ -14,14 +14,6 @@ HOSTS=(
     "0" "https://gitlab.com/CHEF-KOCH/cks-filterlist/raw/master/hosts/Popads.txt"           # CHEF-KOCH Popads blocklist
     "0" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"      # Quidsup Malicious list
     "1" "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt"    # Quidsup NoTrack list
-    "1" "https://hosts-file.net/ad_servers.txt"                                             # HpHosts ads blocklist
-    "0" "https://hosts-file.net/download/hosts.txt"                                         # HpHosts main blocklist
-    "0" "https://hosts-file.net/emd.txt"                                                    # HpHosts EMD blocklist
-    "0" "https://hosts-file.net/exp.txt"                                                    # HpHosts EXP blocklist
-    "0" "https://hosts-file.net/grm.txt"                                                    # HpHosts GRM blocklist
-    "0" "https://hosts-file.net/hphosts-partial.txt"                                        # HpHosts partial list
-    "0" "https://hosts-file.net/mmt.txt"                                                    # HpHosts MMT blocklist
-    "0" "https://hosts-file.net/psh.txt"                                                    # HpHosts PSH blocklist
     "0" "https://hostsfile.mine.nu/hosts.txt"                                               # Andy Short blocklist
     "0" "https://hostsfile.org/downloads/hosts.txt"                                         # Hostfile blocklist
     "0" "https://joewein.net/dl/bl/dom-bl-base.txt"                                         # Joe Wein blocklist
