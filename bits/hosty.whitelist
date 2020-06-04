@@ -35,6 +35,7 @@ ajax.cloudflare.com
 ajax.googleapis.com
 aka.ms
 akadns.net
+akadns6.net
 akamaihd.net
 akamaized.net
 alicdn.com
@@ -193,6 +194,7 @@ ctldl.windowsupdate.com
 cuponclub.net
 currentlydown.com
 cydia.saurik.com
+dailymotion.com
 dasumo.com
 daumcdn.net
 dcrypt.it
@@ -476,6 +478,7 @@ milanuncios.com
 mine.nu
 mirrorservice.org
 mooval.de
+mozilla.net
 mozilla.org
 mqtt-mini.facebook.com
 msecnd.net
@@ -508,6 +511,7 @@ netcraft.com
 netdna-cdn.com
 netdna.bootstrapcdn.com
 netflix.com
+netlify.com
 newegg.com
 newocr.com
 newrelic.com
@@ -673,11 +677,13 @@ speed4up.com
 speedof.me
 speedtest.net
 spotify.com
+ssl-images-amazon.com
 ssl.gstatic.com
 ssl.p.jwpcdn.com
 st.chatango.com
 stackoverflow.com
 stackpath.bootstrapcdn.com
+stackpathcdn.com
 stackpathdns.com
 staples.com
 start.me
@@ -734,6 +740,7 @@ ttvnw.net
 tumblr.com
 tunein.com
 tweetdeck.twitter.com
+twemoji.maxcdn.com
 twimg.com
 twitch.tv
 twitchcdn.net
@@ -742,6 +749,7 @@ typekit.net
 ubi.com
 ubisoft.com
 ubuntu.com
+ucarecdn.com
 udacity.com
 univision.com
 unpkg.com
